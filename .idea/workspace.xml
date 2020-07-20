@@ -4,7 +4,17 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="" />
+    <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/verification_code_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_futbin_players.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/handle_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_all_transfer_targets.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_all_transfer_targets.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +27,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1esNaheCYx5wvUBOD8zNUvy1h7v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
@@ -56,10 +71,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1595235018310" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595235628787">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595275402876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595235628787" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595275402876" />
+    <state width="750" height="530" key="javadoc.popup" timestamp="1595273562575">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595273562575" />
     <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595234893039">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

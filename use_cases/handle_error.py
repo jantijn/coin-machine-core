@@ -1,14 +1,13 @@
 class HandleError:
-    def __init__(self, navigation_service, logging_service):
-        self._navigation_service = navigation_service
+    def __init__(self, fut_web_app_service, logging_service):
+        self.fut_web_app_service = fut_web_app_service
         self._logging_service = logging_service
 
     def execute(self):
-        self._logging_service.log("-" * 80)
         self._logging_service.log("Something went wrong...")
 
-        if self._navigation_service.prove_you_are_not_a_robot():
-            self._logging_service.log("Please log into web app and do Captcha exercise")
-            input("Press enter to continue")
+        # if self.fut_web_app_service.navigation_service.prove_you_are_not_a_robot():
+        #     self._logging_service.log("Please log into web app and do Captcha exercise")
 
-        self._navigation_service.refresh()
+        self._logging_service.log("Restarting the app")
+        self.fut_web_app_service.navigation_service.refresh()
