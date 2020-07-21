@@ -1,6 +1,6 @@
 from use_cases.bid_on_items import BidOnItems
 from use_cases.enter_verification_code import EnterVerificationCode
-from use_cases.get_filters import GetFilters
+from use_cases.get_search_filters import GetFilters
 from use_cases.handle_error import HandleError
 from use_cases.list_all_transfer_targets import ListAllTransferTargets
 from use_cases.login import Login
