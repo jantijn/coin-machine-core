@@ -20,7 +20,7 @@ def build_bid_on_all_players_on_page(fut_web_app_service, logging_service):
 def build_enter_verification_code(fut_web_app_service, logging_service):
     return EnterVerificationCode(
         fut_web_app_service = fut_web_app_service,
-        logging_service = logging_service,
+        logging_service = logging_service
     ).execute
 
 

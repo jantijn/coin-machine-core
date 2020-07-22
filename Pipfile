@@ -11,6 +11,7 @@ selenium = "*"
 python-dotenv = "*"
 webdriver-manager = "*"
 beautifulsoup4 = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"

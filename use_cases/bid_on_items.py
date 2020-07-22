@@ -17,6 +17,7 @@ class BidOnItems:
         self.bid_on_items(price, max_items, max_time_left)
         random_pause(1)
         self.go_back_to_search()
+        return True
 
     def search_market(self):
         self.logging_service.log("Searching the transfer market")
