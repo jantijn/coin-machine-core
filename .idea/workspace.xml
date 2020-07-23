@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/factories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/login_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/fut_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/login_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,12 +141,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.fut_service" />
       <item itemvalue="Python tests.pytest in bin" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.MyTestCase.test_something" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" />
-      <item itemvalue="Python.fut_service" />
     </list>
     <recent_temporary>
       <list>
@@ -191,26 +188,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595443718534">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595452726675">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595443718534" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595443718532">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595452726675" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595452726674">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595443718532" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595443718532">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595452726674" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595452726674">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595443718532" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595443718533">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595452726674" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595452726675">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595443718533" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595452144374">
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595452726675" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595494882479">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595452144374" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595494882479" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1595444660466">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

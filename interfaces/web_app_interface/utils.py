@@ -11,10 +11,12 @@ from selenium.webdriver import ActionChains
 class Button:
     def __init__(self, driver, selector):
         self.driver = driver
-        self.button = WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
-        )
-        [self.height, self.width] = self._get_button_dimensions()
+        self.selector = selector
+        if self.is_present():
+            self.button = self.driver.find_element_by_css_selector(selector)
+
+    def is_present(self):
+        return _is_present(self.driver, self.selector)
 
     def fast_click(self):
         time.sleep(random.randint(0, 10) / 100)
@@ -25,7 +27,8 @@ class Button:
         self._click()
 
     def _click(self):
-        [height_rand, width_rand] = self._create_random_offset()
+        [height, width] = self._get_button_dimensions()
+        [height_rand, width_rand] = _create_random_offset(height, width)
         action = ActionChains(self.driver)
         action.move_to_element_with_offset(self.button, width_rand, height_rand)
         action.click()
@@ -38,24 +41,16 @@ class Button:
         width = int(size_list[1]) - 1
         return [height, width]
 
-    def _create_random_offset(self):
-        try:
-            height_rand = random.randint(1, self.height)
-        except ValueError:
-            height_rand = 1
-        try:
-            width_rand = random.randint(1, self.width)
-        except ValueError:
-            width_rand = 1
-        return [height_rand, width_rand]
-
 
 class InputField:
     def __init__(self, driver, selector):
         self.driver = driver
-        self.field = WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
-        )
+        self.selector = selector
+        if self.is_present():
+            self.button = self.driver.find_element_by_css_selector(selector)
+
+    def is_present(self):
+        return _is_present(self.driver, self.selector)
 
     def fill(self, text):
         while self.field.get_attribute("value") != text:
@@ -71,10 +66,27 @@ class Notification:
         self.selector = selector
 
     def is_present(self):
-        try:
-            WebDriverWait(self.driver, 30).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, self.selector))
-            )
-        except TimeoutException:
-            return False
-        return True
+        return _is_present(self.driver, self.selector)
+
+
+def _is_present(driver, selector):
+    timeout = 5
+    try:
+        WebDriverWait(driver, timeout).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
+        )
+    except TimeoutException:
+        return False
+    return True
+
+
+def _create_random_offset(height, width):
+    try:
+        height_rand = random.randint(1, height)
+    except ValueError:
+        height_rand = 1
+    try:
+        width_rand = random.randint(1, width)
+    except ValueError:
+        width_rand = 1
+    return [height_rand, width_rand]
