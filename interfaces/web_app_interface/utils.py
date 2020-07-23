@@ -1,7 +1,7 @@
 import random
 import time
 
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -26,6 +26,13 @@ class Button:
         time.sleep(random.randint(0, 100) / 100)
         self._click()
 
+    def safe_click(self):
+        time.sleep(random.randint(0, 100) / 100)
+        try:
+            self._click()
+        except ElementClickInterceptedException:
+            self.safe_click()
+
     def _click(self):
         [height, width] = self._get_button_dimensions()
         [height_rand, width_rand] = _create_random_offset(height, width)
@@ -47,7 +54,7 @@ class InputField:
         self.driver = driver
         self.selector = selector
         if self.is_present():
-            self.button = self.driver.find_element_by_css_selector(selector)
+            self.field = self.driver.find_element_by_css_selector(selector)
 
     def is_present(self):
         return _is_present(self.driver, self.selector)
@@ -60,13 +67,43 @@ class InputField:
                 self.field.send_keys(char)
 
 
-class Notification:
+class List:
+    def __init__(self, driver, selector):
+        self.driver = driver
+        self.selector = selector
+        if self.is_present():
+            self.list = self.driver.find_elements_by_css_selector(selector)
+
+    def is_present(self):
+        return _is_present(self.driver, self.selector)
+
+    def get(self):
+        return self.list
+
+
+class Item:
+    def __init__(self, driver, item):
+        self.driver = driver
+        self.item = item
+
+    def get_attribute(self, selector):
+        return self.item.find_element_by_css_selector(selector).text
+
+
+class Label:
     def __init__(self, driver, selector):
         self.driver = driver
         self.selector = selector
 
     def is_present(self):
         return _is_present(self.driver, self.selector)
+
+
+class Clickable:
+
+
+def random_pause(seconds):
+    time.sleep(seconds + random.uniform(-0.5, 0.5))
 
 
 def _is_present(driver, selector):

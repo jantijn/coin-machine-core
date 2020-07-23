@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/login_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
       <recent name="$PROJECT_DIR$/factories" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fut_service">
+  <component name="RunManager" selected="Python.test">
     <configuration name="fut_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,18 +68,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_enter_verification_code.MyTestCase.test_something" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/use_cases" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_enter_verification_code.MyTestCase.test_something&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -143,18 +149,18 @@
     <list>
       <item itemvalue="Python.fut_service" />
       <item itemvalue="Python tests.pytest in bin" />
-      <item itemvalue="Python tests.Unittests for test_enter_verification_code.MyTestCase.test_something" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" />
       <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.fut_service" />
         <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" />
         <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" />
         <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" />
-        <item itemvalue="Python tests.Unittests for test_enter_verification_code.MyTestCase.test_something" />
       </list>
     </recent_temporary>
   </component>
@@ -188,33 +194,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595452726675">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595526964299">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595452726675" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595452726674">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595526964299" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595526964298">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595452726674" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595452726674">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595526964298" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595526964297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595452726674" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595452726675">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595526964297" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595526964299">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595452726675" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595494882479">
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595526964299" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595529687939">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595494882479" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595529687939" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1595444660466">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595444660466" />
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595452607117">
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595527341419">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595452607117" />
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595527341419" />
   </component>
 </project>
