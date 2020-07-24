@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jantijnkromwijk.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jantijnkromwijk.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factories/use_case_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/factories/use_case_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_enter_verification_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_enter_verification_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/enter_verification_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/logout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/snipe_player.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,10 +187,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595358443745" />
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595357562822">
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595608933265">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595357562822" />
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595608933265" />
     <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595235018310">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -194,33 +199,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595526964299">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595536876864">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595526964299" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595526964298">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595536876864" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595536876863">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595526964298" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595526964297">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595536876863" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595536876863">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595526964297" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595526964299">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595536876863" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595536876864">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595526964299" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595529687939">
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595536876864" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595609804102">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595529687939" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595609804102" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1595444660466">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595444660466" />
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595527341419">
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595609784384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595527341419" />
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595609784384" />
   </component>
 </project>

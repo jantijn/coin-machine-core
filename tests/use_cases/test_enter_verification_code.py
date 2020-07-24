@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from use_cases.enter_verification_code import EnterVerificationCode
+from use_cases.verify_device import EnterVerificationCode
 
 CODE = 1234
 
