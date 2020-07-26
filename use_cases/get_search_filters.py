@@ -1,4 +1,4 @@
-from entities.search_filter_entity import SearchFilterEntity
+from entities.search_filter import SearchFilter
 
 
 class GetFilters:

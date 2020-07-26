@@ -1,5 +1,5 @@
 from factories.web_driver_factory import build_web_driver
-from interfaces.web_app_interface import WebAppInterface
+from interfaces.web_app import WebAppInterface
 
 if __name__ == "__main__":
     driver = build_web_driver(headless = False)

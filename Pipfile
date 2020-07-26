@@ -12,6 +12,7 @@ python-dotenv = "*"
 webdriver-manager = "*"
 beautifulsoup4 = "*"
 pytest = "*"
+click = "*"
 
 [requires]
 python_version = "3.7"

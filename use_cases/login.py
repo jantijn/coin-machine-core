@@ -1,32 +1,22 @@
+from interfaces.web_app.selenium.exceptions import WrongCredentialsError
+
+
 class Login:
-    def __init__(self, fut_web_app_service, logging_service):
-        self.fut_web_app_service = fut_web_app_service
-        self.logging_service = logging_service
+    def __init__(self, web_app_interface, logger):
+        self.web_app_interface = web_app_interface
+        self.logger = logger
 
     def execute(self, username, password):
-        self._login(username, password)
+        self.logger.log('Logging in to web app')
+        try:
+            self.web_app_interface.login(username, password)
+        except WrongCredentialsError:
+            return {
+                'success': False,
+                'message': 'Wrong username and or password'
+            }
 
-        if self._login_failed():
-            self.logging_service.log("Wrong credentials provided")
-            return False
-
-        if self._security_code_required():
-            self._request_security_code()
-
-        self.fut_web_app_service.login_service.wait_untill_loaded()
-        return True
-
-    def _login(self, username, password):
-        self.logging_service.log("Logging in to web app")
-        self.fut_web_app_service.login_service.go_to_login()
-        self.fut_web_app_service.login_service.login(username, password)
-
-    def _login_failed(self):
-        return self.fut_web_app_service.login_service.login_failed()
-
-    def _security_code_required(self):
-        return self.fut_web_app_service.login_service.security_code_required()
-
-    def _request_security_code(self):
-        self.logging_service.log("Requesting security code")
-        self.fut_web_app_service.login_service.request_security_code()
+        return {
+            'success': True,
+            'message': 'Login successful!'
+        }

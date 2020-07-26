@@ -5,16 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/interfaces/item_repository/in_memory/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/item_repository/rest_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/market_data/futbin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jantijnkromwijk.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jantijnkromwijk.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factories/use_case_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/factories/use_case_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_enter_verification_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_enter_verification_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/enter_verification_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/logout.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/snipe_player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/item_repository/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/fut_bot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/search_filter_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/logger/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factories/use_case_factory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/factories/web_driver_factory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/exceptions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/selectors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app_interface/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/logger/console/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/database_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/market_data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/bid_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/log_out_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/login_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/navigation_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/purchase_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/search_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/status_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/transfer_list_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/fut_web_app_service/transfer_target_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/logging_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/search_filter_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_search_filter_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_search_filter_entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +52,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -33,7 +61,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1esNaheCYx5wvUBOD8zNUvy1h7v" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -43,15 +73,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/interfaces/item_repository" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/interfaces/item_repository" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/factories" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python tests.Unittests for test_login.TestLogin">
     <configuration name="fut_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_login.TestLogin" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -104,11 +137,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code&quot;" />
+      <option name="_new_target" value="&quot;test_login.TestLogin&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_login.TestLogin.test_login_happy_flow" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -118,11 +151,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code&quot;" />
+      <option name="_new_target" value="&quot;test_login.TestLogin.test_login_happy_flow&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_login.TestLogin.test_login_wrong_username_or_password" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -132,7 +165,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function&quot;" />
+      <option name="_new_target" value="&quot;test_login.TestLogin.test_login_wrong_username_or_password&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -154,18 +187,18 @@
     <list>
       <item itemvalue="Python.fut_service" />
       <item itemvalue="Python tests.pytest in bin" />
-      <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" />
-      <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" />
-      <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.Unittests for test_login.TestLogin.test_login_happy_flow" />
+      <item itemvalue="Python tests.Unittests for test_login.TestLogin.test_login_wrong_username_or_password" />
+      <item itemvalue="Python tests.Unittests for test_login.TestLogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_login.TestLogin" />
+        <item itemvalue="Python tests.Unittests for test_login.TestLogin.test_login_wrong_username_or_password" />
+        <item itemvalue="Python tests.Unittests for test_login.TestLogin.test_login_happy_flow" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.fut_service" />
-        <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_factory_builds_enter_verification_code_function" />
-        <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code_wrong_code" />
-        <item itemvalue="Python tests.Unittests for test_enter_verification_code.TestEnterVerificationCode.test_enter_verification_code" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +220,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595358443745" />
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595619111822">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1595619111822" />
     <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595608933265">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -199,33 +236,41 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595536876864">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595757151044">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595536876864" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595536876863">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595757151044" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595757151043">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595536876863" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595536876863">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595757151043" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595757151043">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595536876863" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595536876864">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595757151043" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595757151044">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595536876864" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595609804102">
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595757151044" />
+    <state x="382" y="137" width="675" height="655" key="StructurePopup" timestamp="1595704685360">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595609804102" />
+    <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595756927955">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595756927955" />
+    <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="329" y="144" width="782" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1595704178651" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1595444660466">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595444660466" />
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595609784384">
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595704664548">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595609784384" />
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595704664548" />
   </component>
 </project>
