@@ -3,7 +3,7 @@ import random
 from difflib import SequenceMatcher
 
 from . import selectors
-from .exceptions import WrongCredentialsError, WrongVerificationCodeError
+from use_cases.exceptions.exceptions import WrongCredentialsError, WrongVerificationCodeError
 from .web_app_objects import (
     WebAppObject,
     ClickableWebAppObject,
@@ -142,9 +142,9 @@ class BidOnSearchFilterItemsExecutor(Executor, SideBarMixin):
     def bid_on_search_filter_items(self, search_filter, max_items=20, max_time_left=60):
         self._go_to_transfers()
         self._go_to_search_the_transfer_market()
-        self._set_bid_filter(search_filter.name, search_filter.price)
+        self._set_bid_filter(search_filter.name, search_filter.buy_price)
         self._search_the_transfer_market()
-        self._bid_on_items(search_filter.price, max_items, max_time_left)
+        self._bid_on_items(search_filter.buy_price, max_items, max_time_left)
 
     def _go_to_search_the_transfer_market(self):
         go_to_search_the_transfer_market_button = ClickableWebAppObject.from_selector(

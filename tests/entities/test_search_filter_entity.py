@@ -2,12 +2,16 @@ import unittest
 
 import entities.search_filter as search_filter_entity
 
-TEST_PLAYER = {"name": "Moussa Sissoko", "futbin_id": 183394, "margin": 100, "bonus": 100}
+TEST_PLAYER = {
+    "name": "Moussa Sissoko",
+    "futbin_id": 183394,
+    "margin": 100,
+    "bonus": 100,
+}
 TEST_MARKET_PRICE = 2000
 
 
 class TestSearchFilterEntity(unittest.TestCase):
-
     def test_filter_entity_init(self):
         et = search_filter_entity.SearchFilter(
             futbin_id=TEST_PLAYER["futbin_id"],
@@ -35,7 +39,9 @@ class TestSearchFilterEntity(unittest.TestCase):
         et.calculate_prices(TEST_MARKET_PRICE)
 
         assert et.sell_price == TEST_MARKET_PRICE + TEST_PLAYER["bonus"]
-        assert et.max_buy_now_price == int(TEST_MARKET_PRICE * 0.95 - TEST_PLAYER["margin"])
+        assert et.max_buy_now_price == int(
+            TEST_MARKET_PRICE * 0.95 - TEST_PLAYER["margin"]
+        )
         assert isinstance(et.sell_price, int)
         assert isinstance(et.max_buy_now_price, int)
 

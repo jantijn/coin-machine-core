@@ -1,4 +1,4 @@
-from interfaces.web_app.selenium.exceptions import WrongVerificationCodeError
+from use_cases.exceptions.exceptions import WrongVerificationCodeError
 
 
 class VerifyDevice:
