@@ -11,11 +11,14 @@ class Login:
         try:
             self.web_app_interface.login(username, password)
         except WrongCredentialsError:
+            error_message = 'Wrong username and or password'
+            self.logger.log(error_message)
             return {
                 'success': False,
-                'message': 'Wrong username and or password'
+                'message': error_message
             }
 
+        self.logger.log('Login successful!')
         return {
             'success': True,
             'message': 'Login successful!'
