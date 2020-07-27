@@ -3,7 +3,10 @@ import random
 from difflib import SequenceMatcher
 
 from . import selectors
-from use_cases.exceptions.exceptions import WrongCredentialsError, WrongVerificationCodeError
+from use_cases.exceptions.exceptions import (
+    WrongCredentialsError,
+    WrongVerificationCodeError,
+)
 from .web_app_objects import (
     WebAppObject,
     ClickableWebAppObject,
@@ -198,7 +201,8 @@ class ListAllTransferTargetsExecutor(Executor, SideBarMixin):
         self._go_to_transfers()
         self._go_to_transfer_targets()
         self._clear_expired_players()
-        self._list_all_won_items(search_filters)
+        won_items = self._list_all_won_items(search_filters)
+        return won_items
 
     def _go_to_transfer_targets(self):
         go_to_transfer_targets_button = ClickableWebAppObject.from_selector(
@@ -213,11 +217,27 @@ class ListAllTransferTargetsExecutor(Executor, SideBarMixin):
         clear_expired_players_button.slow_click()
 
     def _list_all_won_items(self, search_filters):
+        data = []
+
         won_item_list = WonItemList.from_selector(self.driver, selectors.WON_ITEMS)
         while len(won_item_list) > 0:
             won_item = won_item_list.pop_first()
-            sell_price = self._get_sell_price(won_item.get_name(), search_filters)
+            name = won_item.get_name()
+            purchase_price = self._get_purchase_price(name, search_filters)
+            sell_price = self._get_sell_price(name, search_filters)
             won_item.list(sell_price)
+            data.append(
+                {
+                    "name": name,
+                    "purchase_price": purchase_price,
+                    "sell_price": sell_price,
+                }
+            )
+        return data
+
+    def _get_purchase_price(self, item_name, search_filters):
+        matching_filter = self._get_matching_filter(item_name, search_filters)
+        return matching_filter.purchase_price
 
     def _get_sell_price(self, item_name, search_filters):
         matching_filter = self._get_matching_filter(item_name, search_filters)
@@ -233,4 +253,3 @@ class ListAllTransferTargetsExecutor(Executor, SideBarMixin):
                 matching_filter = search_filter
                 max_similar_score = similar_score
         return matching_filter
-

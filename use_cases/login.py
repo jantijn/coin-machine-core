@@ -7,19 +7,13 @@ class Login:
         self.logger = logger
 
     def execute(self, username, password):
-        self.logger.log('Logging in to web app')
+        self.logger.log("Logging in to web app")
         try:
             self.web_app.login(username, password)
         except WrongCredentialsError:
-            error_message = 'Wrong username and or password'
+            error_message = "Wrong username and or password"
             self.logger.log(error_message)
-            return {
-                'success': False,
-                'message': error_message
-            }
+            return {"success": False, "message": error_message}
 
-        self.logger.log('Login successful!')
-        return {
-            'success': True,
-            'message': 'Login successful!'
-        }
+        self.logger.log("Login successful!")
+        return {"success": True, "message": "Login successful!"}

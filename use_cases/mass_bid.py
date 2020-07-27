@@ -9,7 +9,9 @@ class MassBid:
         self.item_repository = item_repository
         self.logger = logger
 
-    def execute(self, number_of_repetitions=1, number_of_search_filters=1, max_time_left=5):
+    def execute(
+        self, number_of_repetitions=1, number_of_search_filters=1, max_time_left=5
+    ):
         max_items = self.calculate_max_items(number_of_search_filters)
 
         for repetition in range(number_of_repetitions):
@@ -30,12 +32,16 @@ class MassBid:
         self.web_app.refresh_transfer_list()
 
     def _get_search_filters(self, number_of_search_filters):
-        search_filters = self.search_filter_repository.get_random_search_filters(number_of_search_filters)
+        search_filters = self.search_filter_repository.get_random_search_filters(
+            number_of_search_filters
+        )
         return search_filters
 
     def _bid_on_each_search_filter(self, max_items, max_time_left, search_filters):
         for search_filter in search_filters:
-            self.web_app.bid_on_search_filter_items(search_filter, max_items, max_time_left)
+            self.web_app.bid_on_search_filter_items(
+                search_filter, max_items, max_time_left
+            )
 
     def _wait_untill_bidding_finished(self, max_time_left):
         self._random_pause(max_time_left * 60)

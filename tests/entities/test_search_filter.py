@@ -11,8 +11,8 @@ TEST_PLAYER = {
 TEST_MARKET_PRICE = 2000
 
 
-class TestSearchFilterEntity(unittest.TestCase):
-    def test_filter_entity_init(self):
+class TestSearchFilter(unittest.TestCase):
+    def test_filter_init(self):
         et = search_filter_entity.SearchFilter(
             futbin_id=TEST_PLAYER["futbin_id"],
             name=TEST_PLAYER["name"],
@@ -25,7 +25,7 @@ class TestSearchFilterEntity(unittest.TestCase):
         assert et.margin == TEST_PLAYER["margin"]
         assert et.bonus == TEST_PLAYER["bonus"]
 
-    def test_filter_entity_from_dict(self):
+    def test_filter_from_dict(self):
         et = search_filter_entity.SearchFilter.from_dict(TEST_PLAYER)
 
         assert et.name == TEST_PLAYER["name"]
@@ -33,7 +33,7 @@ class TestSearchFilterEntity(unittest.TestCase):
         assert et.margin == TEST_PLAYER["margin"]
         assert et.bonus == TEST_PLAYER["bonus"]
 
-    def test_filter_entity_calculate_prices(self):
+    def test_filter_calculate_prices(self):
         et = search_filter_entity.SearchFilter.from_dict(TEST_PLAYER)
 
         et.calculate_prices(TEST_MARKET_PRICE)
@@ -45,7 +45,7 @@ class TestSearchFilterEntity(unittest.TestCase):
         assert isinstance(et.sell_price, int)
         assert isinstance(et.max_buy_now_price, int)
 
-    def test_filter_entity_to_dict(self):
+    def test_filter_to_dict(self):
         expected_result = dict(
             name=TEST_PLAYER["name"],
             max_buy_now_price=TEST_MARKET_PRICE * 0.95 - TEST_PLAYER["margin"],

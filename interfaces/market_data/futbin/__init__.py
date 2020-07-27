@@ -8,9 +8,9 @@ class MarketDataInterface:
 
     @staticmethod
     def _generate_futbin_request(player_id, game=20):
-        return f'https://www.futbin.com/{game}/playerPrices?player={player_id}'
+        return f"https://www.futbin.com/{game}/playerPrices?player={player_id}"
 
     @staticmethod
     def _parse_futbin_response(response, player_id, platform):
         price_string = response.json()[str(player_id)]["prices"][platform]["LCPrice"]
-        return int(price_string.replace(',', ''))
+        return int(price_string.replace(",", ""))
