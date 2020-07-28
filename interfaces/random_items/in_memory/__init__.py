@@ -23,9 +23,6 @@ class SearchFilterInterface:
 
     @staticmethod
     def _random_item_to_search_filter(random_item, margin, bonus):
-        search_filter = SearchFilter(random_item['name'], margin, bonus)
-        search_filter.calculate_prices(
-            get_market_price(random_item['futbin_id'])
-        )
+        search_filter = SearchFilter(random_item["name"], margin, bonus)
+        search_filter.calculate_prices(get_market_price(random_item["futbin_id"]))
         return search_filter
-

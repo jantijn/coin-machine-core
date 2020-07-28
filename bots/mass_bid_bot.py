@@ -1,6 +1,3 @@
-import random
-import time
-
 from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
 from use_cases.get_search_filters import GetSearchFilters
 from use_cases.list_won_items import ListWonItems
@@ -25,38 +22,37 @@ class MassBidBot:
         verify_device = VerifyDevice(self.web_app, self.logger)
         return verify_device.execute(verification_code)
 
-    def mass_bid(
-            self,
-            margin=200,
-            bonus=100,
-            number_of_repetitions=1,
-            number_of_search_filters=1,
-            max_time_left=5
-    ):
-        max_items = self._calculate_max_items(number_of_search_filters)
+    def mass_bid(self, **kwargs):
+        options = {
+            "margin": 200,
+            "bonus": 100,
+            "number_of_repetitions": 1,
+            "number_of_search_filters": 1,
+            "max_time_left": 5,
+        }
+        options.update(kwargs)
 
-        for repetition in range(number_of_repetitions):
+        for repetition in range(options["number_of_repetitions"]):
             self._refresh_transfer_list()
-            search_filters = self._get_search_filters(number_of_search_filters, margin, bonus)
-            self._bid_on_each_search_filter(max_items, max_time_left, search_filters)
-            self._wait_untill_bidding_finished(max_time_left)
+            search_filters = self._get_search_filters(
+                options["number_of_search_filters"], options["margin"], options["bonus"]
+            )
+            self._bid_on_each_search_filter(
+                search_filters, options["max_time_left"]
+            )
             self._list_won_items(search_filters)
-
-    @staticmethod
-    def _calculate_max_items(number_of_search_filters):
-        transfer_target_max_items = 50
-        max_items = int(transfer_target_max_items / number_of_search_filters)
-        return max_items
 
     def _refresh_transfer_list(self):
         refresh_transfer_list = RefreshTransferList(self.web_app, self.logger)
         return refresh_transfer_list.execute()
 
     def _get_search_filters(self, margin, bonus, number_of_search_filters):
-        get_search_filters = GetSearchFilters(self.random_items, self.market_data, self.logger)
+        get_search_filters = GetSearchFilters(
+            self.random_items, self.market_data, self.logger
+        )
         return get_search_filters.execute(number_of_search_filters, margin, bonus)
 
-    def _bid_on_each_search_filter(self, max_items, max_time_left, search_filters):
+    def _bid_on_each_search_filter(self, search_filters, max_time_left):
         bid_on_each_search_filter = BidOnEachSearchFilter(self.web_app, self.logger)
         return bid_on_each_search_filter.execute(search_filters, max_time_left)
 

@@ -5,32 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bots/mass_bid_bot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/market_data/futbin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/purchased_items/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/purchased_items/rest_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/random_items/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/random_items/rest_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/utils/api_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/listed_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/purchased_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bots/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/in_memory/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/rest_api/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/market_data/futbin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bots/mass_bid_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bots/mass_bid_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/market_data/futbin.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/market_data/futbin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/random_items/in_memory/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/mass_bid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,10 +218,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595969850839">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595970432046">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595969850839" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595970432046" />
     <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

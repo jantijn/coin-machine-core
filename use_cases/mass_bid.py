@@ -13,18 +13,20 @@ class MassBid:
         self.logger = logger
 
     def execute(
-            self,
-            margin=200,
-            bonus=100,
-            number_of_repetitions=1,
-            number_of_search_filters=1,
-            max_time_left=5
+        self,
+        margin=200,
+        bonus=100,
+        number_of_repetitions=1,
+        number_of_search_filters=1,
+        max_time_left=5,
     ):
         max_items = self.calculate_max_items(number_of_search_filters)
 
         for repetition in range(number_of_repetitions):
             self._refresh_transfer_list()
-            search_filters = self._get_search_filters(number_of_search_filters, margin, bonus)
+            search_filters = self._get_search_filters(
+                number_of_search_filters, margin, bonus
+            )
             self._bid_on_each_search_filter(max_items, max_time_left, search_filters)
             self._wait_untill_bidding_finished(max_time_left)
             won_items = self._list_won_items(search_filters)
@@ -43,15 +45,13 @@ class MassBid:
         search_filters = []
         random_items = self.random_items.get(number_of_search_filters)
         for item in random_items:
-            search_filters.append(
-                self._item_to_search_filter(item, margin, bonus)
-            )
+            search_filters.append(self._item_to_search_filter(item, margin, bonus))
         return search_filters
 
     def _item_to_search_filter(self, item, margin, bonus):
-        search_filter = SearchFilter(item['name'], margin, bonus)
+        search_filter = SearchFilter(item["name"], margin, bonus)
         search_filter.calculate_prices(
-            self.market_data.get_market_price(item['futbin_id'])
+            self.market_data.get_market_price(item["futbin_id"])
         )
         return search_filter
 

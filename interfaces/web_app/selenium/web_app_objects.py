@@ -167,7 +167,9 @@ class WonItem(ClickableWebAppObject):
         return self._get_attribute_from_web_app_object(selectors.WON_ITEM_NAME)
 
     def _get_purchase_price(self):
-        return self._get_attribute_from_web_app_object(selectors.WON_ITEM_PURCHASE_PRICE)
+        return self._get_attribute_from_web_app_object(
+            selectors.WON_ITEM_PURCHASE_PRICE
+        )
 
     def set_sell_price(self, sell_price):
         self.sell_price = sell_price
@@ -205,7 +207,7 @@ class WonItem(ClickableWebAppObject):
 
     def to_dict(self):
         return {
-            'name': self.name,
-            'purchase_price': self.purchase_price,
-            'sell_price': self.sell_price,
+            "name": self.name,
+            "purchase_price": self.purchase_price,
+            "sell_price": self.sell_price,
         }

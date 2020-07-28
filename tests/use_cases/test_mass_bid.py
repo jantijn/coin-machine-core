@@ -16,10 +16,7 @@ TARGET_RANDOM_ITEMS = [
     {"name": "Nathan Ake", "futbin_id": "208920", "margin": 300, "bonus": 100},
 ]
 TARGET_MARKET_PRICE = 2000
-TARGET_WON_ITEMS = [
-    {"name": "player 1"},
-    {"name": "player 2"}
-]
+TARGET_WON_ITEMS = [{"name": "player 1"}, {"name": "player 2"}]
 
 
 class TestMassBid(unittest.TestCase):
@@ -39,13 +36,27 @@ class TestMassBid(unittest.TestCase):
         return [mass_bid, web_app, random_items, market_data, purchased_items, logger]
 
     def test_mass_bid_refreshes_transfer_list(self):
-        [mass_bid, web_app, random_items, market_data, purchased_items, logger] = self._create_mock_mass_bid_class()
+        [
+            mass_bid,
+            web_app,
+            random_items,
+            market_data,
+            purchased_items,
+            logger,
+        ] = self._create_mock_mass_bid_class()
         mass_bid.execute(max_time_left=TARGET_MAX_TIME_LEFT)
 
         web_app.refresh_transfer_list.assert_called_with()
 
     def test_mass_bid_gets_random_search_filters(self):
-        [mass_bid, web_app, random_items, market_data, purchased_items, logger] = self._create_mock_mass_bid_class()
+        [
+            mass_bid,
+            web_app,
+            random_items,
+            market_data,
+            purchased_items,
+            logger,
+        ] = self._create_mock_mass_bid_class()
         mass_bid.execute(
             number_of_search_filters=TARGET_NUMBER_OF_SEARCH_FILTERS,
             max_time_left=TARGET_MAX_TIME_LEFT,
@@ -54,25 +65,42 @@ class TestMassBid(unittest.TestCase):
         )
 
         calls = [
-            call(TARGET_RANDOM_ITEMS[0]['futbin_id']),
-            call(TARGET_RANDOM_ITEMS[1]['futbin_id']),
+            call(TARGET_RANDOM_ITEMS[0]["futbin_id"]),
+            call(TARGET_RANDOM_ITEMS[1]["futbin_id"]),
         ]
 
         random_items.get.assert_called_with(TARGET_NUMBER_OF_SEARCH_FILTERS)
         market_data.get_market_price.assert_has_calls(calls)
 
     def test_mass_bid_bids_on_items_for_each_search_filter(self):
-        [mass_bid, web_app, random_items, market_data, purchased_items, logger] = self._create_mock_mass_bid_class()
+        [
+            mass_bid,
+            web_app,
+            random_items,
+            market_data,
+            purchased_items,
+            logger,
+        ] = self._create_mock_mass_bid_class()
 
         mass_bid.execute(
             number_of_search_filters=TARGET_NUMBER_OF_SEARCH_FILTERS,
             max_time_left=TARGET_MAX_TIME_LEFT,
         )
 
-        assert web_app.bid_on_search_filter_items.call_count == TARGET_NUMBER_OF_SEARCH_FILTERS
+        assert (
+            web_app.bid_on_search_filter_items.call_count
+            == TARGET_NUMBER_OF_SEARCH_FILTERS
+        )
 
     def test_mass_bid_lists_all_transfer_targets(self):
-        [mass_bid, web_app, random_items, market_data, purchased_items, logger] = self._create_mock_mass_bid_class()
+        [
+            mass_bid,
+            web_app,
+            random_items,
+            market_data,
+            purchased_items,
+            logger,
+        ] = self._create_mock_mass_bid_class()
         mass_bid.execute(
             number_of_search_filters=TARGET_NUMBER_OF_SEARCH_FILTERS,
             max_time_left=TARGET_MAX_TIME_LEFT,
@@ -81,7 +109,14 @@ class TestMassBid(unittest.TestCase):
         web_app.list_all_transfer_targets.assert_called()
 
     def test_mass_bid_saves_all_won_items_in_database(self):
-        [mass_bid, web_app, random_items, market_data, purchased_items, logger] = self._create_mock_mass_bid_class()
+        [
+            mass_bid,
+            web_app,
+            random_items,
+            market_data,
+            purchased_items,
+            logger,
+        ] = self._create_mock_mass_bid_class()
         mass_bid.execute(
             number_of_search_filters=TARGET_NUMBER_OF_SEARCH_FILTERS,
             max_time_left=TARGET_MAX_TIME_LEFT,

@@ -221,9 +221,7 @@ class ListAllTransferTargetsExecutor(Executor, SideBarMixin):
         won_item_list = WonItemList.from_selector(self.driver, selectors.WON_ITEMS)
         while len(won_item_list) > 0:
             won_item = won_item_list.pop_first()
-            won_item.set_sell_price(
-                self._get_sell_price(won_item.name, search_filters)
-            )
+            won_item.set_sell_price(self._get_sell_price(won_item.name, search_filters))
             won_item.list()
             data.append(won_item.to_dict())
         return data
