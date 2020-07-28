@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/entities/purchased_item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/listed_item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/entities/test_search_filter_entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,30 +192,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595881427627">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595919036512">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595881427627" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595881427625">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595919036512" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595919036509">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595881427625" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595881427624">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595919036509" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595919036508">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595881427624" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595881427626">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595919036508" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595919036510">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595881427626" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595919036510" />
     <state x="382" y="137" width="675" height="655" key="StructurePopup" timestamp="1595704685360">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595881790920">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595919669768">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595881790920" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595919669768" />
     <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -1,3 +1,4 @@
+from entities.listed_item import ListedItem
 from .executors import (
     LoginExecutor,
     VerifyDeviceExecutor,
@@ -5,7 +6,6 @@ from .executors import (
     BidOnSearchFilterItemsExecutor,
     ListAllTransferTargetsExecutor,
 )
-from .web_app_objects import WonItem
 
 
 class WebAppInterface:
@@ -25,14 +25,14 @@ class WebAppInterface:
         BidOnSearchFilterItemsExecutor(self.driver).bid_on_search_filter_items(price)
 
     def list_all_transfer_targets(self, search_filters):
-        won_items = ListAllTransferTargetsExecutor(
+        listed_items = ListAllTransferTargetsExecutor(
             self.driver
         ).list_all_transfer_targets(search_filters)
-        return self._to_won_item_entity(won_items)
+        return self._to_listed_item_entity(listed_items)
 
     @staticmethod
-    def _to_won_item_entity(won_items):
+    def _to_listed_item_entity(listed_items):
         data = []
-        for won_item in won_items:
-            data.append(WonItem.from_dict(won_item))
+        for listed_item in listed_items:
+            data.append(ListedItem.from_dict(listed_item))
         return data

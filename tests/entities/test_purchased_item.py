@@ -1,6 +1,6 @@
 import unittest
 
-import entities.purchased_item as purchased_item
+import entities.listed_item as purchased_item
 
 TEST_PLAYER = {
     "name": "Moussa Sissoko",
@@ -15,7 +15,7 @@ def calculate_profit(purchase_price, sell_price):
 
 class TestPurchasedItem(unittest.TestCase):
     def test_purchased_item_init(self):
-        et = purchased_item.PurchasedItem(
+        et = purchased_item.ListedItem(
             name=TEST_PLAYER["name"],
             purchase_price=TEST_PLAYER["purchase_price"],
             sell_price=TEST_PLAYER["sell_price"],
@@ -29,7 +29,7 @@ class TestPurchasedItem(unittest.TestCase):
         )
 
     def test_purchased_item_from_dict(self):
-        et = purchased_item.PurchasedItem.from_dict(TEST_PLAYER)
+        et = purchased_item.ListedItem.from_dict(TEST_PLAYER)
 
         assert et.name == TEST_PLAYER["name"]
         assert et.purchase_price == TEST_PLAYER["purchase_price"]
@@ -48,6 +48,6 @@ class TestPurchasedItem(unittest.TestCase):
             ),
         )
 
-        et = purchased_item.PurchasedItem.from_dict(TEST_PLAYER)
+        et = purchased_item.ListedItem.from_dict(TEST_PLAYER)
 
         assert et.to_dict() == expected_result

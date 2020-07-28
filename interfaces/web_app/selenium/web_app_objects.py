@@ -1,5 +1,6 @@
 import random
 import time
+from difflib import SequenceMatcher
 
 from selenium.common.exceptions import (
     TimeoutException,
@@ -156,14 +157,26 @@ class WonItemList(WebAppObjectList):
 
 
 class WonItem(ClickableWebAppObject):
-    def get_name(self):
+    def __init__(self, driver, web_app_object):
+        super().__init__(driver, web_app_object)
+        self.name = self._get_name()
+        self.purchase_price = self._get_purchase_price()
+        self.sell_price = None
+
+    def _get_name(self):
         return self._get_attribute_from_web_app_object(selectors.WON_ITEM_NAME)
 
-    def list(self, price):
+    def _get_purchase_price(self):
+        return self._get_attribute_from_web_app_object(selectors.WON_ITEM_PURCHASE_PRICE)
+
+    def set_sell_price(self, sell_price):
+        self.sell_price = sell_price
+
+    def list(self):
         self.web_app_object.slow_click()
         self._open_list_dialog()
-        self._set_start_price(price - 100)
-        self._set_max_buy_now_price(price)
+        self._set_start_price(self.sell_price - 100)
+        self._set_max_buy_now_price(self.sell_price)
         self._confirm_listing()
 
     def _open_list_dialog(self):
@@ -189,3 +202,10 @@ class WonItem(ClickableWebAppObject):
             self.driver, selectors.CONFIRM_LISTING_BUTTON
         )
         open_list_dialog_button.slow_click()
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'purchase_price': self.purchase_price,
+            'sell_price': self.sell_price,
+        }
