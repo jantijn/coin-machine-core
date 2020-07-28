@@ -2,6 +2,7 @@ import requests
 
 
 class MarketDataInterface:
+
     def get_market_price(self, player_id, platform="ps"):
         response = requests.get(self._generate_futbin_request(player_id))
         return self._parse_futbin_response(response, player_id, platform)

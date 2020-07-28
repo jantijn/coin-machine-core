@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bots/mass_bid_bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/market_data/futbin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/purchased_items/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/purchased_items/rest_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/random_items/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/random_items/rest_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/utils/api_interface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/listed_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/listed_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bots/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/in_memory/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/item_repository/rest_api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/market_data/futbin/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/mass_bid.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +69,13 @@
       <recent name="$PROJECT_DIR$/interfaces/item_repository" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/interfaces/search_filter" />
       <recent name="$PROJECT_DIR$/use_cases/exceptions" />
       <recent name="$PROJECT_DIR$/factories" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_to_dict">
-    <configuration name="Unittests for test_mass_bid.TestMassBid" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_lists_all_transfer_targets">
+    <configuration name="Unittests for test_mass_bid.TestMassBid.test_mass_bid_bids_on_items_for_each_search_filter" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -65,7 +85,49 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_mass_bid.TestMassBid&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.TestMassBid.test_mass_bid_bids_on_items_for_each_search_filter&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_mass_bid.TestMassBid.test_mass_bid_gets_random_search_filters" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="RoboFutCore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/use_cases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.TestMassBid.test_mass_bid_gets_random_search_filters&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_mass_bid.TestMassBid.test_mass_bid_lists_all_transfer_targets" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="RoboFutCore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/use_cases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.TestMassBid.test_mass_bid_lists_all_transfer_targets&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_mass_bid.TestMassBid.test_mass_bid_refreshes_transfer_list" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="RoboFutCore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/use_cases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.TestMassBid.test_mass_bid_refreshes_transfer_list&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -80,48 +142,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_mass_bid.TestMassBid.test_mass_bid_saves_all_won_items_in_database&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_from_dict" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RoboFutCore" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/entities" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_purchased_item.TestPurchasedItem.test_purchased_item_from_dict&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RoboFutCore" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/entities" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_purchased_item.TestPurchasedItem.test_purchased_item_init&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_to_dict" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RoboFutCore" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/entities" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_purchased_item.TestPurchasedItem.test_purchased_item_to_dict&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -142,19 +162,19 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.pytest in bin" />
+      <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_refreshes_transfer_list" />
+      <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_gets_random_search_filters" />
+      <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_bids_on_items_for_each_search_filter" />
       <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_saves_all_won_items_in_database" />
-      <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid" />
-      <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_init" />
-      <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_from_dict" />
-      <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_to_dict" />
+      <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_lists_all_transfer_targets" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_to_dict" />
-        <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_from_dict" />
-        <item itemvalue="Python tests.Unittests for test_purchased_item.TestPurchasedItem.test_purchased_item_init" />
-        <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid" />
+        <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_lists_all_transfer_targets" />
+        <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_bids_on_items_for_each_search_filter" />
         <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_saves_all_won_items_in_database" />
+        <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_gets_random_search_filters" />
+        <item itemvalue="Python tests.Unittests for test_mass_bid.TestMassBid.test_mass_bid_refreshes_transfer_list" />
       </list>
     </recent_temporary>
   </component>
@@ -176,14 +196,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595358443745" />
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595619111822">
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595961330846">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1595619111822" />
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595608933265">
+    <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1595961330846" />
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595960330496">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595608933265" />
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595960330496" />
     <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595235018310">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -192,38 +212,38 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595919036512">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1595965243777">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595919036512" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595919036509">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595965243777" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1595965243776">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595919036509" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595919036508">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595965243776" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1595965243776">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595919036508" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595919036510">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595965243776" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1595965243777">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595919036510" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595965243777" />
     <state x="382" y="137" width="675" height="655" key="StructurePopup" timestamp="1595704685360">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595919669768">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595969850839">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595919669768" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1595969850839" />
     <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="329" y="144" width="782" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1595704178651" />
-    <state width="750" height="530" key="javadoc.popup" timestamp="1595444660466">
+    <state width="750" height="530" key="javadoc.popup" timestamp="1595961107310">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595444660466" />
+    <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595961107310" />
     <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1595704664548">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

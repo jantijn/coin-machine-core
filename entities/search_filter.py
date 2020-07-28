@@ -1,6 +1,5 @@
 class SearchFilter:
-    def __init__(self, futbin_id, name, margin=100, bonus=0):
-        self.futbin_id = futbin_id
+    def __init__(self, name, margin=100, bonus=0):
         self.name = name
         self.margin = margin
         self.bonus = bonus
@@ -10,7 +9,6 @@ class SearchFilter:
     @classmethod
     def from_dict(cls, adict):
         return cls(
-            futbin_id=adict["futbin_id"],
             name=adict["name"],
             margin=adict["margin"],
             bonus=adict["bonus"],

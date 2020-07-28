@@ -1,4 +1,4 @@
-class ListedItem:
+class PurchasedItem:
     def __init__(self, name, purchase_price, sell_price):
         self.name = name
         self.purchase_price = purchase_price

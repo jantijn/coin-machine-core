@@ -9,10 +9,10 @@ app = Flask(__name__)
 def run():
 	data = request.get_json(silent=True)
 	snipe_bot.run(
-		username=data.get('username'),
-		password=data.get('password'),
-		session_hash=data.get('session_hash'),
-		token=data.get('token')
+		username=data.get_request('username'),
+		password=data.get_request('password'),
+		session_hash=data.get_request('session_hash'),
+		token=data.get_request('token')
 	)
 	return 'Session finished'
 

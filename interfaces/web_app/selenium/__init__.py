@@ -1,4 +1,4 @@
-from entities.listed_item import ListedItem
+from entities.purchased_item import PurchasedItem
 from .executors import (
     LoginExecutor,
     VerifyDeviceExecutor,
@@ -34,5 +34,5 @@ class WebAppInterface:
     def _to_listed_item_entity(listed_items):
         data = []
         for listed_item in listed_items:
-            data.append(ListedItem.from_dict(listed_item))
+            data.append(PurchasedItem.from_dict(listed_item))
         return data
