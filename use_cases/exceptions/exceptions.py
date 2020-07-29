@@ -1,4 +1,4 @@
-class WrongCredentialsError(Exception):
+class WrongCredentialsException(Exception):
     pass
 
 

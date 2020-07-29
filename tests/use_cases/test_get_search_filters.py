@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from entities.search_filter import SearchFilter
-from use_cases.get_search_filters import GetSearchFilters
+from use_cases._get_search_filters import GetSearchFilters
 
 TARGET_MARGIN = 300
 TARGET_BONUS = 100

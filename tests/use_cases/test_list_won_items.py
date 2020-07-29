@@ -3,7 +3,7 @@ from unittest import mock
 
 from entities.search_filter import SearchFilter
 from entities.purchased_item import PurchasedItem
-from use_cases.list_won_items import ListWonItems
+from use_cases._list_won_items import ListWonItems
 
 search_filter_1 = SearchFilter.from_dict({"name": "Joe Gomez", "margin": 300, "bonus": 100})
 search_filter_1.calculate_prices(2000)

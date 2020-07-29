@@ -1,40 +1,52 @@
-import unittest
 from unittest import mock
 
 from use_cases.exceptions.exceptions import WrongVerificationCodeError
+from use_cases.responses import responses
 from use_cases.verify_device import VerifyDevice
 
 VERIFICATION_CODE = "123456789"
 
 
-class TestVerifyDevice(unittest.TestCase):
-    def test_verify_device_happy_flow(self):
-        web_app_interface = mock.Mock()
-        logger_interface = mock.Mock()
+def test_verify_device_happy_flow():
+    web_app_interface = mock.Mock()
+    logger_interface = mock.Mock()
 
-        target_response = {"success": True, "message": "Verify device successful"}
+    verify_device = VerifyDevice(web_app_interface, logger_interface)
+    response = verify_device.execute(verification_code=VERIFICATION_CODE)
 
-        verify_device = VerifyDevice(web_app_interface, logger_interface)
-        response = verify_device.execute(verification_code=VERIFICATION_CODE)
-
-        web_app_interface.verify_device.assert_called_with(VERIFICATION_CODE)
-        assert response == target_response
-
-    def test_login_wrong_username_or_password(self):
-        web_app_interface = mock.Mock()
-        web_app_interface.verify_device.side_effect = WrongVerificationCodeError(
-            "Wrong verification code"
-        )
-        logger_interface = mock.Mock()
-
-        target_response = {"success": False, "message": "Wrong verification code"}
-
-        verify_device = VerifyDevice(web_app_interface, logger_interface)
-        response = verify_device.execute(verification_code=VERIFICATION_CODE)
-
-        web_app_interface.verify_device.assert_called_with(VERIFICATION_CODE)
-        assert response == target_response
+    web_app_interface.verify_device.assert_called_with(VERIFICATION_CODE)
+    assert bool(response) is True
 
 
-if __name__ == "__main__":
-    unittest.main()
+def test_login_wrong_username_or_password():
+    web_app_interface = mock.Mock()
+    web_app_interface.verify_device.side_effect = WrongVerificationCodeError(
+        "Wrong verification code"
+    )
+    logger_interface = mock.Mock()
+
+    verify_device = VerifyDevice(web_app_interface, logger_interface)
+    response = verify_device.execute(verification_code=VERIFICATION_CODE)
+
+    web_app_interface.verify_device.assert_called_with(VERIFICATION_CODE)
+    assert response.value == {
+        'type': responses.ResponseFailure.PARAMETERS_ERROR,
+        'message': 'Wrong verification code'
+    }
+
+
+def test_verify_device_handles_generic_error():
+    web_app_interface = mock.Mock()
+    web_app_interface.verify_device.side_effect = Exception(
+        "Just an error message"
+    )
+    logger_interface = mock.Mock()
+
+    verify_device = VerifyDevice(web_app_interface, logger_interface)
+    response = verify_device.execute(verification_code = VERIFICATION_CODE)
+
+    assert bool(response) is False
+    assert response.value == {
+        'type': responses.ResponseFailure.SYSTEM_ERROR,
+        'message': 'Exception: Just an error message'
+    }

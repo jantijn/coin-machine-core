@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from use_cases.refresh_transfer_list import RefreshTransferList
+from use_cases._refresh_transfer_list import RefreshTransferList
 
 
 class TestRefreshTransferList(unittest.TestCase):

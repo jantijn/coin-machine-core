@@ -1,4 +1,5 @@
-from use_cases.exceptions.exceptions import WrongCredentialsError
+from use_cases.exceptions.exceptions import WrongCredentialsException
+from use_cases.responses import responses
 
 
 class Login:
@@ -10,10 +11,13 @@ class Login:
         self.logger.log("Logging in to web app")
         try:
             self.web_app.login(username, password)
-        except WrongCredentialsError:
-            error_message = "Wrong username and or password"
-            self.logger.log(error_message)
-            return {"success": False, "message": error_message}
+        except WrongCredentialsException:
+            msg = 'Wrong username and or password'
+            self.logger.log(msg)
+            return responses.ResponseFailure.build_parameters_error(msg)
+        except Exception as exc:
+            self.logger.log('Something went wrong')
+            return responses.ResponseFailure.build_system_error(exc)
 
-        self.logger.log("Login successful!")
-        return {"success": True, "message": "Login successful!"}
+        self.logger.log('Login successful!')
+        return responses.ResponseSuccess()

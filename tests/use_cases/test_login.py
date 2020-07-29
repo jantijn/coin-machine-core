@@ -1,44 +1,54 @@
-import unittest
 from unittest import mock
 
-from use_cases.exceptions.exceptions import WrongCredentialsError
+from use_cases.exceptions.exceptions import WrongCredentialsException
 from use_cases.login import Login
+from use_cases.responses import responses
 
 USERNAME = "username"
 PASSWORD = "password"
 
 
-class TestLogin(unittest.TestCase):
-    def test_login_happy_flow(self):
-        web_app_interface = mock.Mock()
-        logger_interface = mock.Mock()
+def test_login_happy_flow(self):
+    web_app_interface = mock.Mock()
+    logger_interface = mock.Mock()
 
-        target_response = {"success": True, "message": "Login successful!"}
+    login = Login(web_app_interface, logger_interface)
+    response = login.execute(username=USERNAME, password=PASSWORD)
 
-        login = Login(web_app_interface, logger_interface)
-        response = login.execute(username=USERNAME, password=PASSWORD)
-
-        web_app_interface.login.assert_called_with(USERNAME, PASSWORD)
-        assert response == target_response
-
-    def test_login_wrong_username_or_password(self):
-        web_app_interface = mock.Mock()
-        web_app_interface.login.side_effect = WrongCredentialsError(
-            "Wrong email address or password"
-        )
-        logger_interface = mock.Mock()
-
-        target_response = {
-            "success": False,
-            "message": "Wrong username and or password",
-        }
-
-        login = Login(web_app_interface, logger_interface)
-        response = login.execute(username=USERNAME, password=PASSWORD)
-
-        web_app_interface.login.assert_called_with(USERNAME, PASSWORD)
-        assert response == target_response
+    web_app_interface.login.assert_called_with(USERNAME, PASSWORD)
+    assert bool(response) is True
 
 
-if __name__ == "__main__":
-    unittest.main()
+def test_login_handles_wrong_username_or_password():
+    web_app_interface = mock.Mock()
+    web_app_interface.login.side_effect = WrongCredentialsException(
+        "Wrong email address or password"
+    )
+    logger_interface = mock.Mock()
+
+    login = Login(web_app_interface, logger_interface)
+    response = login.execute(username=USERNAME, password=PASSWORD)
+
+    web_app_interface.login.assert_called_with(USERNAME, PASSWORD)
+    assert bool(response) is False
+    assert response.value == {
+        'type': responses.ResponseFailure.PARAMETERS_ERROR,
+        'message': 'Wrong username and or password'
+    }
+
+
+def test_login_handles_generic_error():
+    web_app_interface = mock.Mock()
+    web_app_interface.login.side_effect = Exception(
+        "Just an error message"
+    )
+    logger_interface = mock.Mock()
+
+    login = Login(web_app_interface, logger_interface)
+    response = login.execute(username=USERNAME, password=PASSWORD)
+
+    assert bool(response) is False
+    assert response.value == {
+        'type': responses.ResponseFailure.SYSTEM_ERROR,
+        'message': 'Exception: Just an error message'
+    }

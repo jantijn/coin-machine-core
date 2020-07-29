@@ -5,7 +5,7 @@ from .executors import (
     RefreshTransferListExecutor,
     BidOnSearchFilterItemsExecutor,
     ListAllTransferTargetsExecutor,
-)
+    RefreshExecutor)
 
 
 class WebAppInterface:
@@ -36,3 +36,6 @@ class WebAppInterface:
         for listed_item in listed_items:
             data.append(PurchasedItem.from_dict(listed_item))
         return data
+
+    def refresh(self):
+        RefreshExecutor(self.driver).refresh()

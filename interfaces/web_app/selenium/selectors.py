@@ -10,6 +10,7 @@ REQUEST_VERIFICATION_CODE_BUTTON = "#btnSendCode"
 VERIFICATION_CODE_FIELD = "#oneTimeCode"
 CONFIRM_VERIFICATION_CODE_BUTTON = "#btnSubmit"
 WRONG_VERIFICATION_CODE = "span.origin-ux-textbox-status-message.origin-ux-status-message"
+POP_UP_BUTTON = "div.ut-livemessage-footer > button"
 
 # Sidebar
 GO_TO_TRANSFERS_BUTTON = "button.ut-tab-bar-item.icon-transfer"

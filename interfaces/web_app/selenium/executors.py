@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from . import selectors
 from use_cases.exceptions.exceptions import (
-    WrongCredentialsError,
+    WrongCredentialsException,
     WrongVerificationCodeError,
 )
 from .web_app_objects import (
@@ -26,7 +26,7 @@ class Executor:
         self.driver = driver
 
     def _wait_until_loaded(self):
-        WebDriverWait(self.driver, 30).until(
+        WebDriverWait(self.driver, 60).until(
             EC.invisibility_of_element_located((By.CLASS_NAME, "ut-click-shield"))
         )
 
@@ -48,7 +48,7 @@ class LoginExecutor(Executor):
         self._enter_credentials(email, password)
         self._confirm_credentials()
         if self._wrong_credentials():
-            raise WrongCredentialsError("Wrong email address or password")
+            raise WrongCredentialsException("Wrong email address or password")
         if self._verification_code_required():
             self._request_verification_code()
 
@@ -101,6 +101,7 @@ class VerifyDeviceExecutor(Executor):
         if self._wrong_verification_code():
             raise WrongVerificationCodeError("Wrong verification code")
         self._wait_until_loaded()
+        self._handle_pop_ups()
 
     def _enter_verification_code(self, verification_code):
         verification_code_field = FillableWebAppObject.from_selector(
@@ -119,6 +120,17 @@ class VerifyDeviceExecutor(Executor):
             self.driver, selectors.WRONG_VERIFICATION_CODE
         )
         return wrong_credentials_label.is_present()
+
+    def _handle_pop_ups(self):
+        pop_up_button = self._create_pop_up_button()
+        while pop_up_button.is_present():
+            pop_up_button.slow_click()
+            pop_up_button = self._create_pop_up_button()
+
+    def _create_pop_up_button(self):
+        return WebAppObject.from_selector(
+            self.driver, selectors.POP_UP_BUTTON
+        )
 
 
 class RefreshTransferListExecutor(Executor, SideBarMixin):
@@ -251,3 +263,9 @@ class ListAllTransferTargetsExecutor(Executor, SideBarMixin):
                 matching_filter = search_filter
                 max_similar_score = similar_score
         return matching_filter
+
+
+class RefreshExecutor(Executor):
+    def refresh(self):
+        self.driver.refresh()
+        self._wait_until_loaded()
