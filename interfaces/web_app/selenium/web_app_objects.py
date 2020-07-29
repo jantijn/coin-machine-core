@@ -22,7 +22,7 @@ class WebAppObject:
 
     @classmethod
     def from_selector(cls, driver, selector):
-        timeout = 5
+        timeout = 10
         try:
             web_app_object = WebDriverWait(driver, timeout).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
@@ -50,6 +50,9 @@ class WebAppObjectList:
 
     @classmethod
     def from_selector(cls, driver, selector):
+        WebDriverWait(driver, timeout=10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
+        )
         return cls(
             driver=driver,
             web_app_object_list=driver.find_elements_by_css_selector(selector),

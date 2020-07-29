@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/entities/bid_on_item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/entities/test_bid_on_item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_bid_on_each_search_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_get_search_filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_refresh_transfer_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/purchased_items/ignore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/drivers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/entities/test_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/random_items/in_memory/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,28 @@
       <recent name="$PROJECT_DIR$/factories" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_refresh_transfer_list.TestRefreshTransferList.test_refresh_transfer_list">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RoboFutCore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for test_bid_on_each_search_filter.TestBidOnEachFilter.test_mass_bid_bids_on_items_for_each_search_filter" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,20 +89,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_bid_on_each_search_filter.TestBidOnEachFilter.test_mass_bid_bids_on_items_for_each_search_filter&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_bid_on_item.TestBidOnItem" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RoboFutCore" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/entities" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_bid_on_item.TestBidOnItem&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -148,18 +152,18 @@
     <list>
       <item itemvalue="Python tests.pytest in bin" />
       <item itemvalue="Python tests.Unittests for test_bid_on_each_search_filter.TestBidOnEachFilter.test_mass_bid_bids_on_items_for_each_search_filter" />
-      <item itemvalue="Python tests.Unittests for test_bid_on_item.TestBidOnItem" />
       <item itemvalue="Python tests.Unittests for test_get_search_filters.TestGetSearchFilters.test_get_search_filters" />
       <item itemvalue="Python tests.Unittests for test_list_won_items.TestListWonItems.test_list_won_items" />
       <item itemvalue="Python tests.Unittests for test_refresh_transfer_list.TestRefreshTransferList.test_refresh_transfer_list" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python tests.Unittests for test_refresh_transfer_list.TestRefreshTransferList.test_refresh_transfer_list" />
         <item itemvalue="Python tests.Unittests for test_list_won_items.TestListWonItems.test_list_won_items" />
         <item itemvalue="Python tests.Unittests for test_get_search_filters.TestGetSearchFilters.test_get_search_filters" />
         <item itemvalue="Python tests.Unittests for test_bid_on_each_search_filter.TestBidOnEachFilter.test_mass_bid_bids_on_items_for_each_search_filter" />
-        <item itemvalue="Python tests.Unittests for test_bid_on_item.TestBidOnItem" />
       </list>
     </recent_temporary>
   </component>
@@ -197,30 +201,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1596009293815">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1596015793463">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596009293815" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1596009293813">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596015793463" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1596015793462">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596009293813" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1596009293813">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596015793462" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1596015793462">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596009293813" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1596009293814">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596015793462" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1596015793462">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596009293814" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596015793462" />
     <state x="382" y="137" width="675" height="655" key="StructurePopup" timestamp="1595704685360">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596009188569">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596016044848">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1596009188569" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1596016044848" />
     <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

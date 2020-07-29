@@ -2,6 +2,11 @@ import time
 import random
 from difflib import SequenceMatcher
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 from . import selectors
 from use_cases.exceptions.exceptions import (
     WrongCredentialsError,
@@ -19,6 +24,11 @@ from .web_app_objects import (
 class Executor:
     def __init__(self, driver):
         self.driver = driver
+
+    def _wait_until_loaded(self):
+        WebDriverWait(self.driver, 30).until(
+            EC.invisibility_of_element_located((By.CLASS_NAME, "ut-click-shield"))
+        )
 
 
 class SideBarMixin:
@@ -90,6 +100,7 @@ class VerifyDeviceExecutor(Executor):
         self._confirm_verification_code()
         if self._wrong_verification_code():
             raise WrongVerificationCodeError("Wrong verification code")
+        self._wait_until_loaded()
 
     def _enter_verification_code(self, verification_code):
         verification_code_field = FillableWebAppObject.from_selector(
