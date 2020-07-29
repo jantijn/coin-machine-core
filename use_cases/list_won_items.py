@@ -10,3 +10,4 @@ class ListWonItems:
         for won_item in won_items:
             self.logger.log(f"Listed {won_item.name} for a profit (if sold) of {won_item.profit}")
             self.purchased_items.save_purchased_item(won_item)
+        return won_items

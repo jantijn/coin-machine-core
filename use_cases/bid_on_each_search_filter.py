@@ -14,7 +14,7 @@ class BidOnEachSearchFilter:
             self.web_app.bid_on_search_filter_items(
                 search_filter, max_items, max_time_left
             )
-        self._wait_until_bidding_finished()
+        self._wait_until_bidding_finished(max_time_left)
 
     @staticmethod
     def calculate_max_items(search_filters):
@@ -23,6 +23,8 @@ class BidOnEachSearchFilter:
         return max_items
 
     def _wait_until_bidding_finished(self, max_time_left):
+        if max_time_left == 0:
+            return
         self.logger.log("Waiting until auctions with bid are finished...")
         pause_in_seconds = max_time_left * 60 + random.randint(1, 60)
         for seconds_left in reversed(range(pause_in_seconds)):

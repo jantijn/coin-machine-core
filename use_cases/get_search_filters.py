@@ -15,7 +15,7 @@ class GetSearchFilters:
             search_filter = self._item_to_search_filter(item, margin, bonus)
             search_filters.append(search_filter)
             self.logger.log(
-                f"Loaded search filter --> name: {search_filter.name}, purchase price: {search_filter.purchase_price}, sell price: {search_filter.sell_price}"
+                f"Loaded search filter --> name: {search_filter.name}, buy price: {search_filter.buy_price}, sell price: {search_filter.sell_price}"
             )
         return search_filters
 
