@@ -37,9 +37,7 @@ class TestGetSearchFilters(unittest.TestCase):
 
         get_search_filters = GetSearchFilters(random_items, market_data, logger)
         response = get_search_filters.execute(
-            margin = TARGET_MARGIN,
-            bonus = TARGET_BONUS,
-            number_of_search_filters = len(TARGET_ITEMS)
+            margin=TARGET_MARGIN, bonus=TARGET_BONUS, number_of_search_filters=len(TARGET_ITEMS)
         )
 
         assert response[0].to_dict() == TARGET_SEARCH_FILTERS[0].to_dict()

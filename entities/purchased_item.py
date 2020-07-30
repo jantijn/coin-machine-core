@@ -7,11 +7,7 @@ class PurchasedItem:
 
     @classmethod
     def from_dict(cls, adict):
-        return cls(
-            name=adict["name"],
-            purchase_price=adict["purchase_price"],
-            sell_price=adict["sell_price"],
-        )
+        return cls(name=adict["name"], purchase_price=adict["purchase_price"], sell_price=adict["sell_price"],)
 
     def to_dict(self):
         return {

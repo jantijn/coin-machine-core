@@ -7,5 +7,5 @@ class HandleError:
         self._restart_web_app()
 
     def _restart_web_app(self):
-        self.logger.log('Something went wrong, restarting the web app...')
+        self.logger.log("Something went wrong, restarting the web app...")
         self.web_app.refresh()

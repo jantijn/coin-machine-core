@@ -26,8 +26,7 @@ class TestBidOnEachFilter(unittest.TestCase):
 
         bid_on_each_search_filter = BidOnEachSearchFilter(web_app, logger)
         response = bid_on_each_search_filter.execute(
-            search_filters = TARGET_SEARCH_FILTERS,
-            max_time_left = TARGET_MAX_TIME_LEFT
+            search_filters=TARGET_SEARCH_FILTERS, max_time_left=TARGET_MAX_TIME_LEFT
         )
 
         calls = [

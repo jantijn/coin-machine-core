@@ -14,9 +14,7 @@ TEST_MARKET_PRICE = 2000
 class TestSearchFilter(unittest.TestCase):
     def test_filter_init(self):
         et = search_filter.SearchFilter(
-            name=TEST_PLAYER["name"],
-            margin=TEST_PLAYER["margin"],
-            bonus=TEST_PLAYER["bonus"],
+            name=TEST_PLAYER["name"], margin=TEST_PLAYER["margin"], bonus=TEST_PLAYER["bonus"],
         )
 
         assert et.name == TEST_PLAYER["name"]
@@ -36,9 +34,7 @@ class TestSearchFilter(unittest.TestCase):
         et.calculate_prices(TEST_MARKET_PRICE)
 
         assert et.sell_price == TEST_MARKET_PRICE + TEST_PLAYER["bonus"]
-        assert et.buy_price == int(
-            TEST_MARKET_PRICE * 0.95 - TEST_PLAYER["margin"]
-        )
+        assert et.buy_price == int(TEST_MARKET_PRICE * 0.95 - TEST_PLAYER["margin"])
         assert isinstance(et.sell_price, int)
         assert isinstance(et.buy_price, int)
 

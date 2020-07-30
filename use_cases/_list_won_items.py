@@ -6,7 +6,7 @@ class ListWonItems:
 
     def execute(self, search_filters):
         self.logger.log("Listing won items...")
-        won_items = self.web_app.list_all_transfer_targets(search_filters)
+        won_items = self.web_app.list_all_won_items(search_filters)
         for won_item in won_items:
             self.logger.log(f"Listed {won_item.name} for a profit (if sold) of {won_item.profit}")
             self.purchased_items.save_purchased_item(won_item)

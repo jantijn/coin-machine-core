@@ -27,12 +27,12 @@ class TestListWonItems(unittest.TestCase):
             PurchasedItem(search_filter_2.name, search_filter_2.buy_price, search_filter_2.sell_price),
         ]
 
-        web_app.list_all_transfer_targets.return_value = target_response
+        web_app.list_all_won_items.return_value = target_response
 
         list_won_items = ListWonItems(web_app, purchased_items, logger)
         response = list_won_items.execute(TARGET_SEARCH_FILTERS)
 
-        web_app.list_all_transfer_targets.assert_called_with(TARGET_SEARCH_FILTERS)
+        web_app.list_all_won_items.assert_called_with(TARGET_SEARCH_FILTERS)
         assert response == target_response
 
 

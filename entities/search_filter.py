@@ -8,19 +8,11 @@ class SearchFilter:
 
     @classmethod
     def from_dict(cls, adict):
-        return cls(
-            name=adict["name"],
-            margin=adict["margin"],
-            bonus=adict["bonus"],
-        )
+        return cls(name=adict["name"], margin=adict["margin"], bonus=adict["bonus"],)
 
     def calculate_prices(self, market_price):
-        self.buy_price = _calculate_max_buy_now_price(
-            market_price=market_price, margin=self.margin
-        )
-        self.sell_price = _calculate_sell_price(
-            market_price=market_price, bonus=self.bonus
-        )
+        self.buy_price = _calculate_max_buy_now_price(market_price=market_price, margin=self.margin)
+        self.sell_price = _calculate_sell_price(market_price=market_price, bonus=self.bonus)
 
     def to_dict(self):
         return {

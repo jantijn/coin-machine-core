@@ -5,33 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/use_cases/responses/test_responses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/_handle_error.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/responses/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/responses/responses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RoboFutCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RoboFutCore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_results.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_the_market.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_sidebar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_targets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_verify_device.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_handle_error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/responses/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bots/mass_bid_bot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/bid_on_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/bid_on_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/purchased_items/ignore.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/purchased_items/ignore.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/drivers.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/executors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/selectors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/web_app_objects.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_bid_on_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_bid_on_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/responses/test_responses.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/responses/test_responses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_bid_on_each_search_filter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_get_search_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_mass_bid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_refresh_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_refresh_transfer_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/use_cases/test_verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_verify_device.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_bid_on_each_search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/exceptions/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/exceptions/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_get_search_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_bid_on_each_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_handle_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_list_won_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/mass_bid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_refresh_transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/responses/responses.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/responses/responses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +91,7 @@
       <recent name="$PROJECT_DIR$/factories" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_verify_device.test_verify_device_handles_generic_error">
+  <component name="RunManager" selected="Python.test">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_login.test_login_handles_generic_error" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_handle_error.test_handle_error" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -110,11 +124,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_login.test_login_handles_generic_error&quot;" />
+      <option name="_new_target" value="&quot;test_handle_error.test_handle_error&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_verify_device.test_login_wrong_username_or_password" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_mass_bid.test_mass_bid_happy_flow" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,11 +139,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_verify_device.test_login_wrong_username_or_password&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.test_mass_bid_happy_flow&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_verify_device.test_verify_device_handles_generic_error" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,11 +154,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_verify_device.test_verify_device_handles_generic_error&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.test_mass_handles_generic_error_on_refresh&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_verify_device.test_verify_device_happy_flow" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_mass_bid.test_mass_refreshes_on_exception" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="RoboFutCore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,7 +169,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_verify_device.test_verify_device_happy_flow&quot;" />
+      <option name="_new_target" value="&quot;test_mass_bid.test_mass_refreshes_on_exception&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -175,20 +189,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python tests.pytest in tests" />
-      <item itemvalue="Python tests.pytest for test_login.test_login_handles_generic_error" />
-      <item itemvalue="Python tests.pytest for test_verify_device.test_verify_device_happy_flow" />
-      <item itemvalue="Python tests.pytest for test_verify_device.test_login_wrong_username_or_password" />
-      <item itemvalue="Python tests.pytest for test_verify_device.test_verify_device_handles_generic_error" />
+      <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
+      <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
+      <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
+      <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_verify_device.test_verify_device_handles_generic_error" />
-        <item itemvalue="Python tests.pytest for test_verify_device.test_login_wrong_username_or_password" />
-        <item itemvalue="Python tests.pytest for test_verify_device.test_verify_device_happy_flow" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python tests.pytest for test_login.test_login_handles_generic_error" />
+        <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
+        <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
+        <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
+        <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
       </list>
     </recent_temporary>
   </component>
@@ -210,6 +224,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1596047210272" />
+    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596123287738">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1596123287738" />
     <state x="394" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596047194566">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -230,22 +248,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1596049390236">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom" timestamp="1596136418786">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596049390236" />
-    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1596049390234">
+    <state width="1412" height="231" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596136418786" />
+    <state width="1412" height="231" key="GridCell.Tab.0.center" timestamp="1596136418785">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596049390234" />
-    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1596049390234">
+    <state width="1412" height="231" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596136418785" />
+    <state width="1412" height="231" key="GridCell.Tab.0.left" timestamp="1596136418784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596049390234" />
-    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1596049390235">
+    <state width="1412" height="231" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596136418784" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right" timestamp="1596136418785">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596049390235" />
+    <state width="1412" height="231" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596136418785" />
     <state x="150" y="3" key="SettingsEditor" timestamp="1596046634231">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -254,21 +272,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596049756294">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596134530402">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1596049756294" />
-    <state x="329" y="144" width="782" height="612" key="find.popup" timestamp="1595704178651">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1596134530402" />
+    <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596098539616">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="329" y="144" width="782" height="612" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1595704178651" />
+    <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1596098539616" />
+    <state x="329" y="144" width="959" height="702" key="find.popup" timestamp="1596052729048">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="329" y="144" width="959" height="702" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596052729048" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1595961107310">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595961107310" />
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1596047408484">
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1596107108347">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1596047408484" />
+    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1596107108347" />
   </component>
 </project>

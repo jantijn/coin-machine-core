@@ -5,10 +5,7 @@ class BidOnItem:
 
     @classmethod
     def from_dict(cls, adict):
-        return cls(
-            name=adict["name"],
-            bid=adict["bid"],
-        )
+        return cls(name=adict["name"], bid=adict["bid"],)
 
     def to_dict(self):
         return {

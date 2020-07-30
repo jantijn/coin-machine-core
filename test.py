@@ -3,12 +3,12 @@ from interfaces.market_data.futbin import MarketDataInterface
 from interfaces.purchased_items.ignore import PurchasedItemInterface
 from interfaces.random_items.in_memory import RandomItemsInterface
 from interfaces.web_app.selenium import WebAppInterface
-from interfaces.web_app.selenium.drivers import build_web_driver
+from interfaces.web_app.selenium._app import initialize
 from use_cases.login import Login
 from use_cases.mass_bid import MassBid
 from use_cases.verify_device import VerifyDevice
 
-driver = build_web_driver(headless=False)
+driver = initialize(headless=False)
 web_app = WebAppInterface(driver)
 random_items = RandomItemsInterface()
 market_data = MarketDataInterface()
@@ -17,9 +17,9 @@ logger = LoggerInterface()
 
 if __name__ == "__main__":
     login = Login(web_app, logger)
-    login.execute('traderrr.joe@gmail.com', 'H0p3l1jk')
+    login.execute("traderrr.joe@gmail.com", "H0p3l1jk")
 
-    verification_code = input('Enter verification code: ')
+    verification_code = input("Enter verification code: ")
 
     verify_device = VerifyDevice(web_app, logger)
     verify_device.execute(verification_code)

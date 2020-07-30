@@ -24,9 +24,7 @@ class TestPurchasedItem(unittest.TestCase):
         assert et.name == TEST_PLAYER["name"]
         assert et.purchase_price == TEST_PLAYER["purchase_price"]
         assert et.sell_price == TEST_PLAYER["sell_price"]
-        assert et.profit == calculate_profit(
-            TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"]
-        )
+        assert et.profit == calculate_profit(TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"])
 
     def test_purchased_item_from_dict(self):
         et = purchased_item.PurchasedItem.from_dict(TEST_PLAYER)
@@ -34,18 +32,14 @@ class TestPurchasedItem(unittest.TestCase):
         assert et.name == TEST_PLAYER["name"]
         assert et.purchase_price == TEST_PLAYER["purchase_price"]
         assert et.sell_price == TEST_PLAYER["sell_price"]
-        assert et.profit == calculate_profit(
-            TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"]
-        )
+        assert et.profit == calculate_profit(TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"])
 
     def test_purchased_item_to_dict(self):
         expected_result = dict(
             name=TEST_PLAYER["name"],
             purchase_price=TEST_PLAYER["purchase_price"],
             sell_price=TEST_PLAYER["sell_price"],
-            profit=calculate_profit(
-                TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"]
-            ),
+            profit=calculate_profit(TEST_PLAYER["purchase_price"], TEST_PLAYER["sell_price"]),
         )
 
         et = purchased_item.PurchasedItem.from_dict(TEST_PLAYER)

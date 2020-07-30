@@ -9,13 +9,13 @@ class GetSearchFilters:
 
     def execute(self, margin=200, bonus=100, number_of_search_filters=1):
         self.logger.log("Loading search filters")
-        search_filters = []
         random_items = self.random_items.get(number_of_search_filters)
-        for item in random_items:
-            search_filter = self._item_to_search_filter(item, margin, bonus)
-            search_filters.append(search_filter)
+        search_filters = [self._item_to_search_filter(item, margin, bonus) for item in random_items]
+        for search_filter in search_filters:
             self.logger.log(
-                f"Loaded search filter --> name: {search_filter.name}, buy price: {search_filter.buy_price}, sell price: {search_filter.sell_price}"
+                f"Loaded search filter --> name: {search_filter.name} \
+                , buy price: {search_filter.buy_price} \
+                , sell price: {search_filter.sell_price}"
             )
         return search_filters
 

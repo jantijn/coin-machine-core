@@ -12,12 +12,12 @@ class VerifyDevice:
         try:
             self.web_app_interface.verify_device(verification_code)
         except WrongVerificationCodeError:
-            msg = 'Wrong verification code'
+            msg = "Wrong verification code"
             self.logger.log(msg)
             return responses.ResponseFailure.build_parameters_error(msg)
         except Exception as exc:
-            self.logger.log('Something went wrong')
+            self.logger.log("Something went wrong")
             return responses.ResponseFailure.build_system_error(exc)
 
-        self.logger.log('Verify device successful!')
+        self.logger.log("Verify device successful!")
         return responses.ResponseSuccess()

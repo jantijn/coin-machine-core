@@ -8,7 +8,7 @@ USERNAME = "username"
 PASSWORD = "password"
 
 
-def test_login_happy_flow(self):
+def test_login_happy_flow():
     web_app_interface = mock.Mock()
     logger_interface = mock.Mock()
 
@@ -21,9 +21,7 @@ def test_login_happy_flow(self):
 
 def test_login_handles_wrong_username_or_password():
     web_app_interface = mock.Mock()
-    web_app_interface.login.side_effect = WrongCredentialsException(
-        "Wrong email address or password"
-    )
+    web_app_interface.login.side_effect = WrongCredentialsException("Wrong email address or password")
     logger_interface = mock.Mock()
 
     login = Login(web_app_interface, logger_interface)
@@ -32,16 +30,14 @@ def test_login_handles_wrong_username_or_password():
     web_app_interface.login.assert_called_with(USERNAME, PASSWORD)
     assert bool(response) is False
     assert response.value == {
-        'type': responses.ResponseFailure.PARAMETERS_ERROR,
-        'message': 'Wrong username and or password'
+        "type": responses.ResponseFailure.PARAMETERS_ERROR,
+        "message": "Wrong username and or password",
     }
 
 
 def test_login_handles_generic_error():
     web_app_interface = mock.Mock()
-    web_app_interface.login.side_effect = Exception(
-        "Just an error message"
-    )
+    web_app_interface.login.side_effect = Exception("Just an error message")
     logger_interface = mock.Mock()
 
     login = Login(web_app_interface, logger_interface)
@@ -49,6 +45,6 @@ def test_login_handles_generic_error():
 
     assert bool(response) is False
     assert response.value == {
-        'type': responses.ResponseFailure.SYSTEM_ERROR,
-        'message': 'Exception: Just an error message'
+        "type": responses.ResponseFailure.SYSTEM_ERROR,
+        "message": "Exception: Just an error message",
     }

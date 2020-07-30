@@ -1,7 +1,9 @@
 from use_cases._bid_on_each_search_filter import BidOnEachSearchFilter
 from use_cases._get_search_filters import GetSearchFilters
+from use_cases._handle_error import HandleError
 from use_cases._list_won_items import ListWonItems
 from use_cases._refresh_transfer_list import RefreshTransferList
+from use_cases.responses import responses
 
 
 class MassBid:
@@ -24,15 +26,16 @@ class MassBid:
 
         try:
             self._run_mass_bid(options)
-            return 'Success'
-        except:
-            return 'Failure'
+        except Exception as exc:
+            self.logger.log("Something went wrong")
+            return responses.ResponseFailure.build_system_error(exc)
+        return responses.ResponseSuccess()
 
     def _run_mass_bid(self, options):
         for repetition in range(options["number_of_repetitions"]):
             try:
                 self._run_mass_bid_cycle(options)
-            except:
+            except Exception as exc:
                 self._handle_error()
 
     def _run_mass_bid_cycle(self, options):
@@ -40,9 +43,7 @@ class MassBid:
         search_filters = self._get_search_filters(
             options["number_of_search_filters"], options["margin"], options["bonus"]
         )
-        self._bid_on_each_search_filter(
-            search_filters, options["max_time_left"]
-        )
+        self._bid_on_each_search_filter(search_filters, options["max_time_left"])
         self._list_won_items(search_filters)
 
     def _refresh_transfer_list(self):
@@ -50,9 +51,7 @@ class MassBid:
         return refresh_transfer_list.execute()
 
     def _get_search_filters(self, margin, bonus, number_of_search_filters):
-        get_search_filters = GetSearchFilters(
-            self.random_items, self.market_data, self.logger
-        )
+        get_search_filters = GetSearchFilters(self.random_items, self.market_data, self.logger)
         return get_search_filters.execute(number_of_search_filters, margin, bonus)
 
     def _bid_on_each_search_filter(self, search_filters, max_time_left):
@@ -63,7 +62,6 @@ class MassBid:
         list_won_items = ListWonItems(self.web_app, self.purchased_items, self.logger)
         return list_won_items.execute(search_filters)
 
-    # TODO implement function
     def _handle_error(self):
         handle_error = HandleError(self.web_app, self.logger)
         return handle_error.execute()
