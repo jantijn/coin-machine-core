@@ -7,7 +7,7 @@ class GetSearchFilters:
         self.market_data = market_data
         self.logger = logger
 
-    def execute(self, margin=200, bonus=100, number_of_search_filters=1):
+    def execute(self, number_of_search_filters=1, margin=200, bonus=100):
         self.logger.log("Loading search filters")
         random_items = self.random_items.get(number_of_search_filters)
         search_filters = [self._item_to_search_filter(item, margin, bonus) for item in random_items]

@@ -6,17 +6,17 @@ MAX_BID_PRICE_FIELD = "div.ut-navigation-container-view--content > div > div.ut-
 SEARCH_THE_TRANSFER_MARKET_BUTTON = "button.btn-standard.call-to-action"
 
 
-def set_bid_filter(self, name, price):
-    name_field = utils.get_element(self.driver, NAME_FIELD)
+def set_bid_filter(driver, name, price):
+    name_field = utils.get_element(driver, NAME_FIELD)
     name_field.safe_fill(name)
 
-    name_button = utils.get_element(self.driver, NAME_BUTTON)
+    name_button = utils.get_element(driver, NAME_BUTTON)
     name_button.slow_click()
 
-    max_bid_price_field = utils.get_element(self.driver, MAX_BID_PRICE_FIELD)
-    max_bid_price_field.safe_fill(price)
+    max_bid_price_field = utils.get_element(driver, MAX_BID_PRICE_FIELD)
+    max_bid_price_field.safe_fill(price - 100)
 
 
-def search_the_transfer_market(self):
-    search_the_transfer_market_button = utils.get_element(self.driver, SEARCH_THE_TRANSFER_MARKET_BUTTON)
+def search_the_transfer_market(driver):
+    search_the_transfer_market_button = utils.get_element(driver, SEARCH_THE_TRANSFER_MARKET_BUTTON)
     search_the_transfer_market_button.slow_click()

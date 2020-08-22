@@ -7,7 +7,7 @@ WRONG_VERIFICATION_CODE = "span.origin-ux-textbox-status-message.origin-ux-statu
 
 def enter_verification_code(driver, verification_code):
     verification_code_field = utils.get_element(driver, VERIFICATION_CODE_FIELD)
-    verification_code_field.fill(verification_code)
+    verification_code_field.safe_fill(verification_code)
 
 
 def confirm_verification_code(driver):

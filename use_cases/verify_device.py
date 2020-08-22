@@ -15,9 +15,9 @@ class VerifyDevice:
             msg = "Wrong verification code"
             self.logger.log(msg)
             return responses.ResponseFailure.build_parameters_error(msg)
-        except Exception as exc:
-            self.logger.log("Something went wrong")
-            return responses.ResponseFailure.build_system_error(exc)
+        # except Exception as exc:
+        #     self.logger.log("Something went wrong")
+        #     return responses.ResponseFailure.build_system_error(exc)
 
         self.logger.log("Verify device successful!")
         return responses.ResponseSuccess()

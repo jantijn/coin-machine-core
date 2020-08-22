@@ -1,3 +1,5 @@
+from selenium.common.exceptions import StaleElementReferenceException
+
 from entities.purchased_item import PurchasedItem
 from use_cases.exceptions.exceptions import WrongCredentialsException, WrongVerificationCodeError
 from . import (
@@ -15,17 +17,21 @@ from . import (
 
 
 class WebAppInterface:
-    def __init__(self, driver):
+    def __init__(self, driver=None, verbose=False):
+        self.driver = driver
+        self.verbose = verbose
+
+    def set_driver(self, driver):
         self.driver = driver
 
     def login(self, email, password):
-        _login.go_to_login(self.driver)
-        _login.enter_credentials(self.driver, email, password)
-        _login.confirm_credentials(self.driver)
-        if _login.wrong_credentials(self.driver):
+        _login.go_to_login(self.driver, self.verbose)
+        _login.enter_credentials(self.driver, email, password, self.verbose)
+        _login.confirm_credentials(self.driver, self.verbose)
+        if _login.wrong_credentials(self.driver, self.verbose):
             raise WrongCredentialsException("Wrong email address or password")
-        if _login.verification_code_required(self.driver):
-            _login.request_verification_code(self.driver)
+        if _login.verification_code_required(self.driver, self.verbose):
+            _login.request_verification_code(self.driver, self.verbose)
 
     def verify_device(self, verification_code):
         _verify_device.enter_verification_code(self.driver, verification_code)
@@ -36,6 +42,12 @@ class WebAppInterface:
         _home.handle_pop_ups(self.driver)
 
     def refresh_transfer_list(self):
+        try:
+            self._refresh_transfer_list()
+        except StaleElementReferenceException:
+            self.refresh_transfer_list()
+
+    def _refresh_transfer_list(self):
         _sidebar.go_to_transfers(self.driver)
         _transfers.go_to_transfer_list(self.driver)
         _transfer_list.remove_sold_items(self.driver)

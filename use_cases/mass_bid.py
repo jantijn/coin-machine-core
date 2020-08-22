@@ -18,30 +18,32 @@ class MassBid:
         options = {
             "margin": 200,
             "bonus": 100,
-            "number_of_repetitions": 1,
-            "number_of_search_filters": 1,
-            "max_time_left": 5,
+            "number_of_repetitions": 6,
+            "number_of_search_filters": 4,
+            "max_time_left": 30,
         }
         options.update(kwargs)
 
-        try:
-            self._run_mass_bid(options)
-        except Exception as exc:
-            self.logger.log("Something went wrong")
-            return responses.ResponseFailure.build_system_error(exc)
+        # try:
+        self._run_mass_bid(options)
+        # except Exception as exc:
+        #     self.logger.log("Something went wrong")
+        #     return responses.ResponseFailure.build_system_error(exc)
         return responses.ResponseSuccess()
 
     def _run_mass_bid(self, options):
         for repetition in range(options["number_of_repetitions"]):
-            try:
-                self._run_mass_bid_cycle(options)
-            except Exception as exc:
-                self._handle_error()
+            # try:
+            self._run_mass_bid_cycle(options)
+            # except Exception as exc:
+            #     self._handle_error()
 
     def _run_mass_bid_cycle(self, options):
         self._refresh_transfer_list()
         search_filters = self._get_search_filters(
-            options["number_of_search_filters"], options["margin"], options["bonus"]
+            number_of_search_filters = options["number_of_search_filters"],
+            margin = options["margin"],
+            bonus = options["bonus"]
         )
         self._bid_on_each_search_filter(search_filters, options["max_time_left"])
         self._list_won_items(search_filters)

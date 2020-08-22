@@ -1,13 +1,15 @@
 from difflib import SequenceMatcher
 
+from selenium.common.exceptions import StaleElementReferenceException
+
 from interfaces.web_app.selenium import utils
 from interfaces.web_app.selenium.utils import WebAppObject
 
 CLEAR_BUTTON = "div.ut-navigation-container-view--content > div > div > div > section:nth-child(4) > header > button"
 PURCHASED_ITEMS = "li.listFUTItem.has-auction-data.won"
 NAME = "div.name"
-RATING = ""
-PURCHASE_PRICE = "span.currency-coins.subContent"
+RATING = "div.rating"
+PURCHASE_PRICE = "div.auction > div:nth-child(2) > span.currency-coins.value"
 OPEN_LIST_DIALOG_BUTTON = "div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button"
 START_PRICE_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(2) > div.ut-numeric-input-spinner-control > input"
 MAX_BUY_NOW_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
@@ -32,7 +34,7 @@ class PurchasedItem(WebAppObject):
 
     def list(self, sell_price):
         self.sell_price = sell_price
-        self.web_app_object.slow_click()
+        self.slow_click()
         self._open_list_dialog()
         self._set_start_price(sell_price - 100)
         self._set_max_buy_now_price(sell_price)
@@ -56,23 +58,31 @@ class PurchasedItem(WebAppObject):
 
     def _get_purchase_price(self):
         purchase_price_string = self.get_attribute(PURCHASE_PRICE)
-        return int(purchase_price_string.replace(",", ""))
+        if purchase_price_string:
+            return int(purchase_price_string.replace(",", ""))
+        return ''
 
 
 def clear_expired_players(driver):
-    clear_expired_players_button = utils.get_element(driver, CLEAR_BUTTON)
-    clear_expired_players_button.slow_click()
+    if utils.element_exists(driver, CLEAR_BUTTON):
+        clear_expired_players_button = utils.get_element(driver, CLEAR_BUTTON)
+        clear_expired_players_button.slow_click()
 
 
 def list_all_won_items(driver, search_filters):
     purchased_items_ = []
 
+    print('Getting purchased items')
     purchased_items = utils.get_elements(driver, PURCHASED_ITEMS, class_=PurchasedItem)
     while len(purchased_items) > 0:
-        item = purchased_items.pop(0)
-        sell_price = _get_sell_price(item.name, search_filters)
-        item.list(sell_price)
-        purchased_items_.append(item.to_dict())
+        try:
+            item = purchased_items.pop(0)
+            print(f'Listing {item.name}')
+            sell_price = _get_sell_price(item.name, search_filters)
+            item.list(sell_price)
+            purchased_items_.append(item.to_dict())
+        except StaleElementReferenceException:
+            pass
 
     return purchased_items_
 

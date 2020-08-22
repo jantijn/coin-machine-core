@@ -5,10 +5,10 @@ from selenium.common.exceptions import (
     TimeoutException,
     ElementClickInterceptedException,
     NoSuchElementException,
-)
+    MoveTargetOutOfBoundsException, StaleElementReferenceException)
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC, wait
 from selenium.webdriver import ActionChains
 
 
@@ -19,7 +19,7 @@ class WebAppObject:
 
     @classmethod
     def from_selector(cls, driver, selector):
-        timeout = 10
+        timeout = 15
         try:
             web_app_object = WebDriverWait(driver, timeout).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
@@ -34,8 +34,14 @@ class WebAppObject:
     def get_attribute(self, selector):
         try:
             return self.web_app_object.find_element_by_css_selector(selector).text
-        except NoSuchElementException:
+        except (NoSuchElementException, StaleElementReferenceException):
             return ""
+
+    def get_classes(self):
+        try:
+            return self.web_app_object.get_attribute('class').split()
+        except (NoSuchElementException, StaleElementReferenceException):
+            return []
 
     def fast_click(self):
         time.sleep(random.randint(0, 10) / 100)
@@ -56,9 +62,14 @@ class WebAppObject:
         [height, width] = self._get_web_app_object_dimensions(self.web_app_object)
         [height_rand, width_rand] = self._create_random_offset(height, width)
         action = ActionChains(self.driver)
-        action.move_to_element_with_offset(self.web_app_object, width_rand, height_rand)
-        action.click()
-        action.perform()
+        try:
+            action.move_to_element_with_offset(self.web_app_object, width_rand, height_rand)
+            action.click()
+            action.perform()
+        except MoveTargetOutOfBoundsException:
+            self._click()
+        except StaleElementReferenceException:
+            pass
 
     @staticmethod
     def _get_web_app_object_dimensions(web_app_object):
@@ -70,16 +81,31 @@ class WebAppObject:
 
     @staticmethod
     def _create_random_offset(height, width):
-        height_rand = random.randint(1, height)
-        width_rand = random.randint(1, width)
+        middle_height = int(height / 2)
+        middle_width = int(width / 2)
+        height_rand = random.randint(middle_height - 2, middle_height + 2)
+        width_rand = random.randint(middle_width - 2, middle_width + 2)
         return [height_rand, width_rand]
 
     def safe_fill(self, text):
+        text = str(text)
         while self.web_app_object.get_attribute("value") != text:
             self.web_app_object.clear()
+            self.slow_click()
             for char in text:
                 time.sleep(random.randint(0, 10) / 100)
                 self.web_app_object.send_keys(char)
+
+
+def element_exists(driver, selector):
+    timeout = 2
+    try:
+        web_app_object = WebDriverWait(driver, timeout).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
+        )
+    except TimeoutException:
+        web_app_object = None
+    return bool(web_app_object)
 
 
 def get_element(driver, selector):

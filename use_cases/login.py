@@ -16,7 +16,7 @@ class Login:
             self.logger.log(msg)
             return responses.ResponseFailure.build_parameters_error(msg)
         # except Exception as exc:
-        #     self.logger.log("Something went wrong")
+        #     self.logger.log(responses.ResponseFailure.build_system_error(exc))
         #     return responses.ResponseFailure.build_system_error(exc)
 
         self.logger.log("Login successful!")
