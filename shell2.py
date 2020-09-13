@@ -8,8 +8,7 @@ from interfaces.market_data.futbin import MarketDataInterface
 from interfaces.purchased_items.ignore import PurchasedItemInterface
 from interfaces.random_items.in_memory import RandomItemsInterface
 from interfaces.web_app.selenium import WebAppInterface
-from interfaces.web_app.selenium._app import initialize as _initialize
-from use_cases._refresh_transfer_list import RefreshTransferList
+from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
 from use_cases.verify_device import VerifyDevice
 

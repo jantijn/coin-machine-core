@@ -3,14 +3,14 @@ from use_cases.responses import responses
 
 
 class VerifyDevice:
-    def __init__(self, web_app_interface, logger):
-        self.web_app_interface = web_app_interface
+    def __init__(self, web_app, logger):
+        self.web_app = web_app
         self.logger = logger
 
     def execute(self, verification_code):
         self.logger.log("Logging in to web app")
         try:
-            self.web_app_interface.verify_device(verification_code)
+            self.web_app.verify_device(verification_code)
         except WrongVerificationCodeError:
             msg = "Wrong verification code"
             self.logger.log(msg)

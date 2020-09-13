@@ -1,6 +1,6 @@
 from unittest import mock
 
-from use_cases._handle_error import HandleError
+from use_cases.handle_error import HandleError
 
 
 def test_handle_error():

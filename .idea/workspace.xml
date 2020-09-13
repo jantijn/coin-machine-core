@@ -5,25 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/errors" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shell2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/random_items/in_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/random_items/in_memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_the_market.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_the_market.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_targets.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_targets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/_verify_device.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/selenium/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/_get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/_get_search_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/mass_bid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5900" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/market_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors" beforeDir="false" afterPath="$PROJECT_DIR$/notes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/logger/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/logger/console/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/market_data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/market_data/futbin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/purchased_items/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/django.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/purchased_items/ignore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/purchased_items/rest_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/random_items/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/in_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/random_items/in_memory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/random_items/rest_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/utils/api_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/search_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_search_the_market.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/search_the_market.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_sidebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/sidebar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfer_targets.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/transfer_targets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_transfers.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/transfers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/_verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/verify_device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/selenium/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell2.py" beforeDir="false" afterPath="$PROJECT_DIR$/shell2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_bid_on_each_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_handle_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_refresh_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_refresh_transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/handle_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/_refresh_transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/refresh_transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/mass_bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +88,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/interfaces/search_filter" />
-      <recent name="$PROJECT_DIR$/use_cases/exceptions" />
-      <recent name="$PROJECT_DIR$/factories" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/interfaces/item_repository" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/interfaces" />
+      <recent name="$PROJECT_DIR$/bots" />
+      <recent name="$PROJECT_DIR$/bots/" />
+      <recent name="$PROJECT_DIR$/bots/bot.py" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -169,11 +198,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.pytest in tests" />
       <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
-      <item itemvalue="Python tests.pytest in tests" />
     </list>
     <recent_temporary>
       <list>
@@ -203,10 +232,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1596047210272" />
-    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596479405220">
+    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599760030795">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1596479405220" />
+    <state x="368" y="244" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1599760030795" />
     <state x="394" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596047194566">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -215,10 +244,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1595961330846" />
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595960330496">
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600000456165">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595960330496" />
+    <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1600000456165" />
+    <state x="530" y="329" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1599999499718">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="530" y="329" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1440.900@0.0.1440.900" timestamp="1599999499718" />
     <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595235018310">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -252,10 +285,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596623018022">
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600000327960">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1596623018022" />
+    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1600000327960" />
     <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596479394712">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
