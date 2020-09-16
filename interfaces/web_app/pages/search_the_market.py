@@ -1,4 +1,4 @@
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 NAME_FIELD = "div.inline-list-select.ut-player-search-control > div > input"
 NAME_BUTTON = "div.inline-list-select.ut-player-search-control.has-selection.contract-text-input.is-open > div > div > ul > button:nth-child(1)"

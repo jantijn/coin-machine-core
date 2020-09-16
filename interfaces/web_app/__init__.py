@@ -1,28 +1,30 @@
 from selenium.common.exceptions import StaleElementReferenceException
 
-from entities.purchased_item import PurchasedItem
 from use_cases.exceptions.exceptions import (
     WrongCredentialsException,
     WrongVerificationCodeError,
 )
-from . import (
+from .pages import (
+    general,
+    home,
     login,
     search_results,
-    verify_device,
-    general,
-    transfer_list,
     search_the_market,
-    home,
     sidebar,
-    transfers,
+    transfer_list,
     transfer_targets,
+    transfers,
+    verify_device,
+    settings,
 )
-from interfaces.web_app.general import initialize
+from interfaces.web_app.pages.general import initialize
+from .purchased_item import PurchasedItem
 
 
 class WebApp:
-    def __init__(self, headless=True, verbose=False):
-        self.driver = initialize(headless)
+    def __init__(self, headless=True, verbose=False, custom_driver=False):
+        if not custom_driver:
+            self.driver = initialize(headless)
         self.verbose = verbose
 
     def set_driver(self, driver):
@@ -30,18 +32,29 @@ class WebApp:
 
     def login(self, email, password):
         login.go_to_login(self.driver, self.verbose)
+        if login.credentials_required(self.driver):
+            self._enter_credentials(email, password)
+        else:
+            self._clear_home_screen()
+
+    def _enter_credentials(self, email, password):
         login.enter_credentials(self.driver, email, password, self.verbose)
         login.confirm_credentials(self.driver, self.verbose)
         if login.wrong_credentials(self.driver, self.verbose):
             raise WrongCredentialsException("Wrong email address or password")
         if login.verification_code_required(self.driver, self.verbose):
             login.request_verification_code(self.driver, self.verbose)
+        else:
+            self._clear_home_screen()
 
     def verify_device(self, verification_code):
         verify_device.enter_verification_code(self.driver, verification_code)
         verify_device.confirm_verification_code(self.driver)
         if verify_device.wrong_verification_code(self.driver):
             raise WrongVerificationCodeError("Wrong verification code")
+        self._clear_home_screen()
+
+    def _clear_home_screen(self):
         home.wait_until_loaded(self.driver)
         home.handle_pop_ups(self.driver)
 
@@ -68,15 +81,20 @@ class WebApp:
             self.driver, search_filter.buy_price, max_items, max_time_left
         )
 
-    def list_all_won_items(self, search_filters):
-        sidebar.go_to_transfers(self.driver)
-        transfers.go_to_transfer_targets(self.driver)
+    def get_purchased_items(self):
+        if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
+            sidebar.go_to_transfers(self.driver)
+            transfers.go_to_transfer_targets(self.driver)
+
         transfer_targets.clear_expired_players(self.driver)
-        purchased_items = transfer_targets.list_all_won_items(
-            self.driver, search_filters
-        )
-        return [PurchasedItem.from_dict(item) for item in purchased_items]
+        won_items = transfer_targets.get_won_items(self.driver)
+        return [PurchasedItem(web_app_element) for web_app_element in won_items]
 
     def refresh(self):
         general.refresh(self.driver)
         home.wait_until_loaded(self.driver)
+
+    def logout(self):
+        sidebar.go_to_settings(self.driver)
+        settings.logout(self.driver)
+        settings.confirm_logout(self.driver)

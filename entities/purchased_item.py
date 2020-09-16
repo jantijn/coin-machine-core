@@ -1,23 +1,24 @@
-class PurchasedItem:
-    def __init__(self, name, purchase_price, sell_price):
-        self.name = name
-        self.purchase_price = purchase_price
-        self.sell_price = sell_price
-        self.profit = self._calculate_profit(purchase_price, sell_price)
+class PurchasedItemInterface:
+    def __init__(self):
+        self.name = None
+        self.purchase_price = None
+        self.sell_price = None
+        self.rating = None
+        self.profit = None
 
-    @classmethod
-    def from_dict(cls, adict):
-        return cls(name=adict["name"], purchase_price=adict["purchase_price"], sell_price=adict["sell_price"],)
+    def list(self, sell_price):
+        pass
 
     def to_dict(self):
+        self.calculate_profit()
         return {
             "name": self.name,
+            "rating": self.rating,
             "purchase_price": self.purchase_price,
             "sell_price": self.sell_price,
             "profit": self.profit,
         }
 
-    @staticmethod
-    def _calculate_profit(purchase_price, sell_price):
-        profit = sell_price * 0.95 - purchase_price
-        return round(profit / 100, 0) * 100
+    def calculate_profit(self):
+        profit = self.sell_price * 0.95 - self.purchase_price
+        self.profit = round(profit / 100, 0) * 100

@@ -1,8 +1,10 @@
-from random import random
+import random
 
 
 class Repository:
     def save_purchased_item(self, item):
+        print("Mock save item:")
+        print(item.to_dict())
         pass
 
     def get_random_items(self, number_of_items):

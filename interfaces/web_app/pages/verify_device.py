@@ -1,4 +1,4 @@
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 VERIFICATION_CODE_FIELD = "#oneTimeCode"
 CONFIRM_VERIFICATION_CODE_BUTTON = "#btnSubmit"

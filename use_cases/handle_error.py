@@ -3,9 +3,11 @@ class HandleError:
         self.web_app = web_app
         self.logger = logger
 
-    def execute(self):
+    def execute(self, e=None):
+        self.logger.log("Something went wrong, restarting the web app...")
+        if e:
+            self.logger.log(e)
         self._restart_web_app()
 
     def _restart_web_app(self):
-        self.logger.log("Something went wrong, restarting the web app...")
         self.web_app.refresh()

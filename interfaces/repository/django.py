@@ -10,7 +10,7 @@ class Repository:
 
     def save_purchased_item(self, item):
         url = f"/session/{self.session}/purchased-items/"
-        return self._post(url=url, headers=self.headers, data=item)
+        return self._post(url=url, headers=self.headers, data=item.to_dict)
 
     def _post(self, url, headers, data):
         request_url = f"{self.base_url}/{url}"

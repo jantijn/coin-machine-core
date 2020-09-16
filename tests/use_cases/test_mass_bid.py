@@ -49,4 +49,7 @@ def test_mass_handles_generic_error_on_refresh():
     response = mass_bid.execute(max_time_left=0)
 
     assert bool(response) is False
-    assert response.value == {"type": responses.ResponseFailure.SYSTEM_ERROR, "message": "Exception: A second error"}
+    assert response.value == {
+        "type": responses.ResponseFailure.SYSTEM_ERROR,
+        "message": "Exception: A second error",
+    }

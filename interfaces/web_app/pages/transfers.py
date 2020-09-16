@@ -1,4 +1,4 @@
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 GO_TO_TRANSFER_LIST_BUTTON = "div.ut-tile-transfer-list"
 GO_TO_SEARCH_THE_TRANSFER_MARKET_BUTTON = "div.ut-tile-transfer-market"

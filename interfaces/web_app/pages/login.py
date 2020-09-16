@@ -1,6 +1,7 @@
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 GO_TO_LOGIN_BUTTON = "button.btn-standard.call-to-action"
+CREDENTIALS = "div.login-form-container"
 EMAIL_FIELD = "#email"
 PASSWORD_FIELD = "#password"
 CONFIRM_CREDENTIALS_BUTTON = "#btnLogin"
@@ -14,6 +15,10 @@ def go_to_login(driver, verbose=False):
 
     go_to_login_button = utils.get_element(driver, GO_TO_LOGIN_BUTTON)
     go_to_login_button.slow_click()
+
+
+def credentials_required(driver):
+    return utils.element_exists(driver, CREDENTIALS)
 
 
 def enter_credentials(driver, email, password, verbose=False):

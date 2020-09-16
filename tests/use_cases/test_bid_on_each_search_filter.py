@@ -5,9 +5,13 @@ from unittest.mock import call
 from entities.search_filter import SearchFilter
 from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
 
-search_filter_1 = SearchFilter.from_dict({"name": "Joe Gomez", "margin": 300, "bonus": 100})
+search_filter_1 = SearchFilter.from_dict(
+    {"name": "Joe Gomez", "margin": 300, "bonus": 100}
+)
 search_filter_1.calculate_prices(2000)
-search_filter_2 = SearchFilter.from_dict({"name": "Nathan Ake", "margin": 300, "bonus": 100})
+search_filter_2 = SearchFilter.from_dict(
+    {"name": "Nathan Ake", "margin": 300, "bonus": 100}
+)
 search_filter_2.calculate_prices(1500)
 
 TARGET_SEARCH_FILTERS = [

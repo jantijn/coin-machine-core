@@ -21,7 +21,9 @@ def test_login_happy_flow():
 
 def test_login_handles_wrong_username_or_password():
     web_app_interface = mock.Mock()
-    web_app_interface.login.side_effect = WrongCredentialsException("Wrong email address or password")
+    web_app_interface.login.side_effect = WrongCredentialsException(
+        "Wrong email address or password"
+    )
     logger_interface = mock.Mock()
 
     login = Login(web_app_interface, logger_interface)

@@ -8,8 +8,18 @@ TARGET_MARGIN = 300
 TARGET_BONUS = 100
 TARGET_MARKET_PRICE = 2000
 TARGET_ITEMS = [
-    {"name": "Joe Gomez", "margin": TARGET_MARGIN, "bonus": TARGET_BONUS, "futbin_id": 12345},
-    {"name": "Nathan Ake", "margin": TARGET_MARGIN, "bonus": TARGET_BONUS, "futbin_id": 67890},
+    {
+        "name": "Joe Gomez",
+        "margin": TARGET_MARGIN,
+        "bonus": TARGET_BONUS,
+        "futbin_id": 12345,
+    },
+    {
+        "name": "Nathan Ake",
+        "margin": TARGET_MARGIN,
+        "bonus": TARGET_BONUS,
+        "futbin_id": 67890,
+    },
 ]
 
 search_filter_1 = SearchFilter.from_dict(TARGET_ITEMS[0])
@@ -37,7 +47,9 @@ class TestGetSearchFilters(unittest.TestCase):
 
         get_search_filters = GetSearchFilters(random_items, market_data, logger)
         response = get_search_filters.execute(
-            margin=TARGET_MARGIN, bonus=TARGET_BONUS, number_of_search_filters=len(TARGET_ITEMS)
+            margin=TARGET_MARGIN,
+            bonus=TARGET_BONUS,
+            number_of_search_filters=len(TARGET_ITEMS),
         )
 
         assert response[0].to_dict() == TARGET_SEARCH_FILTERS[0].to_dict()

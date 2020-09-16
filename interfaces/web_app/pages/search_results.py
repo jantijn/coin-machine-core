@@ -1,8 +1,8 @@
 import random
 import time
 
-from interfaces.web_app import utils
-from interfaces.web_app.utils import WebAppObject
+from interfaces.web_app.pages import utils
+from interfaces.web_app.pages.utils import WebAppElement
 
 SEARCH_RESULTS = "li.listFUTItem.has-auction-data"
 BID_PRICE_FIELD = "div.DetailPanel > div.bidOptions > div > input"
@@ -12,9 +12,9 @@ NAME = "div.name"
 RATING = "div.rating"
 
 
-class SearchResult(WebAppObject):
-    def __init__(self, driver, web_app_object):
-        super().__init__(driver, web_app_object)
+class SearchResult(WebAppElement):
+    def __init__(self, driver, selenium_element):
+        super().__init__(driver, selenium_element)
         self.name = self.get_attribute(NAME)
         self.rating = self.get_attribute(RATING)
         self.bid_price = None

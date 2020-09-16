@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 POP_UP_BUTTON = "div.ut-livemessage-footer > button"
 

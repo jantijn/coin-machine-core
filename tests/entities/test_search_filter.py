@@ -14,7 +14,9 @@ TEST_MARKET_PRICE = 2000
 class TestSearchFilter(unittest.TestCase):
     def test_filter_init(self):
         et = search_filter.SearchFilter(
-            name=TEST_PLAYER["name"], margin=TEST_PLAYER["margin"], bonus=TEST_PLAYER["bonus"],
+            name=TEST_PLAYER["name"],
+            margin=TEST_PLAYER["margin"],
+            bonus=TEST_PLAYER["bonus"],
         )
 
         assert et.name == TEST_PLAYER["name"]

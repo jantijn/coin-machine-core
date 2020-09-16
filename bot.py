@@ -1,7 +1,10 @@
+import random
+import time
+
 from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
 from use_cases.get_search_filters import GetSearchFilters
-from use_cases.handle_error import HandleError
 from use_cases.list_won_items import ListWonItems
+from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
 from use_cases.responses import responses
@@ -9,15 +12,17 @@ from use_cases.verify_device import VerifyDevice
 
 
 class Bot:
-    def __init__(self, web_app, logger, market_data, repository):
+    def __init__(self, web_app, logger, market_data, repository, username, password):
         self.web_app = web_app
         self.logger = logger
         self.market_data = market_data
         self.repository = repository
+        self.username = username
+        self.password = password
 
-    def login(self, username, password):
+    def login(self):
         login = Login(web_app=self.web_app, logger=self.logger)
-        return login.execute(username, password)
+        return login.execute(self.username, self.password)
 
     def verify_device(self, verification_code):
         verify_device = VerifyDevice(web_app=self.web_app, logger=self.logger)
@@ -27,6 +32,7 @@ class Bot:
         options = {
             "margin": 200,
             "bonus": 100,
+            "platform": "ps",
             "number_of_repetitions": 6,
             "number_of_search_filters": 4,
             "max_time_left": 30,
@@ -41,11 +47,8 @@ class Bot:
         return responses.ResponseSuccess()
 
     def _run_mass_bid(self, options):
-        for repetition in range(options["number_of_repetitions"]):
-            # try:
+        for repetition in range(int(options["number_of_repetitions"])):
             self._run_mass_bid_cycle(options)
-            # except Exception as exc:
-            #     self._handle_error()
 
     def _run_mass_bid_cycle(self, options):
         self._refresh_transfer_list()
@@ -55,6 +58,7 @@ class Bot:
             bonus=options["bonus"],
         )
         self._bid_on_each_search_filter(search_filters, options["max_time_left"])
+        self._wait_until_bidding_finished(options["max_time_left"])
         self._list_won_items(search_filters)
 
     def _refresh_transfer_list(self):
@@ -75,12 +79,23 @@ class Bot:
         )
         return bid_on_each_search_filter.execute(search_filters, max_time_left)
 
+    def _wait_until_bidding_finished(self, max_time_left):
+        if max_time_left == 0:
+            return
+        self.logger.log("Waiting until auctions with bid are finished...")
+        self._logout()
+        pause_in_seconds = max_time_left * 60 + random.randint(1, 60)
+        for seconds_left in reversed(range(pause_in_seconds)):
+            self.logger.log(f"Seconds left: {seconds_left}")
+            time.sleep(1)
+        self.login()
+
+    def _logout(self):
+        logout = Logout(web_app=self.web_app, logger=self.logger)
+        logout.execute()
+
     def _list_won_items(self, search_filters):
         list_won_items = ListWonItems(
             web_app=self.web_app, repository=self.repository, logger=self.logger
         )
         return list_won_items.execute(search_filters)
-
-    def _handle_error(self):
-        handle_error = HandleError(web_app=self.web_app, logger=self.logger)
-        return handle_error.execute()

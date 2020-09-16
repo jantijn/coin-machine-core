@@ -14,34 +14,37 @@ from selenium.webdriver.support import expected_conditions as EC, wait
 from selenium.webdriver import ActionChains
 
 
-class WebAppObject:
-    def __init__(self, driver, web_app_object):
+class WebAppElement:
+    def __init__(self, driver, selenium_element):
         self.driver = driver
-        self.web_app_object = web_app_object
+        self.selenium_element = selenium_element
 
     @classmethod
     def from_selector(cls, driver, selector):
         timeout = 15
         try:
-            web_app_object = WebDriverWait(driver, timeout).until(
+            selenium_element = WebDriverWait(driver, timeout).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
             )
         except TimeoutException:
-            web_app_object = None
-        return cls(driver=driver, web_app_object=web_app_object)
+            selenium_element = None
+        return cls(driver=driver, selenium_element=selenium_element)
 
     def is_present(self):
-        return bool(self.web_app_object)
+        return bool(self.selenium_element)
+
+    def get_text(self):
+        return self.selenium_element.text
 
     def get_attribute(self, selector):
         try:
-            return self.web_app_object.find_element_by_css_selector(selector).text
+            return self.selenium_element.find_element_by_css_selector(selector).text
         except (NoSuchElementException, StaleElementReferenceException):
             return ""
 
     def get_classes(self):
         try:
-            return self.web_app_object.get_attribute("class").split()
+            return self.selenium_element.get_attribute("class").split()
         except (NoSuchElementException, StaleElementReferenceException):
             return []
 
@@ -54,19 +57,19 @@ class WebAppObject:
         self._click()
 
     def safe_click(self):
-        time.sleep(random.randint(0, 100) / 100)
+        time.sleep(random.randint(0, 500) / 100)
         try:
             self._click()
         except ElementClickInterceptedException:
             self.safe_click()
 
     def _click(self):
-        [height, width] = self._get_web_app_object_dimensions(self.web_app_object)
+        [height, width] = self._get_web_app_object_dimensions(self.selenium_element)
         [height_rand, width_rand] = self._create_random_offset(height, width)
         action = ActionChains(self.driver)
         try:
             action.move_to_element_with_offset(
-                self.web_app_object, width_rand, height_rand
+                self.selenium_element, width_rand, height_rand
             )
             action.click()
             action.perform()
@@ -93,12 +96,12 @@ class WebAppObject:
 
     def safe_fill(self, text):
         text = str(text)
-        while self.web_app_object.get_attribute("value") != text:
-            self.web_app_object.clear()
+        while self.selenium_element.get_attribute("value") != text:
+            self.selenium_element.clear()
             self.slow_click()
             for char in text:
                 time.sleep(random.randint(0, 10) / 100)
-                self.web_app_object.send_keys(char)
+                self.selenium_element.send_keys(char)
 
 
 def element_exists(driver, selector):
@@ -113,7 +116,7 @@ def element_exists(driver, selector):
 
 
 def get_element(driver, selector):
-    element = WebAppObject.from_selector(driver, selector)
+    element = WebAppElement.from_selector(driver, selector)
     return element
 
 
@@ -122,4 +125,4 @@ def get_elements(driver, selector, class_=None):
     if class_:
         return [class_(driver, element) for element in elements]
     else:
-        return [WebAppObject(driver, element) for element in elements]
+        return [WebAppElement(driver, element) for element in elements]

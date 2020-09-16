@@ -7,11 +7,12 @@ class GetSearchFilters:
         self.market_data = market_data
         self.logger = logger
 
-    def execute(self, number_of_search_filters=1, margin=200, bonus=100):
+    def execute(self, number_of_search_filters=1, margin=200, bonus=100, platform="ps"):
         self.logger.log("Loading search filters")
         random_items = self.repository.get_random_items(number_of_search_filters)
         search_filters = [
-            self._item_to_search_filter(item, margin, bonus) for item in random_items
+            self._item_to_search_filter(item, margin, bonus, platform)
+            for item in random_items
         ]
         for search_filter in search_filters:
             self.logger.log(
@@ -21,8 +22,10 @@ class GetSearchFilters:
             )
         return search_filters
 
-    def _item_to_search_filter(self, item, margin, bonus):
+    def _item_to_search_filter(self, item, margin, bonus, platform):
         search_filter = SearchFilter(item["name"], margin, bonus)
-        market_price = self.market_data.get_market_price(item["futbin_id"])
+        market_price = self.market_data.get_market_price(
+            item["futbin_id"], platform=platform
+        )
         search_filter.calculate_prices(market_price)
         return search_filter

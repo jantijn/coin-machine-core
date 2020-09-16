@@ -1,4 +1,4 @@
-from interfaces.web_app import utils
+from interfaces.web_app.pages import utils
 
 REMOVE_SOLD_ITEMS_BUTTON = "div.ut-navigation-container-view--content > div > div > div > section:nth-child(1) > header > button"
 RELIST_UNSOLD_ITEMS_BUTTON = "div.ut-navigation-container-view--content > div > div > div > section:nth-child(2) > header > button"
