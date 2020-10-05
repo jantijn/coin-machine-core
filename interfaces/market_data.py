@@ -7,7 +7,7 @@ class MarketData:
         return self._parse_futbin_response(response, player_id, platform)
 
     @staticmethod
-    def _generate_futbin_request(player_id, game=20):
+    def _generate_futbin_request(player_id, game=21):
         return f"https://www.futbin.com/{game}/playerPrices?player={player_id}"
 
     @staticmethod

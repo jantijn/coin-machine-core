@@ -5,7 +5,7 @@ from flask import Flask, request, g
 from bot import Bot
 from interfaces.logger import Logger
 from interfaces.market_data import MarketData
-from interfaces.repository.in_memory import Repository
+from interfaces.repository.django import Repository
 from interfaces.web_app import WebApp
 
 app = Flask(__name__)
@@ -18,12 +18,16 @@ bot = None
 
 @app.route("/init", methods=["POST"])
 def initialize():
+    data = request.get_json()
     global bot
     bot = Bot(
-        web_app=WebApp(headless=False),
+        web_app=WebApp(headless=True),
         logger=Logger(),
         repository=Repository(),
-        market_data=MarketData(),
+        market_data=MarketData()
+    )
+    bot.repository.login(
+        username = data["username"], password = data["password"]
     )
     return "Session initialized"
 
@@ -31,7 +35,9 @@ def initialize():
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
-    response = bot.login(username=data["username"], password=data["password"])
+    bot.username = data["username"]
+    bot.password = data["password"]
+    response = bot.login()
     if response:
         return "Successful login!"
     return "Something went wrong"
@@ -46,7 +52,10 @@ def verify_device():
     return "Something went wrong"
 
 
-# TODO Hier sessie maken
+@app.route("/create-session", methods=["POST"])
+def create_session():
+    session = bot.repository.create_session()
+    return session
 
 
 @app.route("/mass-bid", methods=["POST"])
@@ -57,7 +66,7 @@ def mass_bid():
         number_of_repetitions=int(data["number_of_repetitions"]),
         max_time_left=25,
     )
-    # TODO: Hier sessie beeindigen
+    bot.repository.stop_session()
     return "Done"
 
 

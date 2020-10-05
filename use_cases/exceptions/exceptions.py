@@ -4,3 +4,7 @@ class WrongCredentialsException(Exception):
 
 class WrongVerificationCodeError(Exception):
     pass
+
+
+class NonFatalWebAppException(Exception):
+    pass

@@ -19,6 +19,7 @@ from .pages import (
 )
 from interfaces.web_app.pages.general import initialize
 from .purchased_item import PurchasedItem
+from .transfer_list_item import TransferListItem
 
 
 class WebApp:
@@ -90,9 +91,20 @@ class WebApp:
         won_items = transfer_targets.get_won_items(self.driver)
         return [PurchasedItem(web_app_element) for web_app_element in won_items]
 
+    def get_transfer_list_items(self):
+        if not sidebar.get_location(self.driver) == "TRANSFER LIST":
+            sidebar.go_to_transfers(self.driver)
+            transfers.go_to_transfer_list(self.driver)
+
+        transfer_list_items = transfer_list.get_available_items(self.driver)
+        return [
+            TransferListItem(web_app_element) for web_app_element in transfer_list_items
+        ]
+
     def refresh(self):
         general.refresh(self.driver)
         home.wait_until_loaded(self.driver)
+        self._clear_home_screen()
 
     def logout(self):
         sidebar.go_to_settings(self.driver)

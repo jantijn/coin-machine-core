@@ -1,3 +1,3 @@
 class Logger:
     def log(self, text):
-        print(text)
+        print("COINMACHINE: " + text)

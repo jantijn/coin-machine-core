@@ -1,12 +1,16 @@
 from interfaces.web_app.pages import utils
 
-GO_TO_LOGIN_BUTTON = "button.btn-standard.call-to-action"
+GO_TO_LOGIN_BUTTON = "#Login > div > div > button.btn-standard.call-to-action"
 CREDENTIALS = "div.login-form-container"
 EMAIL_FIELD = "#email"
 PASSWORD_FIELD = "#password"
 CONFIRM_CREDENTIALS_BUTTON = "#btnLogin"
 WRONG_CREDENTIALS_LABEL = "#loginForm > div.general-error > div > div"
 REQUEST_CODE_BUTTON = "#btnSendCode"
+
+
+def on_login_screen(driver):
+    return utils.element_exists(driver, GO_TO_LOGIN_BUTTON)
 
 
 def go_to_login(driver, verbose=False):

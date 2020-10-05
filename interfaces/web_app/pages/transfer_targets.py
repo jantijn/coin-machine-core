@@ -1,25 +1,14 @@
-from difflib import SequenceMatcher
-
-from selenium.common.exceptions import (
-    StaleElementReferenceException,
-    ElementNotInteractableException,
-)
-
 from interfaces.web_app.pages import utils
 
 CLEAR_BUTTON = "div.ut-navigation-container-view--content > div > div > div > section:nth-child(4) > header > button"
 PURCHASED_ITEMS = "li.listFUTItem.has-auction-data.won"
 NAME = "div.name"
 RATING = "div.rating"
-PURCHASE_PRICE = "div.auction > div:nth-child(2) > span.currency-coins.value"
-OPEN_LIST_DIALOG_BUTTON = (
-    "div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button"
-)
-START_PRICE_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(2) > div.ut-numeric-input-spinner-control > input"
-MAX_BUY_NOW_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
-CONFIRM_LISTING_BUTTON = (
-    "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button"
-)
+PURCHASE_PRICE = "body > main > section > section > div.ut-navigation-container-view--content > div > div > div > section:nth-child(3) > ul > li.listFUTItem.has-auction-data.won.selected > div > div.auction > div:nth-child(2) > span.currency-coins.value"
+OPEN_LIST_DIALOG_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div > div > div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button > span.btn-text"
+START_PRICE_FIELD = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(2) > div.ut-numeric-input-spinner-control > input"
+MAX_BUY_NOW_FIELD = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
+CONFIRM_LISTING_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section > div > div > div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button"
 
 
 def open_list_dialog(driver):

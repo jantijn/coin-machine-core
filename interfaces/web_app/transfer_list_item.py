@@ -1,19 +1,19 @@
 from entities.purchased_item import PurchasedItemInterface
 from interfaces.web_app.pages import home
-from interfaces.web_app.pages.transfer_targets import (
+from interfaces.web_app.pages.transfer_list import (
     NAME,
     RATING,
+    POSITION,
     open_list_dialog,
     set_start_price,
     set_max_buy_now_price,
     confirm_listing,
-    PURCHASE_PRICE,
 )
 from interfaces.web_app.pages.utils import WebAppElement
 from use_cases.exceptions.exceptions import NonFatalWebAppException
 
 
-class PurchasedItem(WebAppElement, PurchasedItemInterface):
+class TransferListItem(WebAppElement, PurchasedItemInterface):
     def __init__(self, web_app_element):
         super().__init__(
             driver=web_app_element.driver,
@@ -21,7 +21,8 @@ class PurchasedItem(WebAppElement, PurchasedItemInterface):
         )
         self.name = self.get_attribute(NAME)
         self.rating = self.get_attribute(RATING)
-        self.purchase_price = self._get_purchase_price()
+        self.position = self.get_attribute(POSITION)
+        self.purchase_price = None
         self.sell_price = None
 
     def list(self, sell_price):
@@ -35,9 +36,3 @@ class PurchasedItem(WebAppElement, PurchasedItemInterface):
             home.wait_until_loaded(self.driver)
         except:
             raise NonFatalWebAppException
-
-    def _get_purchase_price(self):
-        purchase_price_string = self.get_attribute(PURCHASE_PRICE)
-        if purchase_price_string:
-            return int(purchase_price_string.replace(",", ""))
-        return 0

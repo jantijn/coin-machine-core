@@ -1,10 +1,5 @@
-from difflib import SequenceMatcher
-
+from use_cases.exceptions.exceptions import NonFatalWebAppException
 from use_cases.handle_error import HandleError
-from selenium.common.exceptions import (
-    StaleElementReferenceException,
-    ElementNotInteractableException,
-)
 
 
 class ListWonItems:
@@ -13,40 +8,30 @@ class ListWonItems:
         self.repository = repository
         self.logger = logger
 
-    def execute(self, search_filters):
+    def execute(self, margin, bonus):
         self.logger.log("Listing won items...")
-        self._list_won_items(search_filters)
+        self._list_won_items(margin, bonus)
 
-    def _list_won_items(self, search_filters):
+    def _list_won_items(self, margin, bonus):
         purchased_items = self.web_app.get_purchased_items()
 
         while len(purchased_items) > 0:
             try:
                 item = purchased_items.pop(0)
-
-                sell_price = self._get_sell_price(item, search_filters)
+                sell_price = self._calculate_sell_price(int(item.purchase_price), margin, bonus)
                 item.list(sell_price)
-                self.repository.save_purchased_item(item)
-            except (StaleElementReferenceException, ElementNotInteractableException):
-                pass
+                # self.repository.save_purchased_item(item)
+                self.logger.log("Listed " + item.name)
+            except NonFatalWebAppException as e:
+                self._handle_error(e)
             finally:
                 purchased_items = self.web_app.get_purchased_items()
 
-    def _get_sell_price(self, item, search_filters):
-        search_filter = self._get_matching_filter(item.name, search_filters)
-        return search_filter.sell_price
+    @staticmethod
+    def _calculate_sell_price(purchase_price, margin, bonus):
+        ea_tax = 0.05
+        return int(round(((purchase_price + margin) / (1 - ea_tax)) / 100, 0) * 100) + bonus
 
     def _handle_error(self, e):
         handle_error = HandleError(web_app=self.web_app, logger=self.logger)
         handle_error.execute(e)
-
-    @staticmethod
-    def _get_matching_filter(item_name, search_filters):
-        max_similar_score = 0
-        matching_filter = {}
-        for search_filter in search_filters:
-            similar_score = SequenceMatcher(None, item_name, search_filter.name).ratio()
-            if similar_score > max_similar_score:
-                matching_filter = search_filter
-                max_similar_score = similar_score
-        return matching_filter

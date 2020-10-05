@@ -5,10 +5,11 @@ import selenium.webdriver
 
 from interfaces.logger import Logger
 from interfaces.market_data import MarketData
-from interfaces.repository.in_memory import Repository
+from interfaces.repository.django import Repository
 from interfaces.web_app import WebApp
 from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
 from use_cases.get_search_filters import GetSearchFilters
+from use_cases.list_transfer_list_items import ListTransferListItems
 from use_cases.list_won_items import ListWonItems
 from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
@@ -17,9 +18,13 @@ from use_cases.verify_device import VerifyDevice
 
 from bot import Bot
 
+# docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome:4.0.0-alpha-7-prerelease-20200907
+# open vnc://0.0.0.0:5900
+
 web_app = WebApp(custom_driver=True)
 market_data = MarketData()
 repository = Repository()
+repository.login(username = "admin", password = "admin")
 logger = Logger()
 
 EXECUTOR = "http://localhost:4444/wd/hub"
@@ -59,7 +64,7 @@ class MyPrompt(Cmd):
 
     def do_login(self, arg):
         login = Login(web_app, logger)
-        print(login.execute("traderrr.joe@gmail.com", "H0p3l1jk"))
+        print(login.execute("jantijn.kromwijk@gmail.com", "H0p3l1jk"))
 
     def do_verify_device(self, arg):
         verify_device = VerifyDevice(web_app, logger)
@@ -73,7 +78,7 @@ class MyPrompt(Cmd):
         get_search_filters = GetSearchFilters(
             repository=repository, market_data=market_data, logger=logger
         )
-        state["search_filters"] = get_search_filters.execute(number_of_search_filters=4)
+        state["search_filters"] = get_search_filters.execute(number_of_search_filters=4, margin=100)
 
     def do_bid_on_each_search_filter(self, arg):
         if state["search_filters"]:
@@ -81,19 +86,22 @@ class MyPrompt(Cmd):
                 web_app=web_app, logger=logger
             )
             bid_on_each_search_filter.execute(
-                search_filters=state["search_filters"], max_time_left=30
+                search_filters=state["search_filters"], max_time_left=25
             )
         else:
             print("First load search filters")
 
     def do_list_won_items(self, arg):
-        if state["search_filters"]:
-            list_won_items = ListWonItems(
-                web_app=web_app, logger=logger, repository=repository
-            )
-            list_won_items.execute(state["search_filters"])
-        else:
-            print("First load search filters")
+        list_won_items = ListWonItems(
+            web_app=web_app, logger=logger, repository=repository
+        )
+        list_won_items.execute(margin=200, bonus=100)
+
+    def do_list_transfer_list_items(self, arg):
+        list_transfer_list_items = ListTransferListItems(
+            web_app = web_app, logger = logger, repository = repository, market_data = market_data
+        )
+        list_transfer_list_items.execute()
 
     def do_logout(self, arg):
         logout = Logout(web_app=web_app, logger=logger)

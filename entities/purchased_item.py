@@ -1,5 +1,6 @@
 class PurchasedItemInterface:
     def __init__(self):
+        self.id = None
         self.name = None
         self.purchase_price = None
         self.sell_price = None
@@ -12,6 +13,7 @@ class PurchasedItemInterface:
     def to_dict(self):
         self.calculate_profit()
         return {
+            "id": self.id,
             "name": self.name,
             "rating": self.rating,
             "purchase_price": self.purchase_price,

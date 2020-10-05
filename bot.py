@@ -12,13 +12,13 @@ from use_cases.verify_device import VerifyDevice
 
 
 class Bot:
-    def __init__(self, web_app, logger, market_data, repository, username, password):
+    def __init__(self, web_app, logger, market_data, repository):
         self.web_app = web_app
         self.logger = logger
         self.market_data = market_data
         self.repository = repository
-        self.username = username
-        self.password = password
+        self.username = None
+        self.password = None
 
     def login(self):
         login = Login(web_app=self.web_app, logger=self.logger)
@@ -35,7 +35,7 @@ class Bot:
             "platform": "ps",
             "number_of_repetitions": 6,
             "number_of_search_filters": 4,
-            "max_time_left": 30,
+            "max_time_left": 0,
         }
         options.update(kwargs)
 
@@ -59,7 +59,8 @@ class Bot:
         )
         self._bid_on_each_search_filter(search_filters, options["max_time_left"])
         self._wait_until_bidding_finished(options["max_time_left"])
-        self._list_won_items(search_filters)
+        self.login()
+        self._list_won_items(margin=options["margin"], bonus=options["bonus"])
 
     def _refresh_transfer_list(self):
         refresh_transfer_list = RefreshTransferList(
@@ -85,17 +86,14 @@ class Bot:
         self.logger.log("Waiting until auctions with bid are finished...")
         self._logout()
         pause_in_seconds = max_time_left * 60 + random.randint(1, 60)
-        for seconds_left in reversed(range(pause_in_seconds)):
-            self.logger.log(f"Seconds left: {seconds_left}")
-            time.sleep(1)
-        self.login()
+        time.sleep(pause_in_seconds)
 
     def _logout(self):
         logout = Logout(web_app=self.web_app, logger=self.logger)
         logout.execute()
 
-    def _list_won_items(self, search_filters):
+    def _list_won_items(self, margin, bonus):
         list_won_items = ListWonItems(
             web_app=self.web_app, repository=self.repository, logger=self.logger
         )
-        return list_won_items.execute(search_filters)
+        return list_won_items.execute(margin=margin, bonus=bonus)

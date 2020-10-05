@@ -5,8 +5,6 @@ class HandleError:
 
     def execute(self, e=None):
         self.logger.log("Something went wrong, restarting the web app...")
-        if e:
-            self.logger.log(e)
         self._restart_web_app()
 
     def _restart_web_app(self):

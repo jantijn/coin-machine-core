@@ -1,8 +1,8 @@
 from interfaces.web_app.pages import utils
 
-NAME_FIELD = "div.inline-list-select.ut-player-search-control > div > input"
-NAME_BUTTON = "div.inline-list-select.ut-player-search-control.has-selection.contract-text-input.is-open > div > div > ul > button:nth-child(1)"
-MAX_BID_PRICE_FIELD = "div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
+NAME_FIELD = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.ut-item-search-view > div.inline-list-select.ut-player-search-control > div > div.ut-player-search-control--input-container > input"
+NAME_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.ut-item-search-view > div.inline-list-select.ut-player-search-control.has-selection.contract-text-input.is-open > div > div.inline-list > ul > button:nth-child(1)"
+MAX_BID_PRICE_FIELD = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
 SEARCH_THE_TRANSFER_MARKET_BUTTON = "button.btn-standard.call-to-action"
 
 
