@@ -9,7 +9,7 @@ class Repository:
     def __init__(self):
         self.access_token = None
         self.refresh_token = None
-        self.base_url = "http://127.0.0.1:8000"
+        self.base_url = "https://coin-machine-repo.herokuapp.com"
         self.headers = None
         self.session = None
 

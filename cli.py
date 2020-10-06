@@ -13,12 +13,6 @@ bot = Bot(
 
 
 def login():
-    try:
-        _login()
-    except:
-        login()
-
-def _login():
     print('Enter your CoinMachine credentials')
 
     username = input('Username: ')
@@ -32,13 +26,6 @@ def _login():
 
 
 def login_to_webapp():
-    try:
-        _login_to_webapp()
-    except:
-        login_to_webapp()
-
-
-def _login_to_webapp():
     print('Enter your EA credentials')
 
     bot.username = input('Username: ')
@@ -51,6 +38,43 @@ def _login_to_webapp():
         raise Exception("Something went wrong")
 
 
+def verify_device():
+    print('Enter the verification code')
+
+    verification_code = input('Verification code: ')
+
+    response = bot.verify_device(verification_code=verification_code)
+    if response:
+        print("Successful verification!")
+    else:
+        raise Exception("Something went wrong")
+
+
+def select_option():
+    print('What do you want to do:')
+    print('1) List all transfer list items')
+    print('2) Run mass bid algorithm')
+    return input('Option: ')
+
+
+def list_transfer_list_items():
+    bot.list_transfer_list_items()
+
+
+def mass_bid():
+    number_of_repetitions = input("How many reps do you want to run (1 rep is ~30 min): ")
+    bot.mass_bid(
+        number_of_repetitions = number_of_repetitions, margin = 100, max_time_left = 25
+    )
+
+
 if __name__ == "__main__":
     login()
     login_to_webapp()
+    verify_device()
+    option = select_option()
+    if option == "1":
+        list_transfer_list_items()
+    elif option == "2":
+        mass_bid()
+

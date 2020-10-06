@@ -3,6 +3,7 @@ import time
 
 from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
 from use_cases.get_search_filters import GetSearchFilters
+from use_cases.list_transfer_list_items import ListTransferListItems
 from use_cases.list_won_items import ListWonItems
 from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
@@ -97,3 +98,9 @@ class Bot:
             web_app=self.web_app, repository=self.repository, logger=self.logger
         )
         return list_won_items.execute(margin=margin, bonus=bonus)
+
+    def list_transfer_list_items(self):
+        list_transfer_list_items = ListTransferListItems(
+            web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
+        )
+        return list_transfer_list_items.execute()

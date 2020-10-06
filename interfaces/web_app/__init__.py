@@ -83,7 +83,11 @@ class WebApp:
         )
 
     def get_purchased_items(self):
-        if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
+        try:
+            if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
+                sidebar.go_to_transfers(self.driver)
+                transfers.go_to_transfer_targets(self.driver)
+        except:
             sidebar.go_to_transfers(self.driver)
             transfers.go_to_transfer_targets(self.driver)
 
