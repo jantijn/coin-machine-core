@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/use_cases/snipe_item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/repository/django.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/django.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/driver.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell2.py" beforeDir="false" afterPath="$PROJECT_DIR$/shell2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/handle_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/logout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,11 +167,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.pytest in tests" />
       <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
-      <item itemvalue="Python tests.pytest in tests" />
     </list>
     <recent_temporary>
       <list>
@@ -226,26 +236,26 @@
     </state>
     <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
     <state x="273" y="23" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1596472352773" />
-    <state width="1412" height="216" key="GridCell.Tab.0.bottom" timestamp="1601672194729">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1412" height="216" key="GridCell.Tab.0.bottom" timestamp="1602165923197">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1412" height="216" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1601672194729" />
-    <state width="1412" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1601581623642" />
-    <state width="1412" height="216" key="GridCell.Tab.0.center" timestamp="1601672194728">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1412" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602165923197" />
+    <state width="1412" height="216" key="GridCell.Tab.0.center" timestamp="1602165923196">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1412" height="216" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1601672194728" />
-    <state width="1412" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1601581623641" />
-    <state width="1412" height="216" key="GridCell.Tab.0.left" timestamp="1601672194728">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1412" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602165923196" />
+    <state width="1412" height="216" key="GridCell.Tab.0.left" timestamp="1602165923195">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1412" height="216" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1601672194728" />
-    <state width="1412" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1601581623640" />
-    <state width="1412" height="216" key="GridCell.Tab.0.right" timestamp="1601672194729">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1412" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602165923195" />
+    <state width="1412" height="216" key="GridCell.Tab.0.right" timestamp="1602165923196">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1412" height="216" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1601672194729" />
-    <state width="1412" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1601581623642" />
+    <state width="1412" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602165923196" />
     <state x="150" y="3" key="SettingsEditor" timestamp="1601794686405">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -254,11 +264,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601970771903">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602166410717">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1601970771903" />
-    <state x="338" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1601582819326" />
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1602166410717" />
     <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596479394712">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

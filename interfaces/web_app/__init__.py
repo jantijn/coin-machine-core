@@ -31,7 +31,10 @@ class WebApp:
     def set_driver(self, driver):
         self.driver = driver
 
-    def login(self, email, password):
+    def login_required(self):
+        return login.login_required(self.driver)
+
+    def login(self, email=None, password=None):
         login.go_to_login(self.driver, self.verbose)
         if login.credentials_required(self.driver):
             self._enter_credentials(email, password)
@@ -55,6 +58,11 @@ class WebApp:
             raise WrongVerificationCodeError("Wrong verification code")
         self._clear_home_screen()
 
+    def refresh(self):
+        general.refresh(self.driver)
+        home.wait_until_loaded(self.driver)
+        self._clear_home_screen()
+
     def _clear_home_screen(self):
         home.wait_until_loaded(self.driver)
         home.handle_pop_ups(self.driver)
@@ -71,44 +79,47 @@ class WebApp:
         transfer_list.remove_sold_items(self.driver)
         transfer_list.relist_unsold_items(self.driver)
 
-    def bid_on_search_filter_items(self, search_filter, max_items, max_time_left):
+    def go_to_search_the_transfer_market(self):
         sidebar.go_to_transfers(self.driver)
         transfers.go_to_search_the_transfer_market(self.driver)
-        search_the_market.set_bid_filter(
-            self.driver, search_filter.name, search_filter.buy_price
-        )
+
+    def set_filter(self, name, price, strategy):
+        if strategy == 'bid':
+            search_the_market.set_bid_filter(self.driver, name, price)
+
+    def search(self):
         search_the_market.search_the_transfer_market(self.driver)
+
+    def bid_on_search_filter_items(self, search_filter, max_items, max_time_left):
         search_results.bid_on_search_results(
             self.driver, search_filter.buy_price, max_items, max_time_left
         )
 
-    def get_purchased_items(self):
-        try:
-            if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
-                sidebar.go_to_transfers(self.driver)
-                transfers.go_to_transfer_targets(self.driver)
-        except:
-            sidebar.go_to_transfers(self.driver)
-            transfers.go_to_transfer_targets(self.driver)
+    def go_to_transfer_targets(self):
+        sidebar.go_to_transfers(self.driver)
+        transfers.go_to_transfer_targets(self.driver)
 
+    def get_purchased_items(self):
+        if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
+            self.go_to_transfer_targets()
         transfer_targets.clear_expired_players(self.driver)
         won_items = transfer_targets.get_won_items(self.driver)
-        return [PurchasedItem(web_app_element) for web_app_element in won_items]
+        return [
+            PurchasedItem(web_app_element) for web_app_element in won_items
+        ]
+
+    def go_to_transfer_list(self):
+        sidebar.go_to_transfers(self.driver)
+        transfers.go_to_transfer_list(self.driver)
 
     def get_transfer_list_items(self):
         if not sidebar.get_location(self.driver) == "TRANSFER LIST":
-            sidebar.go_to_transfers(self.driver)
-            transfers.go_to_transfer_list(self.driver)
+            self.go_to_transfer_list()
 
         transfer_list_items = transfer_list.get_available_items(self.driver)
         return [
             TransferListItem(web_app_element) for web_app_element in transfer_list_items
         ]
-
-    def refresh(self):
-        general.refresh(self.driver)
-        home.wait_until_loaded(self.driver)
-        self._clear_home_screen()
 
     def logout(self):
         sidebar.go_to_settings(self.driver)

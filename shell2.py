@@ -24,7 +24,7 @@ from bot import Bot
 web_app = WebApp(custom_driver=True)
 market_data = MarketData()
 repository = Repository()
-repository.login(username = "admin", password = "admin")
+repository.login(username = "admin", password = "J@nt1jn+admin")
 logger = Logger()
 
 EXECUTOR = "http://localhost:4444/wd/hub"

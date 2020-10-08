@@ -10,22 +10,31 @@ class ListWonItems:
 
     def execute(self, margin, bonus):
         self.logger.log("Listing won items...")
+        self._go_to_transfer_targets()
         self._list_won_items(margin, bonus)
+        self.logger.log("Listed won items!")
+
+    def _go_to_transfer_targets(self):
+        try:
+            self.web_app.go_to_transfer_targets()
+        except NonFatalWebAppException as e:
+            self._handle_error(e)
+            self._go_to_transfer_targets()
 
     def _list_won_items(self, margin, bonus):
-        purchased_items = self.web_app.get_purchased_items()
-
-        while len(purchased_items) > 0:
+        while True:
             try:
+                purchased_items = self.web_app.get_purchased_items()
+                if len(purchased_items) == 0:
+                    break
                 item = purchased_items.pop(0)
+                self.logger.log(f"Listing {item.name}, {item.position}, {item.rating}...")
                 sell_price = self._calculate_sell_price(int(item.purchase_price), margin, bonus)
                 item.list(sell_price)
                 # self.repository.save_purchased_item(item)
-                self.logger.log("Listed " + item.name)
+                self.logger.log(f"Listed {item.name}, {item.position}, {item.rating} for {sell_price}")
             except NonFatalWebAppException as e:
                 self._handle_error(e)
-            finally:
-                purchased_items = self.web_app.get_purchased_items()
 
     @staticmethod
     def _calculate_sell_price(purchase_price, margin, bonus):

@@ -9,14 +9,11 @@ WRONG_CREDENTIALS_LABEL = "#loginForm > div.general-error > div > div"
 REQUEST_CODE_BUTTON = "#btnSendCode"
 
 
-def on_login_screen(driver):
+def login_required(driver):
     return utils.element_exists(driver, GO_TO_LOGIN_BUTTON)
 
 
 def go_to_login(driver, verbose=False):
-    if verbose:
-        print("Go to login")
-
     go_to_login_button = utils.get_element(driver, GO_TO_LOGIN_BUTTON)
     go_to_login_button.slow_click()
 

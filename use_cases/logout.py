@@ -6,3 +6,4 @@ class Logout:
     def execute(self):
         self.logger.log("Logging out...")
         self.web_app.logout()
+        self.logger.log("Logged out!")

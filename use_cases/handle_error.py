@@ -9,3 +9,6 @@ class HandleError:
 
     def _restart_web_app(self):
         self.web_app.refresh()
+        if self.web_app.login_required():
+            self.logger.log("Logging in...")
+            self.web_app.login()

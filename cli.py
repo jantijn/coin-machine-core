@@ -5,7 +5,7 @@ from interfaces.repository.django import Repository
 from interfaces.web_app import WebApp
 
 bot = Bot(
-    web_app = WebApp(headless = True),
+    web_app = WebApp(headless = False),
     logger = Logger(),
     repository = Repository(),
     market_data = MarketData()
@@ -54,6 +54,7 @@ def select_option():
     print('What do you want to do:')
     print('1) List all transfer list items')
     print('2) Run mass bid algorithm')
+    print('3) Quit')
     return input('Option: ')
 
 
@@ -64,7 +65,7 @@ def list_transfer_list_items():
 def mass_bid():
     number_of_repetitions = input("How many reps do you want to run (1 rep is ~30 min): ")
     bot.mass_bid(
-        number_of_repetitions = number_of_repetitions, margin = 100, max_time_left = 25
+        number_of_repetitions = number_of_repetitions, margin = 200, max_time_left = 25
     )
 
 
@@ -72,9 +73,12 @@ if __name__ == "__main__":
     login()
     login_to_webapp()
     verify_device()
-    option = select_option()
-    if option == "1":
-        list_transfer_list_items()
-    elif option == "2":
-        mass_bid()
+    while True:
+        option = select_option()
+        if option == "1":
+            list_transfer_list_items()
+        elif option == "2":
+            mass_bid()
+        elif option == "3":
+            break
 

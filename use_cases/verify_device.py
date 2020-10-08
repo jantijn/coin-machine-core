@@ -8,16 +8,13 @@ class VerifyDevice:
         self.logger = logger
 
     def execute(self, verification_code):
-        self.logger.log("Logging in to web app")
+        self.logger.log("Verifying device...")
         try:
             self.web_app.verify_device(verification_code)
         except WrongVerificationCodeError:
             msg = "Wrong verification code"
             self.logger.log(msg)
             return responses.ResponseFailure.build_parameters_error(msg)
-        # except Exception as exc:
-        #     self.logger.log("Something went wrong")
-        #     return responses.ResponseFailure.build_system_error(exc)
 
         self.logger.log("Verify device successful!")
         return responses.ResponseSuccess()

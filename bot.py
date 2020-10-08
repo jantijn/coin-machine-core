@@ -45,6 +45,7 @@ class Bot:
         # except Exception as exc:
         #     self.logger.log("Something went wrong")
         #     return responses.ResponseFailure.build_system_error(exc)
+        self.logger.log("Bot finished successfully!")
         return responses.ResponseSuccess()
 
     def _run_mass_bid(self, options):
@@ -60,8 +61,8 @@ class Bot:
         )
         self._bid_on_each_search_filter(search_filters, options["max_time_left"])
         self._wait_until_bidding_finished(options["max_time_left"])
-        self.login()
-        self._list_won_items(margin=options["margin"], bonus=options["bonus"])
+        # self.login()
+        self.list_won_items(margin=options["margin"], bonus=options["bonus"])
 
     def _refresh_transfer_list(self):
         refresh_transfer_list = RefreshTransferList(
@@ -85,7 +86,6 @@ class Bot:
         if max_time_left == 0:
             return
         self.logger.log("Waiting until auctions with bid are finished...")
-        self._logout()
         pause_in_seconds = max_time_left * 60 + random.randint(1, 60)
         time.sleep(pause_in_seconds)
 
@@ -93,7 +93,7 @@ class Bot:
         logout = Logout(web_app=self.web_app, logger=self.logger)
         logout.execute()
 
-    def _list_won_items(self, margin, bonus):
+    def list_won_items(self, margin, bonus):
         list_won_items = ListWonItems(
             web_app=self.web_app, repository=self.repository, logger=self.logger
         )
@@ -103,4 +103,5 @@ class Bot:
         list_transfer_list_items = ListTransferListItems(
             web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
         )
-        return list_transfer_list_items.execute()
+        list_transfer_list_items.execute()
+        self.logger.log("Bot finished successfully!")
