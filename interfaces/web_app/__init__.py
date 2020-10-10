@@ -86,14 +86,43 @@ class WebApp:
     def set_filter(self, name, price, strategy):
         if strategy == 'bid':
             search_the_market.set_bid_filter(self.driver, name, price)
+        elif strategy == 'snipe':
+            search_the_market.set_snipe_filter(self.driver, name, price)
+
+    def set_filter_based_on_characteristics(self, club, nation, position, price):
+        search_the_market.set_snipe_filter_based_on_characteristics(
+            self.driver, club, nation, position, price
+        )
 
     def search(self):
         search_the_market.search_the_transfer_market(self.driver)
+
+    def go_back(self):
+        search_the_market.go_back(self.driver)
+
+    def set_min_bid_price(self, price):
+        search_the_market.set_min_bid_price(self.driver, price)
 
     def bid_on_search_filter_items(self, search_filter, max_items, max_time_left):
         search_results.bid_on_search_results(
             self.driver, search_filter.buy_price, max_items, max_time_left
         )
+
+    def snipe_item(self):
+        if not search_results.buy_now(self.driver):
+            return ['no_item_found', None]
+        search_results.confirm_buy_now(self.driver)
+
+        if search_results.outbid_by_other_player(self.driver):
+            return ['outbid', None]
+
+        name = search_results.get_name(self.driver)
+        purchase_price = search_results.get_purchase_price(self.driver)
+
+        return ['success', {'name': name, 'purchase_price': purchase_price}]
+
+    def send_to_club(self):
+        search_results.send_to_club(self.driver)
 
     def go_to_transfer_targets(self):
         sidebar.go_to_transfers(self.driver)

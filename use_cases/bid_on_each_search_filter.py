@@ -17,7 +17,9 @@ class BidOnEachSearchFilter:
     def _bid_on_search_filter(self, max_items, max_time_left, search_filter):
         self.logger.log(f"Bidding on {search_filter.name}...")
         self.web_app.go_to_search_the_transfer_market()
-        self.web_app.set_filter(name = search_filter.name, price = search_filter.buy_price, strategy = 'bid')
+        self.web_app.set_filter(
+            name = search_filter.name, price = search_filter.buy_price, strategy = 'bid'
+        )
         self.web_app.search()
         self.web_app.bid_on_search_filter_items(search_filter, max_items, max_time_left)
         self.logger.log(f"Finished bidding on {search_filter.name}")

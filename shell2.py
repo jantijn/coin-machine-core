@@ -14,6 +14,7 @@ from use_cases.list_won_items import ListWonItems
 from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
+from use_cases.snipe_item import SnipeItem
 from use_cases.verify_device import VerifyDevice
 
 from bot import Bot
@@ -102,6 +103,23 @@ class MyPrompt(Cmd):
             web_app = web_app, logger = logger, repository = repository, market_data = market_data
         )
         list_transfer_list_items.execute()
+
+    def do_snipe_item(self, arg):
+        do_snipe_item = SnipeItem(
+            web_app = web_app, logger = logger, repository = repository, market_data = market_data
+        )
+        characteristics = {
+            'name': 'Telles',
+            'club': 'Manchester Utd',
+            'position': 'LB',
+            'nation': 'Brazil'
+        }
+        do_snipe_item.execute(
+            characteristics = characteristics,
+            price = 30000,
+            number_of_attempts = 50,
+            type_of_filter = 'characteristics'
+        )
 
     def do_logout(self, arg):
         logout = Logout(web_app=web_app, logger=logger)

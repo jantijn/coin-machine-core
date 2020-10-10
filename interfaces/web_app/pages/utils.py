@@ -20,8 +20,7 @@ class WebAppElement:
         self.selenium_element = selenium_element
 
     @classmethod
-    def from_selector(cls, driver, selector):
-        timeout = 15
+    def from_selector(cls, driver, selector, timeout):
         try:
             selenium_element = WebDriverWait(driver, timeout).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
@@ -49,7 +48,7 @@ class WebAppElement:
             return []
 
     def fast_click(self):
-        time.sleep(random.randint(0, 10) / 100)
+        time.sleep(random.randint(0, 10) / 1000)
         self._click()
 
     def slow_click(self):
@@ -103,6 +102,15 @@ class WebAppElement:
                 time.sleep(random.randint(0, 10) / 100)
                 self.selenium_element.send_keys(char)
 
+    def fast_fill(self, text):
+        text = str(text)
+        while self.selenium_element.get_attribute("value") != text:
+            self.selenium_element.clear()
+            self.slow_click()
+            for char in text:
+                time.sleep(random.randint(0, 10) / 1000)
+                self.selenium_element.send_keys(char)
+
 
 def element_exists(driver, selector):
     timeout = 2
@@ -115,8 +123,8 @@ def element_exists(driver, selector):
     return bool(web_app_object)
 
 
-def get_element(driver, selector):
-    element = WebAppElement.from_selector(driver, selector)
+def get_element(driver, selector, timeout=15):
+    element = WebAppElement.from_selector(driver, selector, timeout)
     return element
 
 

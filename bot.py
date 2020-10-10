@@ -9,6 +9,7 @@ from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
 from use_cases.responses import responses
+from use_cases.snipe_item import SnipeItem
 from use_cases.verify_device import VerifyDevice
 
 
@@ -41,28 +42,37 @@ class Bot:
         options.update(kwargs)
 
         # try:
-        self._run_mass_bid(options)
+        profit = self._run_mass_bid(options)
         # except Exception as exc:
         #     self.logger.log("Something went wrong")
         #     return responses.ResponseFailure.build_system_error(exc)
-        self.logger.log("Bot finished successfully!")
+        self.logger.log(f"Bot finished successfully! Total profit is {profit}")
         return responses.ResponseSuccess()
 
     def _run_mass_bid(self, options):
+        profit = 0
         for repetition in range(int(options["number_of_repetitions"])):
-            self._run_mass_bid_cycle(options)
+            profit += self._run_mass_bid_cycle(options)
+        return profit
 
     def _run_mass_bid_cycle(self, options):
+        self.bid_on_random_items(
+            number_of_search_filters=options['number_of_search_filters'],
+            margin=options["margin"],
+            bonus=options["margin"],
+            max_time_left=options["max_time_left"]
+        )
+        self._wait_until_bidding_finished(options["max_time_left"])
+        return self.list_won_items(margin=options["margin"], bonus=options["bonus"])
+
+    def bid_on_random_items(self, number_of_search_filters, margin, bonus, max_time_left):
         self._refresh_transfer_list()
         search_filters = self._get_search_filters(
-            number_of_search_filters=options["number_of_search_filters"],
-            margin=options["margin"],
-            bonus=options["bonus"],
+            number_of_search_filters = number_of_search_filters,
+            margin = margin,
+            bonus = bonus
         )
-        self._bid_on_each_search_filter(search_filters, options["max_time_left"])
-        self._wait_until_bidding_finished(options["max_time_left"])
-        # self.login()
-        self.list_won_items(margin=options["margin"], bonus=options["bonus"])
+        self._bid_on_each_search_filter(search_filters, max_time_left)
 
     def _refresh_transfer_list(self):
         refresh_transfer_list = RefreshTransferList(
@@ -104,4 +114,16 @@ class Bot:
             web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
         )
         list_transfer_list_items.execute()
+        self.logger.log("Bot finished successfully!")
+
+    def snipe_item(self, characteristics, price, type_of_filter, number_of_attempts,):
+        snipe_item = SnipeItem(
+            web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
+        )
+        snipe_item.execute(
+            characteristics = characteristics,
+            price = price,
+            number_of_attempts = number_of_attempts,
+            type_of_filter = type_of_filter
+        )
         self.logger.log("Bot finished successfully!")
