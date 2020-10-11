@@ -21,7 +21,10 @@ class BidOnEachSearchFilter:
             name = search_filter.name, price = search_filter.buy_price, strategy = 'bid'
         )
         self.web_app.search()
-        self.web_app.bid_on_search_filter_items(search_filter, max_items, max_time_left)
+        try:
+            self.web_app.bid_on_search_filter_items(search_filter, max_items, max_time_left)
+        except:
+            self._handle_error()
         self.logger.log(f"Finished bidding on {search_filter.name}")
 
     def _handle_error(self):
