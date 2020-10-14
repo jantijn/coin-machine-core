@@ -11,7 +11,8 @@ CLUB_BUTTON = "body > main > section > section > div.ut-navigation-container-vie
 CHARACTERISTICS = "li.with-icon"
 NATION_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.ut-item-search-view > div:nth-child(6)"
 POSITION_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.ut-item-search-view > div:nth-child(4)"
-
+INCREMENT_MIN_BID_PRICE_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(2) > div.ut-numeric-input-spinner-control > button.btn-standard.increment-value"
+DECREMENT_MIN_BID_PRICE_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(2) > div.ut-numeric-input-spinner-control > button.btn-standard.decrement-value"
 
 def set_bid_filter(driver, name, price):
     name_field = utils.get_element(driver, NAME_FIELD)
@@ -83,6 +84,20 @@ def _set_price_fields(driver, price):
 def set_min_bid_price(driver, price):
     min_bid_price_field = utils.get_element(driver, MIN_BID_PRICE_FIELD)
     min_bid_price_field.fast_fill(price)
+
+
+def increment_min_bid_price(driver):
+    increment_min_bid_price_button = utils.get_element(
+        driver, INCREMENT_MIN_BID_PRICE_BUTTON
+    )
+    increment_min_bid_price_button.fast_click()
+
+
+def decrement_min_bid_price(driver):
+    decrement_min_bid_price_button = utils.get_element(
+        driver, DECREMENT_MIN_BID_PRICE_BUTTON
+    )
+    decrement_min_bid_price_button.fast_click()
 
 
 def search_the_transfer_market(driver):

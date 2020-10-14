@@ -3,7 +3,6 @@ from interfaces.logger import Logger
 from interfaces.market_data import MarketData
 from interfaces.repository.django import Repository
 from interfaces.web_app import WebApp
-from use_cases.snipe_item import SnipeItem
 
 bot = Bot(
     web_app = WebApp(headless = False),
@@ -82,6 +81,7 @@ def list_won_items():
 
 def snipe_item():
     characteristics = {}
+    type_of_filter = None
     print('What type of search filter do you want to use?')
     print('1) Based on name')
     print('2) Based on characteristics')
@@ -111,13 +111,18 @@ if __name__ == "__main__":
     login_to_webapp()
     verify_device()
     while True:
-        option = select_option()
-        if option == "0":
-            snipe_item()
-        if option == "1":
-            list_transfer_list_items()
-        elif option == "2":
-            mass_bid()
-        elif option == "3":
-            break
-
+        try:
+            option = select_option()
+            if option == "0":
+                snipe_item()
+            if option == "1":
+                list_transfer_list_items()
+            elif option == "2":
+                mass_bid()
+            elif option == "3":
+                break
+        except KeyboardInterrupt:
+            response = input('Press enter to continue or type quit to stop')
+            if response == 'quit':
+                break
+        print('Resuming...')

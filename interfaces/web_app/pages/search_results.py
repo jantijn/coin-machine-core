@@ -41,7 +41,7 @@ class SearchResult(WebAppElement):
             bid_price_field = utils.get_element(self.driver, BID_PRICE_FIELD)
             bid_price_string = bid_price_field.selenium_element.get_attribute("value")
             bid_price = int(bid_price_string.replace(',', ''))
-            if bid_price >= price:
+            if bid_price > price:
                 return False
             bid_price_field.safe_fill(price)
 

@@ -94,6 +94,12 @@ class WebApp:
             self.driver, club, nation, position, price
         )
 
+    def increment_min_bid_price(self):
+        search_the_market.increment_min_bid_price(self.driver)
+
+    def decrement_min_bid_price(self):
+        search_the_market.decrement_min_bid_price(self.driver)
+
     def search(self):
         search_the_market.search_the_transfer_market(self.driver)
 

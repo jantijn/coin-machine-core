@@ -18,8 +18,8 @@ class ListWonItems:
     def _go_to_transfer_targets(self):
         try:
             self.web_app.go_to_transfer_targets()
-        except:
-            self._handle_error()
+        except Exception as e:
+            self._handle_error(e)
             self._go_to_transfer_targets()
 
     def _list_won_items(self, margin, bonus):
@@ -37,7 +37,7 @@ class ListWonItems:
                 # self.repository.save_purchased_item(item)
                 profit += item_profit
                 self.logger.log(f"Listed {item.name} at {sell_price} for a profit of {item_profit}")
-            except NonFatalWebAppException as e:
+            except Exception as e:
                 self._handle_error(e)
         return profit
 
