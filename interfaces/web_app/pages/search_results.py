@@ -19,8 +19,14 @@ RATING = "div.rating"
 BUY_NOW_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.bidOptions > button.btn-standard.buyButton.currency-coins"
 CONFIRM_BUY_NOW_BUTTON = "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(1)"
 SEND_TO_CLUB_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(6)"
+SEND_TO_TRANSFER_LIST_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-button-group > button:nth-child(8)"
 NAME_FIELD = "div.name.main-view"
 PURCHASE_PRICE_FIELD = "div.auctionInfo > div > span.currency-coins.subContent"
+LIST_ON_TRANSFER_MARKET_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div > section.ut-navigation-container-view.ui-layout-right > div > div > div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button"
+OPEN_LIST_DIALOG_BUTTON = "div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button > span.btn-text"
+START_PRICE_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(2) > div.ut-numeric-input-spinner-control > input"
+MAX_BUY_NOW_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
+CONFIRM_LISTING_BUTTON = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button"
 
 
 class SearchResult(WebAppElement):
@@ -94,21 +100,6 @@ def _random_pause(average_pause_time_in_seconds):
     time.sleep(average_pause_time_in_seconds + random.uniform(-0.5, 0.5))
 
 
-# def buy_now(driver):
-#     timeout = random.uniform(1, 1.5)
-#     buy_now_button = utils.get_element(
-#         driver, BUY_NOW_BUTTON, timeout = timeout
-#     )
-#     buy_now_button.fast_click()
-#
-#
-# def confirm_buy_now(driver):
-#     confirm_buy_now_button = utils.get_element(
-#         driver, CONFIRM_BUY_NOW_BUTTON
-#     )
-#     confirm_buy_now_button.fast_click()
-
-
 def outbid_by_other_player(driver):
     try:
         WebDriverWait(driver, 3).until(
@@ -158,6 +149,40 @@ def send_to_club(driver):
         driver, SEND_TO_CLUB_BUTTON
     )
     send_to_club_button.slow_click()
+
+
+def send_to_transfer_list(driver):
+    send_to_transfer_list_button = utils.get_element(
+        driver, SEND_TO_TRANSFER_LIST_BUTTON
+    )
+    send_to_transfer_list_button.slow_click()
+
+
+def list(driver, price):
+    open_list_dialog(driver)
+    set_start_price(driver, price - 100)
+    set_max_buy_now_price(driver, price)
+    confirm_listing(driver)
+
+
+def open_list_dialog(driver):
+    open_list_dialog_button = utils.get_element(driver, OPEN_LIST_DIALOG_BUTTON)
+    open_list_dialog_button.slow_click()
+
+
+def set_start_price(driver, price):
+    start_price_field = utils.get_element(driver, START_PRICE_FIELD)
+    start_price_field.safe_fill(price)
+
+
+def set_max_buy_now_price(driver, price):
+    max_buy_now_field = utils.get_element(driver, MAX_BUY_NOW_FIELD)
+    max_buy_now_field.safe_fill(price)
+
+
+def confirm_listing(driver):
+    open_list_dialog_button = utils.get_element(driver, CONFIRM_LISTING_BUTTON)
+    open_list_dialog_button.slow_click()
 
 
 def get_name(driver):

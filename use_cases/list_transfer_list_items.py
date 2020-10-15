@@ -9,10 +9,10 @@ class ListTransferListItems:
         self.market_data = market_data
         self.logger = logger
 
-    def execute(self):
+    def execute(self, type_of_item):
         self.logger.log("Listing transfer list items...")
         self._go_to_transfer_list()
-        self._list_transfer_list_items()
+        self._list_transfer_list_items(type_of_item)
         self.logger.log("Transfer list items listed!")
 
     def _go_to_transfer_list(self):
@@ -22,10 +22,10 @@ class ListTransferListItems:
             self._handle_error(e)
             self._go_to_transfer_list()
 
-    def _list_transfer_list_items(self):
+    def _list_transfer_list_items(self, type_of_item):
         while True:
             try:
-                transfer_list_items = self.web_app.get_transfer_list_items()
+                transfer_list_items = self.web_app.get_transfer_list_items(type_of_item)
                 if len(transfer_list_items) == 0:
                     break
                 item = transfer_list_items.pop(0)

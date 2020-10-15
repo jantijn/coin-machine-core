@@ -130,6 +130,12 @@ class WebApp:
     def send_to_club(self):
         search_results.send_to_club(self.driver)
 
+    def send_to_transfer_list(self):
+        search_results.send_to_transfer_list(self.driver)
+
+    def list(self, price):
+        search_results.list(self.driver, price)
+
     def go_to_transfer_targets(self):
         sidebar.go_to_transfers(self.driver)
         transfers.go_to_transfer_targets(self.driver)
@@ -147,11 +153,11 @@ class WebApp:
         sidebar.go_to_transfers(self.driver)
         transfers.go_to_transfer_list(self.driver)
 
-    def get_transfer_list_items(self):
+    def get_transfer_list_items(self, type_of_item):
         if not sidebar.get_location(self.driver) == "TRANSFER LIST":
             self.go_to_transfer_list()
 
-        transfer_list_items = transfer_list.get_available_items(self.driver)
+        transfer_list_items = transfer_list.get_available_items(self.driver, type_of_item)
         return [
             TransferListItem(web_app_element) for web_app_element in transfer_list_items
         ]

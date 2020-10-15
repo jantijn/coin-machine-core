@@ -15,24 +15,33 @@ class SnipeItem:
         self.market_data = market_data
         self.logger = logger
 
-    def execute(self, characteristics, price, number_of_attempts=1, type_of_filter='name'):
-        self.logger.log(f"Trying to snipe {characteristics['name']} {number_of_attempts} times...")
-        self._set_search_filter(characteristics, price, type_of_filter)
-        self._snipe_items(characteristics, number_of_attempts, price, type_of_filter)
-        self.logger.log(f"Finished sniping {characteristics['name']}")
+    def execute(self, characteristics, price, number_of_attempts=1, type_of_filter='name', success_action='send_to_club'):
+        self.logger.log(f"Trying to snipe {number_of_attempts} times...")
+        if not type_of_filter == 'none':
+            self._set_search_filter(characteristics, price, type_of_filter)
+        self._snipe_items(characteristics, number_of_attempts, price, type_of_filter, success_action)
+        self.logger.log(f"Finished sniping")
 
-    def _snipe_items(self, characteristics, number_of_attempts, price, type_of_filter):
+    def _snipe_items(self, characteristics, number_of_attempts, price, type_of_filter, success_action):
         action = 'increment'
         for attempt in range(number_of_attempts):
             try:
                 success = self._snipe_item(attempt)
                 if success:
-                    self.web_app.send_to_club()
-                    break
+                    if success_action == 'send_to_club':
+                        self.web_app.send_to_club()
+                        break
+                    elif success_action == 'send_to_transfer_list':
+                        self.web_app.send_to_transfer_list()
+                    elif success_action == 'list':
+                        self.web_app.list(characteristics['price'])
                 action = self._reset_search(action)
                 _random_pause()
             except Exception as e:
+                print(e)
                 self._handle_error(e)
+                if type_of_filter == 'none':
+                    break
                 self._set_search_filter(characteristics, price, type_of_filter)
 
     def _set_search_filter(self, characteristics, price, type_of_filter):

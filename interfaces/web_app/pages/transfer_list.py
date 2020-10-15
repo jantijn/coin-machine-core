@@ -4,6 +4,7 @@ REMOVE_SOLD_ITEMS_BUTTON = "div.ut-navigation-container-view--content > div > di
 RELIST_UNSOLD_ITEMS_BUTTON = "div.ut-navigation-container-view--content > div > div > div > section:nth-child(2) > header > button"
 CONFIRM_RELIST_BUTTON = "body > div.view-modal-container.form-modal > section > div > div > button:nth-child(2)"
 AVAILABLE_ITEMS = "section:nth-child(3) > ul > li"
+EXPIRED_ITEMS = "li.listFUTItem.has-auction-data.expired"
 OPEN_LIST_DIALOG_BUTTON = (
     "div.DetailPanel > div.ut-quick-list-panel-view > div.ut-button-group > button"
 )
@@ -34,8 +35,12 @@ def relist_unsold_items(driver):
         confirm_relist_button.slow_click()
 
 
-def get_available_items(driver):
-    return utils.get_elements(driver, AVAILABLE_ITEMS)
+def get_available_items(driver, type_of_item):
+    if type_of_item == 'available_items':
+        return utils.get_elements(driver, AVAILABLE_ITEMS)
+    elif type_of_item == 'expired_items':
+        return utils.get_elements(driver, EXPIRED_ITEMS)
+
 
 
 def open_list_dialog(driver):

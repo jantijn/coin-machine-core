@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/search_the_market.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/search_the_market.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/snipe_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/snipe_item.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,15 +255,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602705414100">
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602786849435">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1601970771903" />
-    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1602705414100" />
-    <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596479394712">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1602786849435" />
+    <state x="462" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602783752114">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1596479394712" />
+    <state x="462" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1602783752114" />
     <state x="329" y="144" width="959" height="702" key="find.popup" timestamp="1596052729048">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

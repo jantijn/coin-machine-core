@@ -113,10 +113,17 @@ class Bot:
         list_transfer_list_items = ListTransferListItems(
             web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
         )
-        list_transfer_list_items.execute()
+        list_transfer_list_items.execute(type_of_item = 'available_items')
         self.logger.log("Bot finished successfully!")
 
-    def snipe_item(self, characteristics, price, type_of_filter, number_of_attempts,):
+    def list_expired_transfer_list_items(self):
+        list_transfer_list_items = ListTransferListItems(
+            web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
+        )
+        list_transfer_list_items.execute(type_of_item = 'expired_items')
+        self.logger.log("Bot finished successfully!")
+
+    def snipe_item(self, characteristics, price, type_of_filter, number_of_attempts, success_action):
         snipe_item = SnipeItem(
             web_app=self.web_app, logger=self.logger, repository=self.repository, market_data=self.market_data
         )
@@ -124,6 +131,7 @@ class Bot:
             characteristics = characteristics,
             price = price,
             number_of_attempts = number_of_attempts,
-            type_of_filter = type_of_filter
+            type_of_filter = type_of_filter,
+            success_action = success_action
         )
         self.logger.log("Bot finished successfully!")
