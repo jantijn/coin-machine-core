@@ -1,4 +1,4 @@
-from entities.purchased_item import PurchasedItemInterface
+from entities.purchased_item import PurchasedItemEntity
 from interfaces.web_app.pages import home
 from interfaces.web_app.pages.transfer_list import (
     NAME,
@@ -13,7 +13,7 @@ from interfaces.web_app.pages.utils import WebAppElement
 from use_cases.exceptions.exceptions import NonFatalWebAppException
 
 
-class TransferListItem(WebAppElement, PurchasedItemInterface):
+class TransferListItem(WebAppElement, PurchasedItemEntity):
     def __init__(self, web_app_element):
         super().__init__(
             driver=web_app_element.driver,

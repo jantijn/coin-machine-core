@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/entities/search_result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/search_result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/web_app/sniped_item.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/snipe_icon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/driver.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/repository/django.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/django.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/won_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/transfer_list_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/transfer_list_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell2.py" beforeDir="false" afterPath="$PROJECT_DIR$/shell2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_purchased_item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/use_cases/test_list_won_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/snipe_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/snipe_item.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,11 +171,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python tests.pytest in tests" />
       <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
+      <item itemvalue="Python tests.pytest in tests" />
     </list>
     <recent_temporary>
       <list>
@@ -188,10 +201,6 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596047210272">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="184" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1596047210272" />
     <state x="368" y="261" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601580791663">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -201,10 +210,6 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="489" y="107" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1600543283440" />
-    <state x="394" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596047194566">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="394" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1596047194566" />
     <state x="233" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600107052436">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -213,20 +218,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="395" y="147" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1601840775180" />
-    <state x="530" y="344" width="747" height="370" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1601580677672">
+    <state x="530" y="344" width="747" height="370" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1602868828687">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="530" y="329" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1440.900@0.0.1440.900" timestamp="1600106199967" />
-    <state x="530" y="344" width="747" height="370" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.23.1440.877@0.23.1440.877" timestamp="1601580677672" />
-    <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1595235018310">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="436" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1595235018310" />
-    <state x="273" y="23" key="CommitChangelistDialog2" timestamp="1596472352773">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="273" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595445239173" />
-    <state x="273" y="23" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1596472352773" />
+    <state x="530" y="344" width="747" height="370" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.23.1440.877@0.23.1440.877" timestamp="1602868828687" />
     <state width="1412" height="216" key="GridCell.Tab.0.bottom" timestamp="1602237977601">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -251,33 +247,23 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="150" y="3" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1601794686405" />
-    <state x="382" y="137" width="675" height="655" key="StructurePopup" timestamp="1595704685360">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="382" y="137" width="675" height="655" key="StructurePopup/0.0.1440.900@0.0.1440.900" timestamp="1595704685360" />
-    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602786849435">
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605646058047">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="338" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1601970771903" />
-    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1602786849435" />
+    <state x="338" y="23" width="763" height="877" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877@0.23.1440.877" timestamp="1605646058047" />
     <state x="462" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602783752114">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="462" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1596479394712" />
     <state x="462" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1602783752114" />
-    <state x="329" y="144" width="959" height="702" key="find.popup" timestamp="1596052729048">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="329" y="144" width="959" height="702" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596052729048" />
     <state width="750" height="530" key="javadoc.popup" timestamp="1602270715660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="750" height="530" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1595961107310" />
     <state width="750" height="530" key="javadoc.popup/0.23.1440.877@0.23.1440.877" timestamp="1602270715660" />
-    <state x="301" y="0" width="838" height="900" key="search.everywhere.popup" timestamp="1600543280745">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="301" y="23" width="838" height="877" key="search.everywhere.popup" timestamp="1605644062461">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="301" y="0" width="838" height="900" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1600543280745" />
-    <state x="301" y="23" width="838" height="877" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1596993584341" />
+    <state x="301" y="23" width="838" height="877" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1605644062461" />
   </component>
 </project>

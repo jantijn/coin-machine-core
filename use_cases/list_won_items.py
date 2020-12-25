@@ -27,7 +27,7 @@ class ListWonItems:
         item_profit = margin + bonus
         while True:
             try:
-                purchased_items = self.web_app.get_purchased_items()
+                purchased_items = self.web_app.get_won_items()
                 if len(purchased_items) == 0:
                     break
                 item = purchased_items.pop(0)

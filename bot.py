@@ -66,13 +66,16 @@ class Bot:
         return self.list_won_items(margin=options["margin"], bonus=options["bonus"])
 
     def bid_on_random_items(self, number_of_search_filters, margin, bonus, max_time_left):
-        self._refresh_transfer_list()
-        search_filters = self._get_search_filters(
-            number_of_search_filters = number_of_search_filters,
-            margin = margin,
-            bonus = bonus
-        )
-        self._bid_on_each_search_filter(search_filters, max_time_left)
+        items_with_bid = 0
+        while items_with_bid < 30:
+            print(f"Items with bid: {items_with_bid}")
+            self._refresh_transfer_list()
+            search_filters = self._get_search_filters(
+                number_of_search_filters = number_of_search_filters,
+                margin = margin,
+                bonus = bonus
+            )
+            items_with_bid += self._bid_on_each_search_filter(search_filters, max_time_left)
 
     def _refresh_transfer_list(self):
         refresh_transfer_list = RefreshTransferList(

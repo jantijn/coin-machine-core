@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from entities.search_filter import SearchFilter
-from entities.purchased_item import PurchasedItemInterface
+from entities.purchased_item import PurchasedItemEntity
 from use_cases.list_won_items import ListWonItems
 
 search_filter_1 = SearchFilter.from_dict(
@@ -27,12 +27,12 @@ class TestListWonItems(unittest.TestCase):
         logger = mock.Mock()
 
         target_response = [
-            PurchasedItemInterface(
+            PurchasedItemEntity(
                 search_filter_1.name,
                 search_filter_1.buy_price,
                 search_filter_1.sell_price,
             ),
-            PurchasedItemInterface(
+            PurchasedItemEntity(
                 search_filter_2.name,
                 search_filter_2.buy_price,
                 search_filter_2.sell_price,

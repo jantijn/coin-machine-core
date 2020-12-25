@@ -41,5 +41,5 @@ class ListTransferListItems:
         handle_error.execute(e)
 
     def _calculate_sell_price(self, item, platform="ps"):
-        item_info = self.repository.get_item_info(name=item.name, rating=item.rating, position=item.position)
+        item_info = self.repository.get_item_info(name=item.name, rating=item.rating)
         return item_info["last_market_price"]

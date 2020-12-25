@@ -18,7 +18,9 @@ from .pages import (
     settings,
 )
 from interfaces.web_app.pages.general import initialize
-from .purchased_item import PurchasedItem
+from .search_result import SearchResult
+from .sniped_item import SnipedItem
+from .won_item import WonItem
 from .transfer_list_item import TransferListItem
 
 
@@ -110,7 +112,7 @@ class WebApp:
         search_the_market.set_min_bid_price(self.driver, price)
 
     def bid_on_search_filter_items(self, search_filter, max_items, max_time_left):
-        search_results.bid_on_search_results(
+        return search_results.bid_on_search_results(
             self.driver, search_filter.buy_price, max_items, max_time_left
         )
 
@@ -122,10 +124,9 @@ class WebApp:
         if search_results.outbid_by_other_player(self.driver):
             return ['outbid', None]
 
-        name = search_results.get_name(self.driver)
-        purchase_price = search_results.get_purchase_price(self.driver)
+        sniped_item = self.get_sniped_item()
 
-        return ['success', {'name': name, 'purchase_price': purchase_price}]
+        return ['success', sniped_item]
 
     def send_to_club(self):
         search_results.send_to_club(self.driver)
@@ -140,14 +141,25 @@ class WebApp:
         sidebar.go_to_transfers(self.driver)
         transfers.go_to_transfer_targets(self.driver)
 
-    def get_purchased_items(self):
+    def get_won_items(self):
         if not sidebar.get_location(self.driver) == "TRANSFER TARGETS":
             self.go_to_transfer_targets()
         transfer_targets.clear_expired_players(self.driver)
         won_items = transfer_targets.get_won_items(self.driver)
         return [
-            PurchasedItem(web_app_element) for web_app_element in won_items
+            WonItem(web_app_element) for web_app_element in won_items
         ]
+
+    def get_search_results(self):
+        search_result_items = search_results.get_search_results(self.driver)
+        return [
+            SearchResult(web_app_element) for web_app_element in search_result_items
+        ]
+
+    def get_sniped_item(self):
+        return SnipedItem(
+            search_results.get_sniped_item(self.driver)
+        )
 
     def go_to_transfer_list(self):
         sidebar.go_to_transfers(self.driver)

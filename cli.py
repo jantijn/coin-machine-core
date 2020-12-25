@@ -61,11 +61,17 @@ def select_option():
 
 
 def list_transfer_list_items():
-    bot.list_transfer_list_items()
+    try:
+        bot.list_transfer_list_items()
+    except:
+        print("On of the names does not match the database")
 
 
 def list_expired_transfer_list_items():
-    bot.list_expired_transfer_list_items()
+    try:
+        bot.list_expired_transfer_list_items()
+    except:
+        print("On of the names does not match the database")
 
 
 def mass_bid():
@@ -79,9 +85,12 @@ def mass_bid():
 
 def list_won_items():
     bonus = input("How much bonus to add to the market price: ")
-    bot.list_won_items(
-        margin = 200, bonus = bonus
-    )
+    try:
+        bot.list_won_items(
+            margin = 200, bonus = bonus
+        )
+    except:
+        print("On of the names does not match the database")
 
 
 def snipe_item():
@@ -118,7 +127,7 @@ def snipe_item():
         success_action = 'send_to_transfer_list'
     elif snipe_option == '2':
         success_action = 'list'
-        characteristics['price'] = int(input('For what price do you want to sell?: '))
+        characteristics['sell_price'] = int(input('For what price do you want to sell?: '))
     number_of_attempts = int(input("How many attempts do you want to do?: "))
 
     bot.snipe_item(

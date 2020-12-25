@@ -19,22 +19,32 @@ class SnipeItem:
         self.logger.log(f"Trying to snipe {number_of_attempts} times...")
         if not type_of_filter == 'none':
             self._set_search_filter(characteristics, price, type_of_filter)
-        self._snipe_items(characteristics, number_of_attempts, price, type_of_filter, success_action)
+        [profit, purchased_items] = self._snipe_items(
+            characteristics, number_of_attempts, price, type_of_filter, success_action
+        )
         self.logger.log(f"Finished sniping")
+        self.logger.log(f"Number of purchased items: {purchased_items}")
+        self.logger.log(f"Total profit: {profit}")
 
     def _snipe_items(self, characteristics, number_of_attempts, price, type_of_filter, success_action):
+        profit = 0
+        purchased_items = 0
         action = 'increment'
         for attempt in range(number_of_attempts):
             try:
-                success = self._snipe_item(attempt)
-                if success:
+                sniped_item = self._snipe_item(attempt)
+                if sniped_item:
                     if success_action == 'send_to_club':
-                        self.web_app.send_to_club()
+                        sniped_item.send_to_club()
+                        purchased_items += 1
                         break
                     elif success_action == 'send_to_transfer_list':
-                        self.web_app.send_to_transfer_list()
+                        sniped_item.send_to_transfer_list()
+                        purchased_items += 1
                     elif success_action == 'list':
-                        self.web_app.list(characteristics['price'])
+                        sniped_item.list(characteristics['sell_price'])
+                        purchased_items += 1
+                        profit += sniped_item.profit
                 action = self._reset_search(action)
                 _random_pause()
             except Exception as e:
@@ -43,6 +53,7 @@ class SnipeItem:
                 if type_of_filter == 'none':
                     break
                 self._set_search_filter(characteristics, price, type_of_filter)
+        return [profit, purchased_items]
 
     def _set_search_filter(self, characteristics, price, type_of_filter):
         try:
@@ -65,8 +76,8 @@ class SnipeItem:
         self.web_app.search()
         [result, sniped_item] = self.web_app.snipe_item()
         if result == 'success':
-            self.logger.log(f"Sniped {sniped_item['name']} for {sniped_item['purchase_price']}!")
-            return True
+            self.logger.log(f"Sniped {sniped_item.name} for {sniped_item.purchase_price}!")
+            return sniped_item
         elif result == 'no_item_found':
             self.logger.log(f"No item found")
             return False

@@ -14,6 +14,7 @@ from use_cases.list_won_items import ListWonItems
 from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
+from use_cases.snipe_icon import SnipeIcon
 from use_cases.snipe_item import SnipeItem
 from use_cases.verify_device import VerifyDevice
 
@@ -102,23 +103,28 @@ class MyPrompt(Cmd):
         list_transfer_list_items = ListTransferListItems(
             web_app = web_app, logger = logger, repository = repository, market_data = market_data
         )
-        list_transfer_list_items.execute()
+        list_transfer_list_items.execute('available_items')
+
+    def do_snipe_icon(self, arg):
+        snipe_icon = SnipeIcon(
+            web_app = web_app, logger = logger, repository = repository, market_data = market_data
+        )
+        snipe_icon.execute(300)
 
     def do_snipe_item(self, arg):
-        do_snipe_item = SnipeItem(
+        snipe_item = SnipeItem(
             web_app = web_app, logger = logger, repository = repository, market_data = market_data
         )
         characteristics = {
-            'name': 'Telles',
-            'club': 'Manchester Utd',
-            'position': 'LB',
-            'nation': 'Brazil'
+            'name': 'Talisca',
+            'sell_price': 1000
         }
-        do_snipe_item.execute(
+        snipe_item.execute(
             characteristics = characteristics,
-            price = 30000,
+            price = 900,
             number_of_attempts = 50,
-            type_of_filter = 'characteristics'
+            type_of_filter = 'name',
+            success_action = 'list'
         )
 
     def do_logout(self, arg):

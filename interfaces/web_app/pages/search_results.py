@@ -28,6 +28,12 @@ START_PRICE_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelA
 MAX_BUY_NOW_FIELD = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > div:nth-child(3) > div.ut-numeric-input-spinner-control > input"
 CONFIRM_LISTING_BUTTON = "div.DetailPanel > div.ut-quick-list-panel-view > div.panelActions.open > button"
 
+SNIPED_ITEM = "div.DetailView"
+SNIPED_ITEM_NAME = "div.name"
+SNIPED_ITEM_POSITION = "div.position"
+SNIPED_ITEM_RATING = "div.rating"
+SNIPED_ITEM_PURCHASE_PRICE = "span.currency-coins.subContent"
+
 
 class SearchResult(WebAppElement):
     def __init__(self, driver, selenium_element):
@@ -93,7 +99,7 @@ def bid_on_search_results(driver, price, max_bids, max_time_left):
         search_result.bid(price)
         items_with_bid.append(search_result.to_dict())
 
-    return items_with_bid
+    return len(items_with_bid)
 
 
 def _random_pause(average_pause_time_in_seconds):
@@ -142,6 +148,13 @@ def confirm_buy_now(driver):
     except TimeoutException:
         return False
     return True
+
+
+def get_sniped_item(driver):
+    sniped_item = utils.get_element(
+        driver, SNIPED_ITEM
+    )
+    return sniped_item
 
 
 def send_to_club(driver):
@@ -197,3 +210,6 @@ def get_purchase_price(driver):
         driver, PURCHASE_PRICE_FIELD
     )
     return purchase_price_field.get_text()
+
+def get_search_results(driver):
+    return utils.get_elements(driver, SEARCH_RESULTS)
