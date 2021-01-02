@@ -17,7 +17,7 @@ class ListTransferListItems:
 
     def _go_to_transfer_list(self):
         try:
-            self.web_app.go_to_transfer_list()
+            self.web_app.navigator.go_to_transfer_list()
         except NonFatalWebAppException as e:
             self._handle_error(e)
             self._go_to_transfer_list()
@@ -25,14 +25,18 @@ class ListTransferListItems:
     def _list_transfer_list_items(self, type_of_item):
         while True:
             try:
-                transfer_list_items = self.web_app.get_transfer_list_items(type_of_item)
+                transfer_list_items = self.web_app.transfer_list_items.get_all(type_of_item=type_of_item)
                 if len(transfer_list_items) == 0:
                     break
                 item = transfer_list_items.pop(0)
-                self.logger.log(f"Listing {item.name}, {item.position}, {item.rating}...")
+                self.logger.log(
+                    f"Listing {item.name}, {item.position}, {item.rating}..."
+                )
                 sell_price = self._calculate_sell_price(item)
                 item.list(sell_price)
-                self.logger.log(f"Listed {item.name}, {item.position}, {item.rating} for {sell_price}")
+                self.logger.log(
+                    f"Listed {item.name}, {item.position}, {item.rating} for {sell_price}"
+                )
             except NonFatalWebAppException as e:
                 self._handle_error(e)
 

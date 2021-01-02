@@ -8,7 +8,7 @@ class HandleError:
         self._restart_web_app()
 
     def _restart_web_app(self):
-        self.web_app.refresh()
-        if self.web_app.login_required():
+        self.web_app.login.refresh()
+        if self.web_app.login.login_required():
             self.logger.log("Logging in...")
-            self.web_app.login()
+            self.web_app.login.login()

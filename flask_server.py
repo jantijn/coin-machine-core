@@ -24,11 +24,9 @@ def initialize():
         web_app=WebApp(headless=True),
         logger=Logger(),
         repository=Repository(),
-        market_data=MarketData()
+        market_data=MarketData(),
     )
-    bot.repository.login(
-        username = data["username"], password = data["password"]
-    )
+    bot.repository.login(username=data["username"], password=data["password"])
     return "Session initialized"
 
 
@@ -46,7 +44,9 @@ def login():
 @app.route("/verify-device", methods=["POST"])
 def verify_device():
     data = request.get_json()
-    response = bot.verify_device(verification_code=data["verification_code"],)
+    response = bot.verify_device(
+        verification_code=data["verification_code"],
+    )
     if response:
         return "Successfully verified device!"
     return "Something went wrong"

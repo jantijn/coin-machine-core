@@ -49,17 +49,14 @@ class Repository:
         url = f"/api/items/random/"
 
         for i in range(number_of_search_filters):
-            item = self._get(url = url, headers = self.headers)
+            item = self._get(url=url, headers=self.headers)
             search_filter = SearchFilter.from_dict(item)
             search_filters.append(search_filter)
 
         return search_filters
 
     def get_item_info(self, name, rating):
-        data = {
-            'short_name': name,
-            'rating': rating
-        }
+        data = {"short_name": name, "rating": rating}
         url = f"/api/items/info/"
         return self._get(url=url, headers=self.headers, data=data)
 

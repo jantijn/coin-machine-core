@@ -1,8 +1,16 @@
 from entities.purchased_item import PurchasedItemEntity
 from interfaces.web_app.pages import home
-from interfaces.web_app.pages.search_results import open_list_dialog, set_start_price, set_max_buy_now_price, \
-    confirm_listing, SNIPED_ITEM_NAME, SNIPED_ITEM_RATING, SNIPED_ITEM_PURCHASE_PRICE, send_to_club, \
-    send_to_transfer_list
+from interfaces.web_app.pages.search_results import (
+    open_list_dialog,
+    set_start_price,
+    set_max_buy_now_price,
+    confirm_listing,
+    SNIPED_ITEM_NAME,
+    SNIPED_ITEM_RATING,
+    SNIPED_ITEM_PURCHASE_PRICE,
+    send_to_club,
+    send_to_transfer_list,
+)
 from interfaces.web_app.pages.utils import WebAppElement
 
 

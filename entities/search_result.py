@@ -6,11 +6,15 @@ class SearchResultEntity:
 
     @classmethod
     def from_dict(cls, adict):
-        return cls(name=adict["name"], rating=adict["rating"], buy_now_price=adict["buy_now_price"])
+        return cls(
+            name=adict["name"],
+            rating=adict["rating"],
+            buy_now_price=adict["buy_now_price"],
+        )
 
     def to_dict(self):
         return {
             "name": self.name,
             "rating": self.rating,
-            "buy_now_price": self.buy_now_price
+            "buy_now_price": self.buy_now_price,
         }

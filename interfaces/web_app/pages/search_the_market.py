@@ -14,6 +14,20 @@ POSITION_BUTTON = "body > main > section > section > div.ut-navigation-container
 INCREMENT_MIN_BID_PRICE_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(2) > div.ut-numeric-input-spinner-control > button.btn-standard.increment-value"
 DECREMENT_MIN_BID_PRICE_BUTTON = "body > main > section > section > div.ut-navigation-container-view--content > div > div.ut-pinned-list-container.ut-content-container > div > div.ut-pinned-list > div.search-prices > div:nth-child(2) > div.ut-numeric-input-spinner-control > button.btn-standard.decrement-value"
 
+
+def set_name(driver, name):
+    name_field = utils.get_element(driver, NAME_FIELD)
+    name_field.safe_fill(name)
+
+    name_button = utils.get_element(driver, NAME_BUTTON)
+    name_button.slow_click()
+
+
+def set_max_bid_price(driver, price):
+    max_bid_price_field = utils.get_element(driver, MAX_BID_PRICE_FIELD)
+    max_bid_price_field.safe_fill(price - 100)
+
+
 def set_bid_filter(driver, name, price):
     name_field = utils.get_element(driver, NAME_FIELD)
     name_field.safe_fill(name)
@@ -73,12 +87,12 @@ def _set_position_field(position, driver):
         if position in position_element.get_text():
             position_element.slow_click()
             break
-            
+
 
 def _set_price_fields(driver, price):
     max_buy_now_price_field = utils.get_element(driver, MAX_BUY_NOW_PRICE_FIELD)
     max_buy_now_price_field.safe_fill(price)
-    set_min_bid_price(driver, price = 150)
+    set_min_bid_price(driver, price=150)
 
 
 def set_min_bid_price(driver, price):
@@ -108,7 +122,5 @@ def search_the_transfer_market(driver):
 
 
 def go_back(driver):
-    go_back_button = utils.get_element(
-        driver, GO_BACK_BUTTON
-    )
+    go_back_button = utils.get_element(driver, GO_BACK_BUTTON)
     go_back_button.slow_click()

@@ -1,5 +1,5 @@
 from entities.purchased_item import PurchasedItemEntity
-from interfaces.web_app.pages import home
+from interfaces.web_app.pages import home, transfer_list
 from interfaces.web_app.pages.transfer_list import (
     NAME,
     RATING,
@@ -11,6 +11,17 @@ from interfaces.web_app.pages.transfer_list import (
 )
 from interfaces.web_app.pages.utils import WebAppElement
 from use_cases.exceptions.exceptions import NonFatalWebAppException
+
+
+class TransferListItems:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def get_all(self, type_of_item):
+        transfer_list_items = transfer_list.get_available_items(self.driver, type_of_item)
+        return [
+            TransferListItem(web_app_element) for web_app_element in transfer_list_items
+        ]
 
 
 class TransferListItem(WebAppElement, PurchasedItemEntity):

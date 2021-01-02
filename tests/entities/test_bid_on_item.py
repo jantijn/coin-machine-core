@@ -10,7 +10,10 @@ TEST_PLAYER = {
 
 class TestBidOnItem(unittest.TestCase):
     def test_bid_on_item_init(self):
-        et = bid_on_item.BidOnItem(name=TEST_PLAYER["name"], bid=TEST_PLAYER["bid"],)
+        et = bid_on_item.BidOnItem(
+            name=TEST_PLAYER["name"],
+            bid=TEST_PLAYER["bid"],
+        )
 
         assert et.name == TEST_PLAYER["name"]
         assert et.bid == TEST_PLAYER["bid"]
@@ -22,7 +25,10 @@ class TestBidOnItem(unittest.TestCase):
         assert et.bid == TEST_PLAYER["bid"]
 
     def test_filter_to_dict(self):
-        expected_result = dict(name=TEST_PLAYER["name"], bid=TEST_PLAYER["bid"],)
+        expected_result = dict(
+            name=TEST_PLAYER["name"],
+            bid=TEST_PLAYER["bid"],
+        )
 
         et = bid_on_item.BidOnItem.from_dict(TEST_PLAYER)
 

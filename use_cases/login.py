@@ -10,7 +10,7 @@ class Login:
     def execute(self, username, password):
         self.logger.log("Logging in...")
         try:
-            self.web_app.login(username, password)
+            self.web_app.login.login(username, password)
         except WrongCredentialsException:
             msg = "Wrong username and or password"
             self.logger.log(msg)

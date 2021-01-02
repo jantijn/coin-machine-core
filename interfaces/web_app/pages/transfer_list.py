@@ -36,11 +36,10 @@ def relist_unsold_items(driver):
 
 
 def get_available_items(driver, type_of_item):
-    if type_of_item == 'available_items':
+    if type_of_item == "available_items":
         return utils.get_elements(driver, AVAILABLE_ITEMS)
-    elif type_of_item == 'expired_items':
+    elif type_of_item == "expired_items":
         return utils.get_elements(driver, EXPIRED_ITEMS)
-
 
 
 def open_list_dialog(driver):

@@ -7,18 +7,14 @@ from interfaces.logger import Logger
 from interfaces.market_data import MarketData
 from interfaces.repository.django import Repository
 from interfaces.web_app import WebApp
-from use_cases.bid_on_each_search_filter import BidOnEachSearchFilter
+
+from use_cases.bid_on_search_filter import BidOnSearchFilter
 from use_cases.get_search_filters import GetSearchFilters
 from use_cases.list_transfer_list_items import ListTransferListItems
 from use_cases.list_won_items import ListWonItems
-from use_cases.logout import Logout
 from use_cases.refresh_transfer_list import RefreshTransferList
 from use_cases.login import Login
-from use_cases.snipe_icon import SnipeIcon
-from use_cases.snipe_item import SnipeItem
 from use_cases.verify_device import VerifyDevice
-
-from bot import Bot
 
 # docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome:4.0.0-alpha-7-prerelease-20200907
 # open vnc://0.0.0.0:5900
@@ -26,7 +22,7 @@ from bot import Bot
 web_app = WebApp(custom_driver=True)
 market_data = MarketData()
 repository = Repository()
-repository.login(username = "admin", password = "J@nt1jn+admin")
+repository.login(username="admin", password="J@nt1jn+admin")
 logger = Logger()
 
 EXECUTOR = "http://localhost:4444/wd/hub"
@@ -76,19 +72,17 @@ class MyPrompt(Cmd):
         refresh_transfer_list = RefreshTransferList(web_app, logger)
         refresh_transfer_list.execute()
 
-    def do_get_search_filters(self, arg):
-        get_search_filters = GetSearchFilters(
-            repository=repository, market_data=market_data, logger=logger
-        )
-        state["search_filters"] = get_search_filters.execute(number_of_search_filters=4, margin=100)
+    def do_get_search_filter(self, arg):
+        get_search_filters = GetSearchFilters(repository=repository, logger=logger)
+        state["search_filter"] = get_search_filters.execute(
+            number_of_search_filters=1, margin=100
+        )[0]
 
-    def do_bid_on_each_search_filter(self, arg):
-        if state["search_filters"]:
-            bid_on_each_search_filter = BidOnEachSearchFilter(
-                web_app=web_app, logger=logger
-            )
-            bid_on_each_search_filter.execute(
-                search_filters=state["search_filters"], max_time_left=25
+    def do_bid_on_search_filter(self, arg):
+        if state["search_filter"]:
+            bid_on_search_filter = BidOnSearchFilter(web_app=web_app, logger=logger)
+            bid_on_search_filter.execute(
+                search_filter=state["search_filter"], max_items=10, max_time_left=5
             )
         else:
             print("First load search filters")
@@ -101,35 +95,12 @@ class MyPrompt(Cmd):
 
     def do_list_transfer_list_items(self, arg):
         list_transfer_list_items = ListTransferListItems(
-            web_app = web_app, logger = logger, repository = repository, market_data = market_data
+            web_app=web_app,
+            logger=logger,
+            repository=repository,
+            market_data=market_data,
         )
-        list_transfer_list_items.execute('available_items')
-
-    def do_snipe_icon(self, arg):
-        snipe_icon = SnipeIcon(
-            web_app = web_app, logger = logger, repository = repository, market_data = market_data
-        )
-        snipe_icon.execute(300)
-
-    def do_snipe_item(self, arg):
-        snipe_item = SnipeItem(
-            web_app = web_app, logger = logger, repository = repository, market_data = market_data
-        )
-        characteristics = {
-            'name': 'Talisca',
-            'sell_price': 1000
-        }
-        snipe_item.execute(
-            characteristics = characteristics,
-            price = 900,
-            number_of_attempts = 50,
-            type_of_filter = 'name',
-            success_action = 'list'
-        )
-
-    def do_logout(self, arg):
-        logout = Logout(web_app=web_app, logger=logger)
-        logout.execute()
+        list_transfer_list_items.execute()
 
     def do_exit(self, inp):
         print("Bye")

@@ -8,11 +8,17 @@ class SearchFilter:
 
     @classmethod
     def from_dict(cls, adict):
-        return cls(repo_id=adict["name"], name=adict["short_name"], market_price=adict["last_market_price"])
+        return cls(
+            repo_id=adict["name"],
+            name=adict["short_name"],
+            market_price=adict["last_market_price"],
+        )
 
     def calculate_prices(self, margin, bonus):
         ea_tax = 0.05
-        self.buy_price = int(round((self.market_price * (1 - ea_tax) - margin) / 100, 0) * 100)
+        self.buy_price = int(
+            round((self.market_price * (1 - ea_tax) - margin) / 100, 0) * 100
+        )
         self.sell_price = self.market_price + bonus
 
     def to_dict(self):

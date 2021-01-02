@@ -1,7 +1,6 @@
 class GetSearchFilters:
-    def __init__(self, repository, market_data, logger):
+    def __init__(self, repository, logger):
         self.repository = repository
-        self.market_data = market_data
         self.logger = logger
 
     def execute(self, number_of_search_filters=1, margin=200, bonus=100, platform="ps"):
@@ -15,5 +14,5 @@ class GetSearchFilters:
             self.logger.log(
                 f"Loaded search filter --> name: {search_filter.name}, buy price: {search_filter.buy_price}, sell price: {search_filter.sell_price}"
             )
-        self.logger.log("Search filters loaded")
+        self.logger.log("Search filter(s) loaded")
         return search_filters

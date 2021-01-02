@@ -10,7 +10,7 @@ class VerifyDevice:
     def execute(self, verification_code):
         self.logger.log("Verifying device...")
         try:
-            self.web_app.verify_device(verification_code)
+            self.web_app.login.verify_device(verification_code)
         except WrongVerificationCodeError:
             msg = "Wrong verification code"
             self.logger.log(msg)

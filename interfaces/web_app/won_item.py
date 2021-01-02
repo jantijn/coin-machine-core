@@ -1,5 +1,8 @@
+import random
+import time
+
 from entities.purchased_item import PurchasedItemEntity
-from interfaces.web_app.pages import home
+from interfaces.web_app.pages import home, transfer_targets
 from interfaces.web_app.pages.transfer_targets import (
     NAME,
     RATING,
@@ -11,6 +14,24 @@ from interfaces.web_app.pages.transfer_targets import (
 )
 from interfaces.web_app.pages.utils import WebAppElement
 from use_cases.exceptions.exceptions import NonFatalWebAppException
+
+
+class WonItems:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def get_all(self):
+        self._random_pause(2)
+        transfer_targets.clear_expired_players(self.driver)
+        won_items = transfer_targets.get_won_items(self.driver)
+        return [WonItem(web_app_element) for web_app_element in won_items]
+
+    @staticmethod
+    def _random_pause(average_pause_time_in_seconds):
+        time.sleep(average_pause_time_in_seconds + random.uniform(-0.5, 0.5))
+
+    def clear_lost_items(self):
+        transfer_targets.clear_expired_players(self.driver)
 
 
 class WonItem(WebAppElement, PurchasedItemEntity):
