@@ -5,43 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785a1ea8-8b5b-47be-a0ff-b42fa1f0880a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app/navigator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app/search_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/web_app/search_results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/bid_on_search_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/mass_bid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/driver.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/bid_on_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/bid_on_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/search_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/search_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/search_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/repository/django.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/repository/django.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/general.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/search_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/search_the_market.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/search_the_market.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/pages/transfer_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/search_result.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/sniped_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/sniped_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/transfer_list_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/transfer_list_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/web_app/won_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/won_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell2.py" beforeDir="false" afterPath="$PROJECT_DIR$/shell2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/entities/test_bid_on_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/entities/test_bid_on_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/bid_on_each_search_filter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/exceptions/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/exceptions/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/get_search_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/get_search_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/handle_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/handle_error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_transfer_list_items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/list_won_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/list_won_items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/snipe_icon.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/snipe_item.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/verify_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/verify_device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/web_app/search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/web_app/search_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,11 +152,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python tests.pytest in tests" />
       <item itemvalue="Python tests.pytest for test_handle_error.test_handle_error" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_bid_happy_flow" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_handles_generic_error_on_refresh" />
       <item itemvalue="Python tests.pytest for test_mass_bid.test_mass_refreshes_on_exception" />
+      <item itemvalue="Python tests.pytest in tests" />
     </list>
     <recent_temporary>
       <list>

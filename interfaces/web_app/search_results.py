@@ -47,7 +47,7 @@ class SearchResult(WebAppElement, SearchResultEntity):
             return 60
         if unit == "Seconds":
             return 1
-        elif unit == "Hours" or unit == "Hour":
+        elif unit in ["Hour", "Hours", "Day", "Days"]:
             return 60
         return int(number)
 
